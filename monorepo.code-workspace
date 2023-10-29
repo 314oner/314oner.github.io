@@ -12,5 +12,9 @@
       "name": "rsc-v8-app",
       "path": "apps/rsc-v8-app"
     },
+    {
+      "name": "static-preact-app",
+      "path": "apps/static-preact-app"
+    },
   ],
 }
