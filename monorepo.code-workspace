@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "name": "🌳 root",
+      "path": "."
+    },
+    {
+      "name": "json-server",
+      "path": "apps/json-server"
+    },
+    {
+      "name": "rsc-v8-app",
+      "path": "apps/rsc-v8-app"
+    },
+  ],
+}
