@@ -1,7 +1,7 @@
 {
   "name": "static-preact-app",
   "scripts": {
-    "dev": "snowpack dev",
+    "dev": "snowpack dev --port 8079",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "serve": "node ./fastify.serve.js",

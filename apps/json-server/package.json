@@ -5,7 +5,7 @@
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "save-json-api": "node ./src/scripts/save-json-api.js",
-    "dev": "npm run transpile && npm run build && npm run save-json-api"
+    "start": "npm run transpile && npm run build && npm run save-json-api"
   },
   "devDependencies": {
     "@types/node": "~20.8.9",
