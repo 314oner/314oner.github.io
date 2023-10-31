@@ -2,7 +2,10 @@
 const { h, render, Component } = preact;
 const { useState, useEffect } = preactHooks;
 const { Router } = preactRouter;
+
 import htm from "https://cdnjs.cloudflare.com/ajax/libs/htm/3.1.1/htm.module.js";
+import useData from './hooks/useData'
+
 const html = htm.bind(h);
 
 const Counter = () => {
@@ -31,7 +34,17 @@ const Home = () => html`
 const About = () => html`
   <p>About</p>
 `;
-const App = () => html`
+const App = () => {
+  const [
+    data,
+    searchTerm,
+    setSearchTerm,
+    loadNextPage,
+    hasNextPage,
+    getResultsCount,
+  ] = useData();
+
+  return html`
   <header>
     <${Nav} />
   </header>
@@ -43,5 +56,6 @@ const App = () => html`
     <//>
   </main>
 `;
+}
 
 render(html`<${App}/>`, document.getElementById('app'))

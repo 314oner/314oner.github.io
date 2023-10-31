@@ -4,6 +4,7 @@
 /.yarn/unplugged
 # Production
 /build
+/dist
 
 # Generated files
 .docusaurus
