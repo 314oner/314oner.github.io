@@ -3308,7 +3308,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsonp@npm:0.2.2":
+"@types/jsonp@npm:~0.2.2":
   version: 0.2.2
   resolution: "@types/jsonp@npm:0.2.2"
   checksum: dbe009ac026fadbfb31a70904efbceaf16cc39bd75062d871d4d4a1ba9552fe2da8a54fc14934b73e60ec5d9333046204e4fe60212fcc8216f170f6247250264
@@ -3356,7 +3356,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.8.9":
+"@types/node@npm:*":
   version: 20.8.9
   resolution: "@types/node@npm:20.8.9"
   dependencies:
@@ -3369,6 +3369,15 @@ __metadata:
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:~20.8.9":
+  version: 20.8.10
+  resolution: "@types/node@npm:20.8.10"
+  dependencies:
+    undici-types: ~5.26.4
+  checksum: 7c61190e43e8074a1b571e52ff14c880bc67a0447f2fe5ed0e1a023eb8a23d5f815658edb98890f7578afe0f090433c4a635c7c87311762544e20dd78723e515
   languageName: node
   linkType: hard
 
@@ -13303,8 +13312,8 @@ __metadata:
   resolution: "static-preact-app@workspace:apps/static-preact-app"
   dependencies:
     "@fastify/static": 6.11.2
-    "@types/jsonp": 0.2.2
-    "@types/node": ^20.8.9
+    "@types/jsonp": ~0.2.2
+    "@types/node": ~20.8.9
     fastify: 4.24.3
     jsonp: 0.2.1
     snowpack: 3.8.8
