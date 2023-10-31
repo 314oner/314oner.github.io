@@ -5,6 +5,7 @@ const { Router } = preactRouter;
 
 import htm from "https://cdnjs.cloudflare.com/ajax/libs/htm/3.1.1/htm.module.js";
 import useData from './hooks/useData'
+import api from './api';
 
 const html = htm.bind(h);
 
@@ -36,19 +37,29 @@ const About = () => html`
 `;
 const App = () => {
   const [
-    data,
     searchTerm,
     setSearchTerm,
     loadNextPage,
     hasNextPage,
     getResultsCount,
   ] = useData();
+  const [data, setData] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get.data();
+      setData(response);
+    };
 
+    fetchData();
+  }, []);
   return html`
   <header>
     <${Nav} />
   </header>
   <main>
+    <div>
+      ${data}
+    </div>
     <${Router}>
       <${Home} path="/" />
       <${About} path="/about" />

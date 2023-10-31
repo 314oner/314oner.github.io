@@ -8808,6 +8808,12 @@ __metadata:
 "json-server@workspace:apps/json-server":
   version: 0.0.0-use.local
   resolution: "json-server@workspace:apps/json-server"
+  dependencies:
+    "@types/node": ~20.8.9
+    fastify: 4.24.3
+    node-fs: 0.1.7
+    snowpack: 3.8.8
+    typescript: ^5.2.2
   languageName: unknown
   linkType: soft
 
@@ -9875,6 +9881,14 @@ __metadata:
   version: 1.3.1
   resolution: "node-forge@npm:1.3.1"
   checksum: 08fb072d3d670599c89a1704b3e9c649ff1b998256737f0e06fbd1a5bf41cae4457ccaee32d95052d80bbafd9ffe01284e078c8071f0267dc9744e51c5ed42a9
+  languageName: node
+  linkType: hard
+
+"node-fs@npm:0.1.7":
+  version: 0.1.7
+  resolution: "node-fs@npm:0.1.7"
+  checksum: 370917b2eb7ccb469801ae151b6b4162082ec4226ecf7ce0a7a0870e3b3bf67607fa2e0ef4b99ea8edd080821aef23b571a2774c02f2ee5742383e99c24cd837
+  conditions: (os=linux | os=darwin | os=freebsd | os=win32 | os=smartos | os=sunos)
   languageName: node
   linkType: hard
 
