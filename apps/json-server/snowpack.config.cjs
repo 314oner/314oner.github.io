@@ -1,6 +1,6 @@
 module.exports = {
     root: './src',
     buildOptions: {
-        out: '../../build'
+        out: './dist'
     },
 };

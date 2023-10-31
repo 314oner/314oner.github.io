@@ -8,9 +8,6 @@
 .yarn/install-state.gz
 .pnp.*
 
-# Production
-/build
-
 # Generated files
 .docusaurus
 .cache-loader
