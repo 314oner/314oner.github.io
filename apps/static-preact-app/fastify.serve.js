@@ -7,9 +7,9 @@ const fastify_1 = __importDefault(require("fastify"));
 const node_path_1 = __importDefault(require("node:path"));
 const server = (0, fastify_1.default)();
 server.register(require('@fastify/static'), {
-    root: node_path_1.default.join(__dirname, '..', 'ui')
+    root: node_path_1.default.join(__dirname, 'dist')
 });
-server.listen({ port: 3000 }, (err, address) => {
+server.listen({ port: 5000 }, (err, address) => {
     if (err)
         throw err;
     console.log(`Server is now listening on ${address}`);

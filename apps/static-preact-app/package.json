@@ -1,15 +1,22 @@
 {
   "name": "static-preact-app",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "dev": "node src/server/server.js"
+    "dev": "snowpack dev",
+    "transpile": "tsc -p tsconfig.json",
+    "build": "snowpack build",
+    "serve": "node ./fastify.serve.js",
+    "start": "npm run transpile && npm run build && npm run serve"
   },
   "devDependencies": {
     "@fastify/static": "6.11.2",
-    "@types/node": "^20.8.9",
+    "@types/jsonp": "~0.2.2",
+    "@types/node": "~20.8.9",
     "fastify": "4.24.3",
-    "fastify-cli": "5.8.0",
+    "snowpack": "3.8.8",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "jsonp": "0.2.1"
   },
   "packageManager": "yarn@4.0.0-rc.44"
 }
