@@ -4,8 +4,8 @@ const { useState, useEffect } = preactHooks;
 const { Router } = preactRouter;
 
 import htm from "https://cdnjs.cloudflare.com/ajax/libs/htm/3.1.1/htm.module.js";
-import useData from './hooks/useData'
-import api from './api';
+import useData from './hooks/useData.js'
+import api from './api/index.js';
 
 const html = htm.bind(h);
 
