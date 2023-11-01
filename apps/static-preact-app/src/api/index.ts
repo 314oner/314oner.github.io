@@ -1,5 +1,5 @@
 //@ts-ignore
-import getEndpoints from '../db';
+const getEndpoints = require('../db')
 
 const endpoints = getEndpoints();
 
