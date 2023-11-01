@@ -1,6 +1,6 @@
 module.exports = {
-    root: './src',
+    root: './src/db',
     buildOptions: {
-        out: './dist'
+        out: '../static-preact-app/src/db'
     },
 };

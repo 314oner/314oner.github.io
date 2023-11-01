@@ -1,5 +1,4 @@
-import data from './data.json';
-
-export default () => ({
-    data: data,
-})
+const data = require("./data.json");
+module.exports = () => ({
+  data
+});
