@@ -1,11 +1,12 @@
 {
   "name": "json-server",
+  "type": "module",
   "scripts": {
     "tsc:init": "tsc --init",
     "transpile": "tsc -p tsconfig.json",
-    "build": "snowpack build",
+    "build": "snowpack build --config ./snowpack.config.cjs",
     "save-json-api": "node ./src/scripts/save-json-api.js",
-    "start": "npm run transpile && npm run build && npm run save-json-api"
+    "start": "npm run build && npm run save-json-api"
   },
   "devDependencies": {
     "@types/node": "~20.8.9",

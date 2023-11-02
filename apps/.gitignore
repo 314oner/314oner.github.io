@@ -1,6 +1,6 @@
 # Dependencies
 /node_modules
-build/db/_snowpack
+db
 
 # yarn v2
 .yarn/cache

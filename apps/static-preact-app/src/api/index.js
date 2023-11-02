@@ -1,11 +1,6 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 //@ts-ignore
-const db_1 = __importDefault(require("../db"));
-const endpoints = (0, db_1.default)();
+import * as getEndpoints from '../db';
+const endpoints = getEndpoints();
 const getJson = async (endpoint) => {
     /*
     https://raw.githubusercontent.com/userName/projectName/branchName/relative-directory-path/fileName, где:
@@ -26,4 +21,4 @@ const api = {
         data: () => getJson('data'),
     },
 };
-exports.default = api;
+export default api;

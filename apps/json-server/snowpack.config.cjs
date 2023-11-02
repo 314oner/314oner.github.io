@@ -3,4 +3,7 @@ module.exports = {
     buildOptions: {
         out: '../static-preact-app/src/db'
     },
+    packageOptions: {
+        polyfillNode: true
+    }
 };

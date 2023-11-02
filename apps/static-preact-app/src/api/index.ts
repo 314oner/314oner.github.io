@@ -1,5 +1,5 @@
 //@ts-ignore
-import getEndpoints from '../db';
+import * as getEndpoints from '../db';
 
 const endpoints = getEndpoints();
 

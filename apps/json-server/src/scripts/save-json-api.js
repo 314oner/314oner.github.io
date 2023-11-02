@@ -1,16 +1,11 @@
-const fs = require('node-fs');
-const getDb = require('../db');
-
+import fs from 'node-fs'
+import getDb from '../db/index.js';
 const db = getDb();
-
-fs.mkdir('./dist/db', () => {
+fs.mkdir('../db', () => {
     for (let [key, value] of Object.entries(db)) {
-        fs.writeFile(
-            `./dist/db/${key}.json`,
-            JSON.stringify(value),
-            (err) => {
-                if (err) throw err;
-            }
-        );
+        fs.writeFile(`../db/${key}.json`, JSON.stringify(value), (err) => {
+            if (err)
+                throw err;
+        });
     }
 });

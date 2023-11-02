@@ -1,7 +1,4 @@
-const data = require("./data.json");
-module.exports = () => ({
-  data
-});
+import data from './data.json.proxy.js' assert { type: "json" }
 export default () => ({
-  data
+    data: data,
 });

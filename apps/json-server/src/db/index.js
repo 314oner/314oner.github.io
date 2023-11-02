@@ -1,9 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const data = require('./data.json');
-module.exports = () => ({
+import data from './data.json' assert { type: "json" }
+export default () => ({
     data: data,
-});
-exports.default = () => ({
-    data: data
 });
