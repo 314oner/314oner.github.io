@@ -25,7 +25,7 @@
     "server": "json-server --watch ./apps/json-server/src/db/index.js --routes ./apps/json-server/src/routes.json --port 3001",
     "apps:start": "yarn workspaces foreach -v -i -ptv --include '*-app' run start",
     "servers:start": "yarn workspaces foreach -v -i -ptv --include '*-server' run start",
-    "start": "npm run servers:start && npm run apps:start && shx cp build/index.html build/404.html",
+    "start": "npm run apps:start && npm run servers:start && shx cp build/index.html build/404.html",
     "deploy": "gh-pages -d build",
     "typecheck": "tsc"
   },
@@ -42,9 +42,10 @@
     "@docusaurus/module-type-aliases": "2.4.3",
     "@tsconfig/docusaurus": "^1.0.5",
     "gh-pages": "^6.0.0",
-    "json-server": "^0.17.4",
+    "json-server": "0.17.4",
     "shx": "0.3.4",
-    "typescript": "^4.7.4"
+    "ts-node": "10.9.1",
+    "typescript": "^5.2.2"
   },
   "browserslist": {
     "production": [

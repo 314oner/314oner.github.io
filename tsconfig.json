@@ -1,6 +1,22 @@
 {
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "."
-  }
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "~/*": [
+        "./apps/*"
+      ],
+      "~/public/*": [
+        "./public/*"
+      ]
+    },
+  },
+  "include": [
+    "apps/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

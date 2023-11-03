@@ -1,5 +1,9 @@
 # Dependencies
 /node_modules
+build/db/_snowpack
+
+# etc
+apps/db
 
 # yarn v2
 .yarn/cache
@@ -7,10 +11,15 @@
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+*/install-state.gz
 
 # Generated files
 .docusaurus
 .cache-loader
+tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo
+**/**/tsconfig.tsbuildinfo
+**/**/**/tsconfig.tsbuildinfo
 
 # Misc
 .DS_Store

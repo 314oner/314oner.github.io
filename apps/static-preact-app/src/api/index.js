@@ -1,11 +1,6 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 //@ts-ignore
-const db_1 = __importDefault(require("../db"));
-const endpoints = (0, db_1.default)();
+import getEndpoints from '../db';
+const endpoints = getEndpoints();
 const getJson = async (endpoint) => {
     /*
     https://raw.githubusercontent.com/userName/projectName/branchName/relative-directory-path/fileName, где:
@@ -17,7 +12,7 @@ const getJson = async (endpoint) => {
     */
     //@ts-ignore
     //const path = `http://localhost:3001/api/${endpoint}`;
-    const path = `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/apps/json-server/dist/db/${endpoint}.json`;
+    const path = `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/db/${endpoint}.json`;
     const response = await fetch(path);
     return await response.json();
 };
@@ -26,4 +21,4 @@ const api = {
         data: () => getJson('data'),
     },
 };
-exports.default = api;
+export default api;

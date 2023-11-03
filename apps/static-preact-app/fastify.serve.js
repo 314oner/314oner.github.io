@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const fastify_1 = __importDefault(require("fastify"));
-const node_path_1 = __importDefault(require("node:path"));
-const server = (0, fastify_1.default)();
+import fastify from 'fastify';
+import path from 'node:path';
+const server = fastify();
 server.register(require('@fastify/static'), {
-    root: node_path_1.default.join(__dirname, 'dist')
+    root: path.join(__dirname, 'dist')
 });
 server.listen({ port: 5000 }, (err, address) => {
     if (err)

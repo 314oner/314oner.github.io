@@ -1,5 +1,7 @@
-const data = require('./data.json');
+import data from './data.json' assert { type: "json" }
 
-module.exports = () => ({
-    data: data,
-});
+export default function getEndpoints() {
+    return () => ({
+        data: data,
+    })
+}
