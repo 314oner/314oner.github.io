@@ -1,5 +1,5 @@
 //@ts-ignore
-import * as getEndpoints from '../db';
+import getEndpoints from '../db';
 
 const endpoints = getEndpoints();
 
@@ -19,7 +19,7 @@ const getJson = async <T>(endpoint: ENDPOINTS): Promise<T> => {
   */
   //@ts-ignore
   //const path = `http://localhost:3001/api/${endpoint}`;
-  const path = `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/build/db/${endpoint}.json`
+  const path = `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/db/${endpoint}.json`;
   const response = await fetch(path);
 
   return await response.json();

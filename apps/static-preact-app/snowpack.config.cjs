@@ -3,4 +3,10 @@ module.exports = {
     buildOptions: {
         out: '../../build'
     },
+    /*
+        packageOptions: {
+        polyfillNode: true
+    },
+    plugins: ['@snowpack/plugin-typescript'],
+    */
 };
