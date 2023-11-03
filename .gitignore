@@ -2,6 +2,9 @@
 /node_modules
 build/db/_snowpack
 
+# etc
+apps/db
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
@@ -9,9 +12,14 @@ build/db/_snowpack
 .yarn/install-state.gz
 .pnp.*
 */install-state.gz
+
 # Generated files
 .docusaurus
 .cache-loader
+tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo
+**/**/tsconfig.tsbuildinfo
+**/**/**/tsconfig.tsbuildinfo
 
 # Misc
 .DS_Store

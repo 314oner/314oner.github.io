@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "listEmittedFiles": true,
+    "target": "es6",
+    "module": "esnext",
+    "baseUrl": "./src",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./src/db",
+    "outDir": "../../build/db",
+  },
+  "include": [
+    "./src/db/*",
+  ],
+}

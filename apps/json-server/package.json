@@ -2,17 +2,14 @@
   "name": "json-server",
   "type": "module",
   "scripts": {
-    "tsc:init": "tsc --init",
-    "transpile": "tsc -p tsconfig.json",
-    "build": "snowpack build --config ./snowpack.config.cjs",
-    "save-json-api": "node ./src/scripts/save-json-api.js",
+    "build": "tsc -p tsconfig.json",
+    "save-json-api": "ts-node --esm ./src/scripts/save-json-api.ts",
     "start": "npm run build && npm run save-json-api"
   },
   "devDependencies": {
     "@types/node": "~20.8.9",
-    "fastify": "4.24.3",
     "node-fs": "0.1.7",
-    "snowpack": "3.8.8",
+    "ts-node": "10.9.1",
     "typescript": "^5.2.2"
   },
   "packageManager": "yarn@4.0.0-rc.44"
