@@ -1,7 +1,12 @@
 {
-  "name": "static-preact-app",
+  "name": "@apps/static-preact-app",
+  "version": "3.0.2",
+  "description": "",
+  "main": "lib/cjs/index.js",
+  "typings": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
   "scripts": {
-    "dev": "snowpack dev --port 8079",
+    "dev": "snowpack dev --port 8079 --polyfill-node",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "serve": "node ./fastify.serve.js",
@@ -15,9 +20,12 @@
     "@types/node": "~20.8.9",
     "fastify": "4.24.3",
     "snowpack": "3.8.8",
+    "snowpack-plugin-raw": "^1.0.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@apps/json-server": "^3.0.2",
+    "@packages/pkg2": "^3.0.2",
     "jsonp": "0.2.1"
   },
   "packageManager": "yarn@4.0.0-rc.44"

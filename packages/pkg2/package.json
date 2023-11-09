@@ -1,0 +1,21 @@
+{
+  "name": "@packages/pkg2",
+  "version": "3.0.2",
+  "description": "",
+  "main": "lib/cjs/index.js",
+  "typings": "lib/cjs/index.d.ts",
+  "module": "lib/esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc -b ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@packages/pkg1": "^3.0.2"
+  },
+  "devDependencies": {
+    "typescript": "next"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "outDir": "lib/cjs",
+    "rootDir": "src",
+    "composite": true
+  },
+  "references": [{ "path": "../pkg1" }, { "path": "../pkg2" }]
+}

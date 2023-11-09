@@ -1,20 +1,42 @@
 {
   "extends": "@tsconfig/docusaurus/tsconfig.json",
+  "files": [],
+  "references": [
+    {
+      "path": "apps/json-server"
+    },
+    {
+      "path": "apps/rsc-v8-app"
+    },
+    {
+      "path": "apps/static-preact-app"
+    },
+    {
+      "path": "packages/pkg1"
+    },
+    {
+      "path": "packages/pkg2"
+    },
+    {
+      "path": "packages/pkg3"
+    }
+  ],
   "compilerOptions": {
     "baseUrl": ".",
     "skipLibCheck": true,
-    "noEmit": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
-      "~/*": [
-        "./apps/*"
-      ],
-      "~/public/*": [
-        "./public/*"
+      "@/*": [
+        "./packages/*",
+        "./apps/*",
       ]
     },
   },
   "include": [
-    "apps/**/*"
+    "apps/*",
+    "packages/*",
   ],
   "exclude": [
     "node_modules"
