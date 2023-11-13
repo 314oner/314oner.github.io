@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "outDir": "lib/cjs",
+    "outDir": "../../build/db",
     "rootDir": "./src/db",
     "target": "es6",
-    "module": "AMD",
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "composite": true
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true
   },
   "include": [
     "./src/db/*",
     "./src/db/data.json",
   ],
-  "exclude": [
-    "node_modules",
-    "../../node_modules"
-  ]
+  "exclude": []
 }

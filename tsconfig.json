@@ -24,9 +24,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "skipLibCheck": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "paths": {
       "@/*": [
         "./packages/*",

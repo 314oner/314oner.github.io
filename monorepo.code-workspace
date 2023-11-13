@@ -6,7 +6,7 @@
     },
     {
       "name": "json-server",
-      "path": "apps/json-server"
+      "path": "servers/json-server"
     },
     {
       "name": "rsc-v8-app",

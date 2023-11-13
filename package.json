@@ -26,11 +26,11 @@
     "server": "node --loader ts-node/esm ./apps/json-server/json-server.ts --watch ./build/db/index.js --routes ./apps/json-server/src/routes.json --port 3001",
     "apps:build": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run build",
     "apps:dev": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run dev",
-    "servers:build": "yarn workspaces foreach -v -i -ptv --include '*-server' run build",
-    "build": "npm run apps:build && npm run servers:build && shx cp build/index.html build/404.html",
-    "build:clean": "rm -rf ./packages/*/lib && yarn transpile",
-    "lint": "tslint --project ./apps/tsconfig.lint.json",
-    "lint:fix": "tslint --project ./apps/tsconfig.lint.json --fix"
+    "servers:build": "yarn workspaces foreach -v -i -ptv --include '@servers/*' run build",
+    "build": "npm run apps:build && shx cp build/index.html build/404.html && npm run servers:build",
+    "build:clean": "rm -rf ./packages/*/lib ./apps/*/lib && yarn transpile",
+    "lint": "tslint --project ./packages/tsconfig.lint.json",
+    "lint:fix": "tslint --project ./packages/tsconfig.lint.json --fix"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
