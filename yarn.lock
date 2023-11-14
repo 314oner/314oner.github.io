@@ -3947,6 +3947,9 @@ __metadata:
   resolution: "@servers/json-server@workspace:apps/json-server"
   dependencies:
     "@types/node": ~20.8.9
+    body-parser: 1.20.2
+    connect-pause: 0.1.0
+    json-server: 0.17.4
     node-fs: 0.1.7
     ts-node: 10.9.1
     typescript: ^5.2.2
@@ -5836,7 +5839,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:^1.19.0":
+"body-parser@npm:1.20.2, body-parser@npm:^1.19.0":
   version: 1.20.2
   resolution: "body-parser@npm:1.20.2"
   dependencies:
@@ -6700,6 +6703,13 @@ __metadata:
   version: 2.0.0
   resolution: "connect-history-api-fallback@npm:2.0.0"
   checksum: dc5368690f4a5c413889792f8df70d5941ca9da44523cde3f87af0745faee5ee16afb8195434550f0504726642734f2683d6c07f8b460f828a12c45fbd4c9a68
+  languageName: node
+  linkType: hard
+
+"connect-pause@npm:0.1.0":
+  version: 0.1.0
+  resolution: "connect-pause@npm:0.1.0"
+  checksum: c2d8c626973a9b0d08066df3500cd99e2d62bd9c2f26224635b9f2c72741bfd1805d7f463eaf367c37159d6e4fb7dec17f697dd9e29477c00d1f7fb1c42691f9
   languageName: node
   linkType: hard
 
