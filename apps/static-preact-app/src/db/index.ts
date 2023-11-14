@@ -1,2 +1,7 @@
-import api from '~/json-server/src/db'
-export default api;
+import data from './data.json'
+
+export default function getEndpoints() {
+    return () => ({
+        data: data,
+    })
+}

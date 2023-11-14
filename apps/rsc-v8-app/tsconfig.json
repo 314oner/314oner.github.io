@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "outDir": "lib/cjs",
+    "rootDir": "src",
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../json-server",
+      "circular": true
+    }
+  ],
+  "include": [
+    "src/**/*",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "node_modues"
+  ]
+}

@@ -1,17 +1,16 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "listEmittedFiles": true,
-    "target": "es6",
-    "module": "esnext",
-    "baseUrl": "./src",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "rootDir": "./src/db",
     "outDir": "../../build/db",
+    "rootDir": "./src/db",
+    "target": "es6",
+    "skipLibCheck": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true
   },
   "include": [
     "./src/db/*",
+    "./src/db/data.json",
   ],
+  "exclude": []
 }

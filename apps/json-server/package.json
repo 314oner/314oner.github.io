@@ -1,10 +1,11 @@
 {
-  "name": "json-server",
+  "name": "@servers/json-server",
+  "version": "3.0.2",
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "transpile": "tsc --build tsconfig.json",
     "save-json-api": "ts-node --esm ./src/scripts/save-json-api.ts",
-    "start": "npm run build && npm run save-json-api"
+    "build": "npm run transpile && npm run save-json-api"
   },
   "devDependencies": {
     "@types/node": "~20.8.9",

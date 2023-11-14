@@ -6,7 +6,7 @@
     },
     {
       "name": "json-server",
-      "path": "apps/json-server"
+      "path": "servers/json-server"
     },
     {
       "name": "rsc-v8-app",
@@ -15,6 +15,18 @@
     {
       "name": "static-preact-app",
       "path": "apps/static-preact-app"
+    },
+    {
+      "name": "pkg1",
+      "path": "packages/pkg1"
+    },
+    {
+      "name": "pkg2",
+      "path": "packages/pkg2"
+    },
+    {
+      "name": "pkg3",
+      "path": "packages/pkg3"
     },
   ],
 }
