@@ -5,13 +5,10 @@
 module.exports = {
     root: './src',
     workspaceRoot: '/',
-    /*
     alias: {
-      '@client': './src/client',
-      '@server': './src/server',
+        /* ... */
     },
-    */
-    plugins: ['@snowpack/plugin-react-refresh'],
+    plugins: ['@snowpack/plugin-typescript', '@snowpack/plugin-react-refresh'],
     packageOptions: {
         /* ... */
     },

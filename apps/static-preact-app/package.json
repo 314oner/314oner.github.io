@@ -37,6 +37,7 @@
   "dependencies": {
     "@packages/pkg2": "^3.0.2",
     "@servers/json-server": "^3.0.2",
+    "fast-average-color": "^6.3.0",
     "jsonp": "0.2.1"
   },
   "packageManager": "yarn@4.0.0-rc.44"

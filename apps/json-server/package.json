@@ -1,17 +1,26 @@
 {
   "name": "@servers/json-server",
   "version": "3.0.2",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "transpile": "tsc --build tsconfig.json",
-    "save-json-api": "ts-node --esm ./src/scripts/save-json-api.ts",
+    "save-json-api": "node ./scripts/save-json-api.js",
     "build": "npm run transpile && npm run save-json-api"
   },
   "devDependencies": {
     "@types/node": "~20.8.9",
+    "json-server": "0.17.4",
     "node-fs": "0.1.7",
     "ts-node": "10.9.1",
     "typescript": "^5.2.2"
   },
-  "packageManager": "yarn@4.0.0-rc.44"
+  "packageManager": "yarn@4.0.0-rc.44",
+  "dependencies": {
+    "body-parser": "1.20.2",
+    "connect-pause": "0.1.0"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  }
 }
