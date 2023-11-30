@@ -9,7 +9,6 @@
 apps/db
 
 # Production
-/build
 /dist
 /lib
 
