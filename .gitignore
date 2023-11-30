@@ -8,8 +8,12 @@
 # etc
 apps/db
 
+# scripts
+npm
+deploy
+run
+
 # Production
-/build
 /dist
 /lib
 

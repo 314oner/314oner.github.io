@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "fast-average-color": "./fast-average-color.js",
+    "jsonp": "./jsonp.js"
+  }
+}

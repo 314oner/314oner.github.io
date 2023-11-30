@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "snowpack dev",
     "transpile": "tsc -p tsconfig.json",
-    "build": "snowpack build && rm ../../build/db/*.json ../../build/db/*.js",
+    "build": "snowpack build",
     "serve": "ts-node ./fastify.serve.ts"
   },
   "devDependencies": {
