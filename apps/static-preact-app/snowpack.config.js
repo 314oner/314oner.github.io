@@ -12,7 +12,7 @@ module.exports = {
     //root: ROOT_SRC,
     //workspaceRoot: '/',
     //mount: {
-    //    public: { url: "/", static: true, dot: true },
+    //    public: { url: "/", static: true, dot: true }, //snowpack ignoring .jekyll
     //src: BUILD_SRC //home/~
     //},
     workspaceRoot: WORKSPACE,
