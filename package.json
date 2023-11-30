@@ -23,14 +23,16 @@
     "docs:write-translations": "docusaurus write-translations",
     "docs:write-heading-ids": "docusaurus write-heading-ids",
     "server": "json-server --watch ./apps/json-server/src/index.js --routes ./apps/json-server/routes.json --port 3001",
+    "apps:build2": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run build && rm ./build/db/*.json ./build/db/*.js && touch ./build/.nojekyll",
     "apps:build": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run build",
     "apps:serve": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run serve",
-    "servers:build": "yarn workspaces foreach -v -i -ptv --include '@servers/*' run build",
+    "servers:build": "rm ./build/db/*.json ./build/db/*.js && touch ./build/.nojekyll && yarn workspaces foreach -v -i -ptv --include '@servers/*' run build",
     "build": "npm run apps:build && shx cp build/index.html build/404.html && npm run servers:build",
     "start": "npm run build && concurrently \"npm run server\" \"npm run apps:serve\"",
     "build:clean": "rm -rf ./packages/*/lib ./apps/*/lib && yarn transpile",
     "lint": "tslint --project ./packages/tsconfig.lint.json",
-    "lint:fix": "tslint --project ./packages/tsconfig.lint.json --fix"
+    "lint:fix": "tslint --project ./packages/tsconfig.lint.json --fix",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
