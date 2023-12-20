@@ -36,6 +36,7 @@ jobs:
       with:
         node-version: 16
         cache: 'pnpm'
+        cache-dependency-path: './services/apps/static-preact-app/pnpm-lock.yaml'
     - name: Install dependencies
       working-directory: ./services/apps/static-preact-app
       run: pnpm install
