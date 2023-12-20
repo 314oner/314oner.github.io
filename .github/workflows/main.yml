@@ -21,8 +21,7 @@ jobs:
         run: npm install
       - name: Build app
         working-directory: ./services/apps/static-preact-app
-        build: npm run build
-        start: npm start
+        run: npm run start
         wait-on: 'http://localhost:5000'
         env:
           APP_NAME: static-preact-app
