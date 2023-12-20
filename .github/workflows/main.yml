@@ -40,13 +40,13 @@ jobs:
     - name: Install dependencies
       working-directory: ./services/apps/static-preact-app
       run: pnpm install --no-frozen-lockfile
-    #- name: Run app
-    #  working-directory: ./services/apps/static-preact-app
-    #  run: pnpm run start
-    - name: Run app without loop and locale binaries
-      uses: actions/github-actions@latest
-      with:
-        working-directory: ./services/apps/static-preact-app
-        build: yarn run build
-        start: yarn start
-        wait-on: 'http://localhost:5000'
+    - name: Run app
+      working-directory: ./services/apps/static-preact-app
+      run: pnpm run start && pnpm run test
+    #- name: Run app without loop and locale binaries
+    #  uses: actions/github-actions@latest
+    #  with:
+    #    working-directory: ./services/apps/static-preact-app
+    #    build: yarn run build
+    #    start: yarn start
+    #    wait-on: 'http://localhost:5000'

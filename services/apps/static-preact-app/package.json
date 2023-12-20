@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "snowpack dev",
-    "test": "cypress run",
+    "test": "npx cypress run",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "serve-build": "ts-node ./fastify.serve.ts",
