@@ -45,6 +45,7 @@ jobs:
         browser: chrome
     - name: Run app
       working-directory: ./services/apps/static-preact-app
-      run: pnpm run start
+      #run: pnpm run start
       with:
-          wait-on: 'http://localhost:5000'
+        run: pnpm run start
+        wait-on: 'http://localhost:5000'
