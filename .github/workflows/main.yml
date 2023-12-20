@@ -43,8 +43,9 @@ jobs:
     - name: Cypress run
       uses: cypress-io/github-action@v5
       with:
-        install: false
+        working-directory: ./services/apps/static-preact-app
         cache-dependency-path: './services/apps/static-preact-app/package.json'
+        install: false
         start: pnpm run start
         browser: chrome
         wait-on: 'http://localhost:5000'
