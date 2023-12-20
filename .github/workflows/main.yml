@@ -49,6 +49,8 @@ jobs:
         start: pnpm run start
         browser: chrome
         wait-on: 'http://localhost:5000'
+      env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     #- name: Run test case
     #  working-directory: ./services/apps/static-preact-app
     #  run: pnpm run test
