@@ -46,7 +46,7 @@ jobs:
         working-directory: ./services/apps/static-preact-app
         cache-dependency-path: './services/apps/static-preact-app/package.json'
         install: false
-        start: pnpm run start
+        start: npx cypress install && pnpm run start
         browser: chrome
         wait-on: 'http://localhost:5000'
       env:
