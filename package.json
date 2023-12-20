@@ -24,7 +24,7 @@
     "docs:write-heading-ids": "docusaurus write-heading-ids",
     "server": "json-server --watch ./services/apps/json-server/src/index.js --routes ./services/apps/json-server/routes.json --port 3001",
     "apps:build": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run build",
-    "apps:serve": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run serve",
+    "apps:serve": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run serve-build",
     "servers:build": "rm ./build/db/*.json ./build/db/*.js && yarn workspaces foreach -v -i -ptv --include '@servers/*' run build",
     "build": "npm run apps:build && shx cp build/index.html build/404.html && npm run servers:build",
     "start": "npm run build && concurrently \"npm run server\" \"npm run apps:serve\"",

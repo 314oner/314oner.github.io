@@ -18,9 +18,11 @@ jobs:
           node-version: 14
       - name: Install dependencies
         working-directory: ./services/apps/static-preact-app
-        run: npm ci
+        run: npm install
       - name: Build app
         working-directory: ./services/apps/static-preact-app
-        run: npm run test
+        build: npm run build
+        start: npm start
+        wait-on: 'http://localhost:5000'
         env:
           APP_NAME: static-preact-app
