@@ -42,5 +42,5 @@ jobs:
     - name: Run Cypress
       working-directory: ./services/apps/static-preact-app
       uses: cypress-io/github-action@v4
-      with:
-        browser: chrome
+      #with:
+      #  browser: chrome
