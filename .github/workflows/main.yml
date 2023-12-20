@@ -39,7 +39,7 @@ jobs:
         cache-dependency-path: './services/apps/static-preact-app/pnpm-lock.yaml'
     - name: Install dependencies
       working-directory: ./services/apps/static-preact-app
-      run: pnpm install
+      run: pnpm install --no-frozen-lockfile
     - name: Run app
       working-directory: ./services/apps/static-preact-app
       run: pnpm run start
