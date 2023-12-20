@@ -43,7 +43,7 @@ jobs:
     - name: Run app
       working-directory: ./services/apps/static-preact-app
       #run: pnpm run start
-      run: pnpm run test
+      run: pnpm run test && pnpm run start
     #- name: Run app without loop and locale binaries
     #  uses: actions/github-actions@latest
     #  with:
