@@ -40,7 +40,10 @@ jobs:
       working-directory: ./services/apps/static-preact-app
       run: pnpm install
     - name: Run Cypress
-      working-directory: ./services/apps/static-preact-app
       uses: cypress-io/github-action@v4
-      #with:
-      #  browser: chrome
+      with:
+        browser: chrome
+    - name: Run app
+      working-directory: ./services/apps/static-preact-app
+      run: pnpm run start
+      wait-on: 'http://localhost:5000'
