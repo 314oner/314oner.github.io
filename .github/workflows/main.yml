@@ -40,12 +40,15 @@ jobs:
     - name: Install dependencies
       working-directory: ./services/apps/static-preact-app
       run: pnpm install --no-frozen-lockfile
-    - name: Run app
-      working-directory: ./services/apps/static-preact-app
-      run: pnpm run start
-    - name: Run test case
-      working-directory: ./services/apps/static-preact-app
-      run: pnpm run test
+    - name: Cypress run
+      uses: cypress-io/github-action@v5
+      with:
+        start: pnpm run start
+        browser: chrome
+        wait-on: 'http://localhost:5000'
+    #- name: Run test case
+    #  working-directory: ./services/apps/static-preact-app
+    #  run: pnpm run test
     #- name: Run app without loop and locale binaries
     #  uses: actions/github-actions@latest
     #  with:
