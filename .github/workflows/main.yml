@@ -21,9 +21,12 @@ jobs:
         run: npm ci
       - name: Build app
         working-directory: ./services/apps/static-preact-app
-        build: npm run build
-        start: npm run start
-        run: npm run test
-        wait-on: 'http://localhost:5000'
+        run: npm run build
         env:
           APP_NAME: static-preact-app
+      - name: Start app
+        working-directory: ./services/apps/static-preact-app
+        run: npm run start
+      - name: Listen app
+        working-directory: ./services/apps/static-preact-app
+        run: npm run test
