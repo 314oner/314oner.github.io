@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "snowpack dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "serve": "ts-node ./fastify.serve.ts"
@@ -35,10 +36,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@packages/pkg2": "^3.0.2",
-    "@servers/json-server": "^3.0.2",
     "fast-average-color": "^6.3.0",
     "jsonp": "0.2.1"
-  },
-  "packageManager": "yarn@4.0.0-rc.44"
+  }
 }

@@ -6,27 +6,27 @@
     },
     {
       "name": "json-server",
-      "path": "servers/json-server"
+      "path": "services/servers/json-server"
     },
     {
       "name": "rsc-v8-app",
-      "path": "apps/rsc-v8-app"
+      "path": "services/apps/rsc-v8-app"
     },
     {
       "name": "static-preact-app",
-      "path": "apps/static-preact-app"
+      "path": "services/apps/static-preact-app"
     },
     {
       "name": "pkg1",
-      "path": "packages/pkg1"
+      "path": "services/packages/pkg1"
     },
     {
       "name": "pkg2",
-      "path": "packages/pkg2"
+      "path": "services/packages/pkg2"
     },
     {
       "name": "pkg3",
-      "path": "packages/pkg3"
+      "path": "services/packages/pkg3"
     },
   ],
 }

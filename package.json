@@ -1,6 +1,6 @@
 {
   "name": "314oner.github.io",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "author": "Alexander Gverdtsiteli",
   "license": "UNLICENSED",
@@ -22,15 +22,15 @@
     "docs:serve": "docusaurus serve",
     "docs:write-translations": "docusaurus write-translations",
     "docs:write-heading-ids": "docusaurus write-heading-ids",
-    "server": "json-server --watch ./apps/json-server/src/index.js --routes ./apps/json-server/routes.json --port 3001",
+    "server": "json-server --watch ./services/apps/json-server/src/index.js --routes ./services/apps/json-server/routes.json --port 3001",
     "apps:build": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run build",
     "apps:serve": "yarn workspaces foreach -v -i -ptv --include '@apps/*' run serve",
     "servers:build": "rm ./build/db/*.json ./build/db/*.js && yarn workspaces foreach -v -i -ptv --include '@servers/*' run build",
     "build": "npm run apps:build && shx cp build/index.html build/404.html && npm run servers:build",
     "start": "npm run build && concurrently \"npm run server\" \"npm run apps:serve\"",
-    "build:clean": "rm -rf ./packages/*/lib ./apps/*/lib && yarn transpile",
-    "lint": "tslint --project ./packages/tsconfig.lint.json",
-    "lint:fix": "tslint --project ./packages/tsconfig.lint.json --fix",
+    "build:clean": "rm -rf ./services/packages/*/lib ./services/apps/*/lib && yarn transpile",
+    "lint": "tslint --project ./services/packages/tsconfig.lint.json",
+    "lint:fix": "tslint --project ./services/packages/tsconfig.lint.json --fix",
     "predeploy": "rm -rf build && npm run build",
     "deploy:create": "gh-pages -d build -t true",
     "deploy:clean": "gh-pages-clean",
@@ -68,12 +68,14 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": ">=16.14"
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "packageManager": "yarn@4.0.0-rc.44"
+  "workspaces": {
+    "packages": [
+      "services/packages/*",
+      "services/apps/*"
+    ],
+    "nohoist": [
+      "**/services/typescript",
+      "**/services/typescript/**"
+    ]
+  }
 }
