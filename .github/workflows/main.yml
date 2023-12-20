@@ -42,8 +42,10 @@ jobs:
       run: pnpm install --no-frozen-lockfile
     - name: Run app
       working-directory: ./services/apps/static-preact-app
-      #run: pnpm run start
-      run: pnpm run test && pnpm run start
+      run: pnpm run start
+    - name: Run test case
+      working-directory: ./services/apps/static-preact-app
+      run: pnpm run test
     #- name: Run app without loop and locale binaries
     #  uses: actions/github-actions@latest
     #  with:
