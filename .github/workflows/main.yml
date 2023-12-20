@@ -8,25 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
   deploy-frontend:
-    name: Deploy frontend
-    runs-on: ubuntu-latest
-    needs: deploy-api
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Single
+        uses: ./
         with:
-          node-version: 14
-      - name: Install dependencies
-        working-directory: ./services/apps/static-preact-app
-        run: npm ci
-      - name: Build app
-        working-directory: ./services/apps/static-preact-app
-        run: npm run build
-        env:
-          APP_NAME: static-preact-app
-      - name: Start app
-        working-directory: ./services/apps/static-preact-app
-        run: npm run start
-      - name: Listen app
-        working-directory: ./services/apps/static-preact-app
-        run: npm run test
+          working-directory: services/apps/static-preact-app
+          build: yarn run build
+          start: yarn start
+          wait-on: 'http://localhost:5000'
