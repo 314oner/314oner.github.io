@@ -46,4 +46,5 @@ jobs:
     - name: Run app
       working-directory: ./services/apps/static-preact-app
       run: pnpm run start
-      wait-on: 'http://localhost:5000'
+      with:
+          wait-on: 'http://localhost:5000'
