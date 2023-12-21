@@ -66,6 +66,9 @@ importers:
       '@types/react-dom':
         specifier: ^17.0.11
         version: 17.0.25
+      axe-core:
+        specifier: ^4.8.3
+        version: 4.8.3
       babel-plugin-module-resolver:
         specifier: ^4.1.0
         version: 4.1.0
@@ -74,7 +77,7 @@ importers:
         version: 13.6.1
       cypress-axe:
         specifier: ^1.5.0
-        version: 1.5.0(cypress@13.6.1)
+        version: 1.5.0(axe-core@4.8.3)(cypress@13.6.1)
       fastify:
         specifier: 4.24.3
         version: 4.24.3
@@ -2425,6 +2428,11 @@ packages:
     resolution: {integrity: sha512-NmWvPnx0F1SfrQbYwOi7OeaNGokp9XhzNioJ/CSBs8Qa4vxug81mhJEAVZwxXuBmYB5KDRfMq/F3RR0BIU7sWg==}
     dev: true
 
+  /axe-core@4.8.3:
+    resolution: {integrity: sha512-d5ZQHPSPkF9Tw+yfyDcRoUOc4g/8UloJJe5J8m4L5+c7AtDdjDLRxew/knnI4CxvtdxEUVgWz4x3OIQUIFiMfw==}
+    engines: {node: '>=4'}
+    dev: true
+
   /babel-loader@8.3.0(@babel/core@7.23.6)(webpack@5.89.0):
     resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
     engines: {node: '>= 8.9'}
@@ -3231,13 +3239,14 @@ packages:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
     dev: true
 
-  /cypress-axe@1.5.0(cypress@13.6.1):
+  /cypress-axe@1.5.0(axe-core@4.8.3)(cypress@13.6.1):
     resolution: {integrity: sha512-Hy/owCjfj+25KMsecvDgo4fC/781ccL+e8p+UUYoadGVM2ogZF9XIKbiM6KI8Y3cEaSreymdD6ZzccbI2bY0lQ==}
     engines: {node: '>=10'}
     peerDependencies:
       axe-core: ^3 || ^4
       cypress: ^10 || ^11 || ^12 || ^13
     dependencies:
+      axe-core: 4.8.3
       cypress: 13.6.1
     dev: true
 
