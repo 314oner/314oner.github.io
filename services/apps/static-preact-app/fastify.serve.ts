@@ -4,7 +4,7 @@ import path from 'node:path'
 const server = fastify()
 
 server.register(require('@fastify/static'), {
-  root: path.join(__dirname, '..', '..', 'build')
+  root: path.join(__dirname, '..', '..', '..', 'build')
 })
 
 server.listen({ port: 5000 }, (err, address) => {

@@ -18,7 +18,7 @@ module.exports = {
     workspaceRoot: WORKSPACE,
     buildOptions: {
         baseUrl: '/314oner.github.io',
-        out: '../../build',
+        out: '../../../build',
     },
     alias: {
         /* ... */
@@ -31,6 +31,6 @@ module.exports = {
         /* ... */
     },
     buildOptions: {
-        out: '../../build'
+        out: '../../../build'
     }
 };
