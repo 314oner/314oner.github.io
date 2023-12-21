@@ -6,7 +6,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2] # Uses 2 parallel instances
+        #containers: [1, 2] # Uses 2 parallel instances
+        containers: [1] # Uses 2 parallel instances
         cypress:
           - working_directory: services/apps/static-preact-app
           #- working_directory: services/apps/rsc-v8-app
