@@ -4,9 +4,11 @@
   "description": "",
   "scripts": {
     "dev": "snowpack dev",
+    "test": "npx cypress run",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
-    "serve": "ts-node ./fastify.serve.ts"
+    "serve-build": "ts-node ./fastify.serve.ts",
+    "start": "serve -p 5000 ../../../build"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -27,18 +29,17 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "babel-plugin-module-resolver": "^4.1.0",
+    "cypress": "13.6.1",
     "fastify": "4.24.3",
     "nodemon": "^2.0.15",
+    "serve": "14.2.1",
     "snowpack": "3.8.8",
     "snowpack-plugin-raw": "^1.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@packages/pkg2": "^3.0.2",
-    "@servers/json-server": "^3.0.2",
     "fast-average-color": "^6.3.0",
     "jsonp": "0.2.1"
-  },
-  "packageManager": "yarn@4.0.0-rc.44"
+  }
 }
