@@ -28,20 +28,20 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/**/**/pnpm-lock.yaml') }}
 
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
           path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('pnpm-lock.yaml') }}
+          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/**/**/pnpm-lock.yaml') }}
 
       - name: install dependencies and verify Cypress
         working-directory: ${{ matrix.cypress.working_directory }}
         env:
           CI: 1
         run: |
-          pnpm install --no-frozen-lockfile
+          pnpm install frozen-lockfile
           npx cypress verify
           npx cypress info
           npx cypress version
