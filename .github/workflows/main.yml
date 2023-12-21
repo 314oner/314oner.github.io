@@ -41,7 +41,7 @@ jobs:
         env:
           CI: 1
         run: |
-          pnpm install frozen-lockfile
+          pnpm install frozen-lockfile -w
           npx cypress verify
           npx cypress info
           npx cypress version
