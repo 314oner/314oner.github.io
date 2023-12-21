@@ -1,10 +1,9 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  fixturesFolder: false,
+  projectId: "mtsong",
   e2e: {
-    setupNodeEvents(on, config) {},
-    supportFile: false,
+    setupNodeEvents(on, config) { },
     baseUrl: 'http://localhost:5000',
   },
 })
