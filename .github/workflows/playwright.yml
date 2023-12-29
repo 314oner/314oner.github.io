@@ -47,6 +47,7 @@ jobs:
       #  run: docker-compose up -d playwright
 
       - name: Images build 🛎
+        uses: ./services/apps/static-preact-app
         with:
           working-directory: services/apps/static-preact-app
           run: docker-compose up -d playwright
