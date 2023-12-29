@@ -42,10 +42,15 @@ jobs:
         working-directory: ${{ matrix.cypress.working_directory }}
         run: npm start &
 
+      #- name: Images build 🛎
+      #  working-directory: ${{ matrix.cypress.working_directory }}
+      #  run: docker-compose up -d playwright
+
       - name: Images build 🛎
-        working-directory: ${{ matrix.cypress.working_directory }}
-        run: docker-compose up -d playwright
-      
+        with:
+          working-directory: services/apps/static-preact-app
+          run: docker-compose up -d playwright
+
       - run: docker-compose down
         if: always()
       - uses: actions/upload-artifact@v2
