@@ -22,7 +22,7 @@ jobs:
           shopt -s dotglob
           mv services/apps/static-preact-app/* .
           ls -lah
-          
+
       - name: PNPM Init 🛎
         uses: pnpm/action-setup@v2
         with:
@@ -40,7 +40,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: install dependencies and verify Cypress
-        working-directory: ${{ matrix.cypress.working_directory }}
+        #working-directory: ${{ matrix.cypress.working_directory }}
         env:
           CI: 1
         run: |
@@ -49,7 +49,7 @@ jobs:
           npx playwright install
 
       - name: Start the app 📤
-        working-directory: ${{ matrix.cypress.working_directory }}
+        #working-directory: ${{ matrix.cypress.working_directory }}
         run: npm start &
 
       #- name: Images build 🛎
