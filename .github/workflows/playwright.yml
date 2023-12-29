@@ -10,12 +10,24 @@ jobs:
           - working_directory: services/apps/static-preact-app
           #- working_directory: services/apps/rsc-v8-app
     steps:
-      - uses: actions/checkout@v1
+      - name: PNPM Init 🛎
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
       
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: install dependencies and verify Cypress
         working-directory: ${{ matrix.cypress.working_directory }}
