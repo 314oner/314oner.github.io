@@ -12,9 +12,17 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v4
-        #with:
-        #  repository: my-org/my-tools
-        #  path: my-tools        
+        with:
+          sparse-checkout: 'services/apps/static-preact-app'
+          sparse-checkout-cone-mode: false 
+      
+      - name: Move compose config to root
+        run: |
+          ls -lah
+          shopt -s dotglob
+          mv services/apps/static-preact-app/docker-compose.yml .
+          ls -lah  
+      
       - name: PNPM Init 🛎
         uses: pnpm/action-setup@v2
         with:
