@@ -16,13 +16,13 @@ jobs:
           sparse-checkout: 'services/apps/static-preact-app'
           sparse-checkout-cone-mode: false 
       
-      - name: Move compose config to root
+      - name: Move files
         run: |
           ls -lah
           shopt -s dotglob
-          mv services/apps/static-preact-app/docker-compose.yml .
-          ls -lah  
-      
+          mv services/apps/static-preact-app/* .
+          ls -lah
+          
       - name: PNPM Init 🛎
         uses: pnpm/action-setup@v2
         with:
