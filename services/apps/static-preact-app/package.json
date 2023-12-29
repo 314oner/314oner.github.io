@@ -5,7 +5,7 @@
   "scripts": {
     "test": "cypress open",
     "dev": "snowpack dev",
-    "test2": "npx cypress run",
+    "test:screenshots": "playwright test",
     "transpile": "tsc -p tsconfig.json",
     "build": "snowpack build",
     "serve-build": "ts-node ./fastify.serve.ts",
@@ -39,7 +39,10 @@
     "snowpack": "3.8.8",
     "snowpack-plugin-raw": "^1.0.0",
     "ts-node": "^10.4.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@playwright/test": "1",
+    "@actions/core": "^1.1.0",
+    "@actions/github": "^1.1.0"
   },
   "dependencies": {
     "fast-average-color": "^6.3.0",

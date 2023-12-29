@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.16.1-focal
+    entrypoint: npx playwright test
+    ipc: host
+    environment:
+      - BASE_URL=http://localhost:3001
+      - FORCE_COLOR=1
+    working_dir: /app
+    volumes:
+      - .:/app:ro
+      # Videos, error screenshots and traces are stored in test-results:
+      - ./test-results:/app/test-results
+      # Snapshot results are stored alongside spec files:
+      - ./test:/app/test
