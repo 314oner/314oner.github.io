@@ -1,0 +1,71 @@
+name: CI
+on: [push]
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+        playwright:
+          - working_directory: services/apps/static-preact-app
+          #- working_directory: services/apps/rsc-v8-app
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: 'services/apps/static-preact-app'
+          sparse-checkout-cone-mode: false 
+      
+      - name: Move files
+        run: |
+          ls -lah
+          shopt -s dotglob
+          mv services/apps/static-preact-app/* .
+          ls -lah
+
+      - name: PNPM Init 🛎
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: install dependencies and verify Cypress
+        #working-directory: ${{ matrix.cypress.working_directory }}
+        env:
+          CI: 1
+        run: |
+          pnpm install --no-frozen-lockfile
+          npx playwright install-deps
+          npx playwright install
+
+      - name: Start the app 📤
+        #working-directory: ${{ matrix.cypress.working_directory }}
+        run: npm start &
+
+      #- name: Images build 🛎
+      #  working-directory: ${{ matrix.cypress.working_directory }}
+      #  run: docker-compose up -d playwright
+
+      - name: Images build 🛎
+        uses: ./services/apps/static-preact-app
+        with:
+          working-directory: services/apps/static-preact-app
+          run: docker-compose up -d playwright
+
+      - run: docker-compose down
+        if: always()
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: npm-test-results
+          path: test-results
