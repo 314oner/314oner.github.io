@@ -40,7 +40,7 @@
     "snowpack-plugin-raw": "^1.0.0",
     "ts-node": "^10.4.0",
     "typescript": "^5.2.2",
-    "@playwright/test": "1",
+    "@playwright/test": "^1.40.1",
     "@actions/core": "^1.1.0",
     "@actions/github": "^1.1.0"
   },

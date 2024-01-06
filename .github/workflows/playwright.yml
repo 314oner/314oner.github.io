@@ -23,49 +23,18 @@ jobs:
           mv services/apps/static-preact-app/* .
           ls -lah
 
-      - name: PNPM Init 🛎
-        uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v2
         with:
-          version: 7
-      
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
-
-      - name: install dependencies and verify Cypress
-        #working-directory: ${{ matrix.cypress.working_directory }}
-        env:
-          CI: 1
-        run: |
-          pnpm install --no-frozen-lockfile
-          npx playwright install-deps
-          npx playwright install
-
-      - name: Start the app 📤
-        #working-directory: ${{ matrix.cypress.working_directory }}
-        run: npm start &
-
-      #- name: Images build 🛎
-      #  working-directory: ${{ matrix.cypress.working_directory }}
-      #  run: docker-compose up -d playwright
-
-      - name: Images build 🛎
-        uses: ./services/apps/static-preact-app
-        with:
-          working-directory: services/apps/static-preact-app
-          run: docker-compose up -d playwright
-
+          node-version: 16
+      - run: npm ci
+      - run: npx playwright install-deps
+      - run: npx playwright install
+      - run: docker-compose run --rm example
       - run: docker-compose down
         if: always()
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: npm-test-results
-          path: test-results
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
