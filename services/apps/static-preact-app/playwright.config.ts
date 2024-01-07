@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
     baseURL: process.env.BASE_URL || 'http://localhost:8080',
-    storageState: 'test/storage-state.json'
+    //storageState: 'test/storage-state.json'
   },
   projects: [
     {
