@@ -1,0 +1,40 @@
+name: CI
+on: [push]
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+        playwright:
+          - working_directory: services/apps/static-preact-app
+          #- working_directory: services/apps/rsc-v8-app
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: 'services/apps/static-preact-app'
+          sparse-checkout-cone-mode: false 
+      
+      - name: Move files
+        run: |
+          ls -lah
+          shopt -s dotglob
+          mv services/apps/static-preact-app/* .
+          ls -lah
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npx playwright install-deps
+      - run: npx playwright install
+      - run: docker-compose run --rm example
+      - run: docker-compose down
+        if: always()
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
