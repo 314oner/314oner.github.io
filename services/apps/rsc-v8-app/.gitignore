@@ -1,28 +1,19 @@
-# Dependencies
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
 /node_modules
 /.pnp
 .pnp.js
-/.yarn/cache
-/.yarn/unplugged
 
-# Production
-/build
-/dist
-/lib
-
-# Testing
+# testing
 /coverage
 
-# Notes
-notes/*.md
+# production
+/build
+/dist
 
-# Generated files
-.docusaurus
-.cache-loader
-tsconfig.tsbuildinfo
-**/tsconfig.tsbuildinfo
-**/**/tsconfig.tsbuildinfo
-**/**/**/tsconfig.tsbuildinfo
+# notes
+notes/*.md
 
 # misc
 .DS_Store
@@ -39,3 +30,5 @@ yarn-error.log*
 
 # vscode
 .vscode
+.idea
+

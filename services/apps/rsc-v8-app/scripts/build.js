@@ -12,7 +12,7 @@ webpack(
   {
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? 'source-map' : 'cheap-module-source-map',
-    entry: [path.resolve(__dirname, '../src/framework/bootstrap.js')],
+    entry: [path.resolve(__dirname, '../src/index.client.js')],
     output: {
       path: path.resolve(__dirname, '../build'),
       filename: 'main.js',
