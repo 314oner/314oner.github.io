@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://github.com/en/blog</id>
+    <title>314oner.github.io Blog</title>
+    <updated>2024-01-11T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://github.com/en/blog"/>
+    <subtitle>314oner.github.io Blog</subtitle>
+    <icon>https://github.com/en/img/favicon.ico</icon>
+    <rights>Copyright © 2024 314oner.github.io.</rights>
+    <entry>
+        <title type="html"><![CDATA[Сайт для документации создан!]]></title>
+        <id>https://github.com/en/blog/blog-example</id>
+        <link href="https://github.com/en/blog/blog-example"/>
+        <updated>2024-01-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Первое сообшение в блоге]]></summary>
+        <content type="html"><![CDATA[<p>Первое сообшение в блоге</p>]]></content>
+        <author>
+            <name>Alexander Gverdtsiteli</name>
+            <uri>https://github.com/314oner</uri>
+        </author>
+        <category label="blog" term="blog"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[5512],{4352:e=>{e.exports=JSON.parse('{"title":"All our posts","items":[{"title":"\u0421\u0430\u0439\u0442 \u0434\u043b\u044f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u0438 \u0441\u043e\u0437\u0434\u0430\u043d!","permalink":"/en/blog/blog-example","unlisted":false}]}')}}]);

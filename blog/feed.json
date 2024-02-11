@@ -1,0 +1,23 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "314oner.github.io Blog",
+    "home_page_url": "https://github.com/blog",
+    "description": "314oner.github.io Blog",
+    "items": [
+        {
+            "id": "https://github.com/blog/blog-example",
+            "content_html": "<p>Первое сообшение в блоге</p>",
+            "url": "https://github.com/blog/blog-example",
+            "title": "Сайт для документации создан!",
+            "summary": "Первое сообшение в блоге",
+            "date_modified": "2024-01-11T00:00:00.000Z",
+            "author": {
+                "name": "Alexander Gverdtsiteli",
+                "url": "https://github.com/314oner"
+            },
+            "tags": [
+                "blog"
+            ]
+        }
+    ]
+}

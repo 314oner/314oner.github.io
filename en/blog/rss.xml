@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>314oner.github.io Blog</title>
+        <link>https://github.com/en/blog</link>
+        <description>314oner.github.io Blog</description>
+        <lastBuildDate>Thu, 11 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <copyright>Copyright © 2024 314oner.github.io.</copyright>
+        <item>
+            <title><![CDATA[Сайт для документации создан!]]></title>
+            <link>https://github.com/en/blog/blog-example</link>
+            <guid>https://github.com/en/blog/blog-example</guid>
+            <pubDate>Thu, 11 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Первое сообшение в блоге]]></description>
+            <content:encoded><![CDATA[<p>Первое сообшение в блоге</p>]]></content:encoded>
+            <category>blog</category>
+        </item>
+    </channel>
+</rss>
