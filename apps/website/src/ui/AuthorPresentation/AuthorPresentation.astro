@@ -1,0 +1,30 @@
+---
+import type { SupportedLanguages } from '@packages/core/config';
+import { querySiteData } from '@packages/core/domains';
+import { Image } from 'astro:assets';
+
+import { getIntl } from '@/infrastructure/i18n/getServerSideLocales.server';
+import { sanityClient } from '@/infrastructure/sanity/client';
+
+import AuthorPresentationComponent from './AuthorPresentation.svelte';
+
+const { lang } = Astro.params as { lang: SupportedLanguages };
+const siteData = await querySiteData({
+  client: sanityClient,
+});
+const intl = getIntl(lang);
+---
+
+<AuthorPresentationComponent lang={lang} siteData={siteData}>
+  <Image
+    slot="img"
+    class="object-cover rounded-full"
+    src={siteData.personalInformation.profilePic.url}
+    alt={intl.formatMessage({
+      id: `authorPresentation.profileImageAlt`,
+    })}
+    loading="eager"
+    width={128}
+    height={128}
+  />
+</AuthorPresentationComponent>

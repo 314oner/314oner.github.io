@@ -1,0 +1,6 @@
+## General
+**/.cache
+**/public
+.history
+
+build

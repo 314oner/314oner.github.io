@@ -1,0 +1,76 @@
+---
+import './_ui/Search.css';
+
+import type { SupportedLanguages } from '@packages/core/config';
+import { renderToString } from 'react-dom/server';
+import { getServerState } from 'react-instantsearch';
+
+import { languageGetStaticPaths } from '@/infrastructure/getStaticPaths';
+import { getIntl } from '@/infrastructure/i18n/getServerSideLocales.server';
+import { getHomePageUrl } from '@/infrastructure/utils/url';
+import { Breadcrumbs } from '@/ui/Breadcrumbs';
+import Layout from '@/ui/layouts/Layout.astro';
+
+import { Search } from './_ui/Search';
+import { SearchSSR } from './_ui/SearchSSR';
+
+const { lang } = Astro.params as { lang: SupportedLanguages };
+
+export const prerender = true;
+export const getStaticPaths = languageGetStaticPaths;
+
+const intl = getIntl(lang);
+
+const searchServerState = await getServerState(
+  Search({
+    lang: lang,
+    tagsTitle: intl.formatMessage({ id: `search.filters.tags` }),
+    languageTitle: intl.formatMessage({ id: `search.filters.lang` }),
+    typeTitle: intl.formatMessage({ id: `search.filters.type` }),
+    inputSearchPlaceholder: intl.formatMessage({ id: `search.input` }),
+  }),
+  { renderToString },
+);
+---
+
+<Layout title={intl.formatMessage({ id: `search.pageTitle` })}>
+  <!-- <NextSeo title={formatMessage(messages.pageTitle)} noindex /> -->
+  <Breadcrumbs
+    class="col-span-full lg:col-span-10"
+    crumbs={[
+      {
+        label: intl.formatMessage({ id: `sideMenu.home` }),
+        href: getHomePageUrl(lang),
+      },
+      {
+        label: intl.formatMessage({ id: `sideMenu.search` }),
+      },
+    ]}
+  />
+  <header class="mb-6 col-span-full">
+    <h1 class="text-3xl font-extrabold md:text-4xl col-span-full">
+      {intl.formatMessage({ id: `search.pageTitle` })}
+    </h1>
+    <p class="text-lg">
+      {
+        intl.formatMessage(
+          { id: `search.paragraph` },
+          {
+            a: function Anchor(chunks: never) {
+              return (
+                <a
+                  class="underline text-secondary"
+                  href="https://www.google.com/search?q=site%3Apackages.me+javascript"
+                >
+                  {chunks}
+                </a>
+              );
+            },
+          },
+        )
+      }
+    </p>
+  </header>
+
+  <SearchSSR lang={lang} searchServerState={searchServerState} client:load />
+</Layout>

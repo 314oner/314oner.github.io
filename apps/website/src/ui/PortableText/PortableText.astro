@@ -1,0 +1,66 @@
+---
+import { PortableText as OriginalPortableText } from 'astro-portabletext';
+import type {
+  PortableTextProps,
+  SomePortableTextComponents,
+} from 'astro-portabletext/types';
+
+import BigQuote from './BigQuote.astro';
+import { Callout } from './Callout';
+import { CodeBlock } from './CodeBlock';
+import { CodePen } from './CodePen';
+import Divider from './Divider.astro';
+import Gif from './Gif.astro';
+import HeadingWithLink from './HeadingWithLink.astro';
+import Highlight from './Highlight.astro';
+import Image from './Image.astro';
+import { ImageSlider } from './ImageSlider';
+import InternalLink from './InternalLink.astro';
+import PageLink from './PageLink.astro';
+import Strikethrough from './Strikethrough.astro';
+import { Tweet } from './Tweet';
+import { YouTube } from './YouTube';
+
+export interface Props {
+  value: PortableTextProps[`value`];
+  components?: PortableTextProps[`components`];
+}
+
+const { value } = Astro.props;
+
+const components = {
+  type: {
+    divider: Divider,
+    image: Image,
+    detailedImage: Image,
+    gif: Gif,
+    imageSlider: ImageSlider,
+    code: CodeBlock,
+    codePen: CodePen,
+    tweet: Tweet,
+    youtubeVideo: YouTube,
+    callout: Callout,
+  },
+  mark: {
+    strikethrough: Strikethrough,
+    highlight: Highlight,
+    internalLink: InternalLink,
+    pageLink: PageLink,
+  },
+  block: {
+    h2: HeadingWithLink,
+    h3: HeadingWithLink,
+    h4: HeadingWithLink,
+    h5: HeadingWithLink,
+    h6: HeadingWithLink,
+    bigQuote: BigQuote,
+  },
+} as unknown as SomePortableTextComponents;
+
+const portableTextProps = {
+  value: value,
+  components,
+};
+---
+
+<OriginalPortableText {...portableTextProps} />

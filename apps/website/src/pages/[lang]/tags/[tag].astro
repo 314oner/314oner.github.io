@@ -1,0 +1,116 @@
+---
+import type { SupportedLanguages } from '@packages/core/config';
+import {
+  queryTagBySlug,
+  sortPostsByPublishedDate,
+} from '@packages/core/domains';
+import { isEmpty } from '@packages/core/utils';
+
+import { getIntl } from '@/infrastructure/i18n/getServerSideLocales.server';
+import { sanityClient } from '@/infrastructure/sanity/client';
+import {
+  getHomePageUrl,
+  getPostUrl,
+  getSnippetUrl,
+  getTagsHomeUrl,
+  getTilUrl,
+} from '@/infrastructure/utils/url';
+import { Breadcrumbs } from '@/ui/Breadcrumbs';
+import Layout from '@/ui/layouts/Layout.astro';
+import PostBasic from '@/ui/PostBasic.astro';
+
+const { lang, tag } = Astro.params as { lang: SupportedLanguages; tag: string };
+
+const remoteTag = await queryTagBySlug({
+  slug: tag,
+  language: lang,
+  client: sanityClient,
+});
+
+const allContent = sortPostsByPublishedDate([
+  ...remoteTag.posts,
+  ...remoteTag.tils,
+  ...remoteTag.codeSnippets,
+]);
+
+const intl = getIntl(lang);
+
+function getUrlFn(type: `post` | `til` | `codeSnippet`) {
+  if (type === `post`) {
+    return getPostUrl;
+  }
+
+  if (type === `til`) {
+    return getTilUrl;
+  }
+
+  if (type === `codeSnippet`) {
+    return getSnippetUrl;
+  }
+
+  throw new Error(`Invalid type: "${type}"`);
+}
+---
+
+<Layout
+  title={intl.formatMessage(
+    { id: `tags.single.seo.title` },
+    {
+      tag: remoteTag.name,
+    },
+  )}
+  seo={{
+    description: intl.formatMessage(
+      { id: `tags.single.seo.description` },
+      { tag: remoteTag.name },
+    ),
+  }}
+>
+  <Breadcrumbs
+    class="mb-4"
+    crumbs={[
+      {
+        label: intl.formatMessage({ id: `sideMenu.home` }),
+        href: getHomePageUrl(lang),
+      },
+
+      {
+        label: intl.formatMessage({ id: `sideMenu.tags` }),
+        href: getTagsHomeUrl(lang),
+      },
+      {
+        label: remoteTag.slug,
+      },
+    ]}
+  />
+
+  <header class="mb-4 col-span-full lg:mb-8">
+    <h2 class="font-sans text-xl font-extrabold lg:text-3xl">
+      {`"${remoteTag.name}"`}
+    </h2>
+    <p class="text-base md:text-lg lg:text-2lg">
+      {intl.formatMessage({ id: `tags.single.description` })}
+    </p>
+  </header>
+  {
+    isEmpty(allContent) ? (
+      <p class="text-lg col-span-full">
+        {intl.formatMessage({ id: `tags.single.empty` })}
+      </p>
+    ) : (
+      <ul class="pb-5 space-y-6 md:pb-10 col-span-full">
+        {allContent.map((content) => {
+          const urlFn = getUrlFn(content._type);
+
+          return (
+            <PostBasic
+              titleClassName="text-xl lg:text-2xl"
+              {...(content as any)}
+              url={urlFn(content.slug, lang)}
+            />
+          );
+        })}
+      </ul>
+    )
+  }
+</Layout>

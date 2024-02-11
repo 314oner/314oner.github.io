@@ -1,0 +1,833 @@
+{
+  "Preset options": {
+    "message": "Настройки пресета"
+  },
+  "apiDocs.configTabs.presetOptions.description": {
+    "message": "Если вы используете пресет, настройте этот плагин через {presetLink}:"
+  },
+  "preset options": {
+    "message": "настройки пресета"
+  },
+  "Plugin options": {
+    "message": "Настройки плагина"
+  },
+  "If you are using a standalone plugin, provide options directly to the plugin:": {
+    "message": "Если вы используете отдельный плагин, предоставьте параметры непосредственно плагину:"
+  },
+  "Current: {canaryVersionName}": {
+    "message": "Текущий: {canaryVersionName}",
+    "description": "The hint text for the current canary version tag."
+  },
+  "Example: 0.0.0-4922": {
+    "message": "Пример: 0.0.0-4922",
+    "description": "An example canary version tag when the actual version can't be fetched."
+  },
+  "The latest canary version that's available on npm is published at {time}.": {
+    "message": "Последняя доступная версия canary npm опубликована на {time}."
+  },
+  "Docusaurus with Keytar": {
+    "message": "Сайт для документации"
+  },
+  "homepage.hero.title": {
+    "message": "Документация для приложений и библиотек",
+    "description": "Home page"
+  },
+  "Get Started": {
+    "message": "Начать работу"
+  },
+  "Try a Demo": {
+    "message": "Попробуйте демо"
+  },
+  "Loved by many engineers": {
+    "message": "Любит многие инженеры"
+  },
+  "homepage.banner.launch.3.0": {
+    "message": "Docusaurus 3.0 закончился!"
+  },
+  "versionsPage.versionEntry.link": {
+    "message": "Документация"
+  },
+  "versionsPage.versionEntry.releaseNotes": {
+    "message": "Примечания к выпуску"
+  },
+  "versionsPage.title": {
+    "message": "Версии документации к Docusaurus"
+  },
+  "versionsPage.current.title": {
+    "message": "Текущая версия (Стабильная)"
+  },
+  "versionsPage.current.description": {
+    "message": "Здесь вы можете найти документацию по текущей версии."
+  },
+  "versionsPage.next.title": {
+    "message": "Следующая версия (Невыпущенная)"
+  },
+  "versionsPage.next.description": {
+    "message": "Здесь вы можете найти документацию по работе с невыпущенной версией."
+  },
+  "versionsPage.archived.title": {
+    "message": "Прошлые версии (больше не поддерживается)"
+  },
+  "versionsPage.archived.description": {
+    "message": "Здесь вы можете найти документацию по предыдущим версиям Docusaurus."
+  },
+  "versionsPage.legacy.title": {
+    "message": "Docusaurus v1 (Legacy)"
+  },
+  "versionsPage.legacy.description": {
+    "message": "Здесь вы можете найти документацию по предыдущим версиям Docusaurus."
+  },
+  "homepage.features.powered-by-mdx.title": {
+    "message": "При поддержке MDX"
+  },
+  "homepage.features.powered-by-mdx.text": {
+    "message": "Сохранить время и сосредоточиться на текстовых документах. Просто напишите документацию и записи блога в MDX, а Docusaurus собирает их в статические HTML-файлы, готовые к работе. Вы даже можете вставить React компоненты в свой Markdown благодаря MDX."
+  },
+  "homepage.features.built-using-react.title": {
+    "message": "Встроенный с использованием React"
+  },
+  "homepage.features.built-using-react.text": {
+    "message": "Расширьте и настройте макет вашего проекта, написав React компоненты. Использование подключаемой архитектуры и создание собственного сайта при повторном использовании тех же данных, что и плагины Docusaurus."
+  },
+  "homepage.features.ready-for-translations.title": {
+    "message": "Готово к переводу"
+  },
+  "homepage.features.ready-for-translations.text": {
+    "message": "Локализация выходит за пределы коробки. Используйте git, Crowdin, или любой другой менеджер по переводам для перевода вашей документации и развертывания их по отдельности."
+  },
+  "homepage.features.document-versioning.title": {
+    "message": "Версии документа"
+  },
+  "homepage.features.document-versioning.text": {
+    "message": "Поддержка пользователей во всех версиях вашего проекта. Версия документа помогает вам синхронизировать документацию с выпуском проекта."
+  },
+  "homepage.features.content-search.title": {
+    "message": "Поиск контента"
+  },
+  "homepage.features.content-search.text": {
+    "message": "Мы с гордостью поддерживаем поиск документации для Альголии."
+  },
+  "homepage.quotes.first.title": {
+    "message": "Первый пользователь",
+    "description": "Title of quote"
+  },
+  "homepage.quotes.first": {
+    "message": "Я помог с открытым исходным кодом многим проектам на Facebook и всем нужен сайт. Все они имеют очень схожие ограничения: документация должна быть написана в маркировке и размещена на страницах GitHub. Я так рад, что теперь существует Docusaurus для того, чтобы каждый раз не нужно тратить неделю на новую игру.",
+    "description": "Quote"
+  },
+  "homepage.quotes.second.title": {
+    "message": "Второй пользователь",
+    "description": "Title of quote on the home page"
+  },
+  "homepage.quotes.second": {
+    "message": "После нашего переезда в Docusaurus материалы с открытым исходным кодом в React Native docs были незамечены. Документы теперь размещены на небольшом репозитории в простой разметке, и ни один из них не требует типичного генератора статических сайтов. Спасибо слэш!",
+    "description": "Quote on the home page"
+  },
+  "homepage.quotes.third.title": {
+    "message": "Третий пользователь",
+    "description": "Title of quote of Ricky Vetter on the home page"
+  },
+  "homepage.quotes.third": {
+    "message": "Docusaurus был отличным выбором для семейства проектов ReasonML. Это делает нашу документацию последовательной, удобной для i18n, легкой в обслуживании и дружественной для новых участников.",
+    "description": "Quote of Ricky Vetter on the home page"
+  },
+  "Favorite": {
+    "message": "Избранное"
+  },
+  "showcase.tag.favorite.description": {
+    "message": "Наши любимые сайты Docusaurus, которые вы должны убедиться!"
+  },
+  "Open-Source": {
+    "message": "Открытый код"
+  },
+  "showcase.tag.opensource.description": {
+    "message": "Сайты с открытым исходным кодом Docusaurus могут быть полезными для вдохновения!"
+  },
+  "Product": {
+    "message": "Товар"
+  },
+  "showcase.tag.product.description": {
+    "message": "Сайты Docusaurus связанные с коммерческим продуктом!"
+  },
+  "Design": {
+    "message": "Дизайн"
+  },
+  "showcase.tag.design.description": {
+    "message": "Красивые сайты Docusaurus, отполированные и выходящие из исходного шаблона!"
+  },
+  "I18n": {
+    "message": "I18n"
+  },
+  "showcase.tag.i18n.description": {
+    "message": "Переведенные сайты Docusaurus с поддержкой интернационализации с более чем 1 локальной."
+  },
+  "Versioning": {
+    "message": "Versioning"
+  },
+  "showcase.tag.versioning.description": {
+    "message": "Сайты Docusaurus с использованием функции управления версиями плагина docs для управления множеством версий."
+  },
+  "Large": {
+    "message": "Большой"
+  },
+  "showcase.tag.large.description": {
+    "message": "Очень большие сайты Docusaurus, включая гораздо больше страниц, чем среднее!"
+  },
+  "Meta": {
+    "message": "Meta"
+  },
+  "showcase.tag.meta.description": {
+    "message": "Сайты Meta (ранее Facebook) Docusaurus"
+  },
+  "Personal": {
+    "message": "Личные сведения"
+  },
+  "showcase.tag.personal.description": {
+    "message": "Персональные веб-сайты, блоги и цифровые сады, построенные с Docusaurus"
+  },
+  "RTL Direction": {
+    "message": "Направление RTL"
+  },
+  "showcase.tag.rtl.description": {
+    "message": "Сайты Docusaurus, используя поддержку правого в левом направлении чтения."
+  },
+  "colorGenerator.tip.body": {
+    "message": "Наберите хотя бы {wcagLink} для основного цвета, чтобы обеспечить читабельность. Используйте сам сайт Docusaurus, чтобы посмотреть как будет выглядеть ваша цветовая палитра. Альтернативные палитры можно использовать в темном режиме, так как один цвет обычно не работает как в светлом, так и в темном режиме."
+  },
+  "colorGenerator.tip.body.wcagLink.label": {
+    "message": "Контрастность WCAG-AA"
+  },
+  "colorGenerator.inputs.primary.label": {
+    "message": "Основной цвет:"
+  },
+  "colorGenerator.inputs.modeToggle.label": {
+    "message": "Изменить режим {colorMode}"
+  },
+  "colorGenerator.inputs.modeToggle.label.colorMode.light": {
+    "message": "светлый"
+  },
+  "colorGenerator.inputs.modeToggle.label.colorMode.dark": {
+    "message": "темный"
+  },
+  "colorGenerator.inputs.resetButton.label": {
+    "message": "Reset"
+  },
+  "colorGenerator.inputs.background.label": {
+    "message": "Фон:"
+  },
+  "colorGenerator.table.heading1": {
+    "message": "Имя переменной CSS"
+  },
+  "colorGenerator.table.heading2": {
+    "message": "Гекс",
+    "description": "This column is the color's representation in hex"
+  },
+  "colorGenerator.table.heading3": {
+    "message": "Корректировка",
+    "description": "This column is the adjusted shades' adjustment values relative to the primary color"
+  },
+  "colorGenerator.table.heading4": {
+    "message": "Контрастный Рейтинг",
+    "description": "This column is WCAG contrast rating: AAA, AA, Fail"
+  },
+  "colorGenerator.text": {
+    "message": "Замените переменные в {cssPath} этими новыми переменными."
+  },
+  "playground.codesandbox.description": {
+    "message": "CodeSandbox — это онлайн-редактор кода и среда разработки, позволяющая разработчикам создавать, делиться и взаимодействовать в проектах веб-разработки в браузерной среде"
+  },
+  "playground.stackblitz.description": {
+    "message": "StackBlitz использует новейшую технологию {webContainersLink} для запуска Docusaurus непосредственно в вашем браузере."
+  },
+  "playground.tryItButton": {
+    "message": "Попробуйте сейчас!"
+  },
+  "team.profile.websiteLinkLabel": {
+    "message": "сайт"
+  },
+  "team.profile.Alexey Pyltsyn.body": {
+    "message": "Установленный энтузиаст с открытым исходным кодом 👋 Вечный любитель во всем 🤷‍♂️ Сопровождающий русские документы на PHP, React, Kubernetes и многое другое 🧐"
+  },
+  "team.profile.Joel Marcey.body": {
+    "message": "Основатель Docusaurus и теперь всегда благодарна Docusaurus более ответственным за тех, кто фактически пишет код для этого."
+  },
+  "team.profile.Sebastien Lorber.body": {
+    "message": "Реакция любителя с 2014 года. Фриланс, помогая кораблю Facebook Docusaurus v2. Он регулярно пишет на {website} и {devto}."
+  },
+  "team.profile.Sida Chen.body": {
+    "message": "Студент из Шанхая, Китай. Создатель проектов-энтузиастов с открытым исходным кодом, но на самом деле не работает над этими проектами."
+  },
+  "team.profile.Yangshun Tay.body": {
+    "message": "Разработчик Front End Stack, который любит работать на Jamstack. Работа над Docusaurus сделала его неофициальным веб-мастером Facebook, работающим неполный рабочий день, который является отличной ролью."
+  },
+  "team.profile.Endilie Yacop Sucipto.body": {
+    "message": "Сопровождающий @docusaurus · 🔥🔥🔥"
+  },
+  "team.profile.Wei Gao.body": {
+    "message": "🏻<unk> 🌾 Работа над React разработчиком, поддерживает Docusaurus, пишет docs и спам в этом мире со многими сайтами."
+  },
+  "team.profile.Anshul Goyal.body": {
+    "message": "Разработчик Fullstack, который любит программировать и попробовать новые технологии. В свободное время он содействует открытию исходного кода, пишет записи в блоге на своей {websiteLink} и смотрит анимацию."
+  },
+  "team.profile.Anshul Goyal.body.websiteLink.label": {
+    "message": "сайт"
+  },
+  "team.profile.Drew Alexander.body": {
+    "message": "Разработчик и Креатив, пытаясь получить навыки создания того, что он может думать."
+  },
+  "team.profile.Fanny Vieira.body": {
+    "message": "Фэнни начал с веб-разработки в средней школе, построив проект для школьной кухни. В свободное время она любит вносить свой вклад в Open Source, иногда пишет на {blogLink} о своем опыте, приготовлении и создании {spotifyLink}."
+  },
+  "team.profile.Fanny Vieira.body.blogLink.label": {
+    "message": "ее блог"
+  },
+  "team.profile.Fanny Vieira.body.spotifyLink.label": {
+    "message": "Плейлисты Spotify"
+  },
+  "team.profile.Sam Zhou.body": {
+    "message": "Сэм начал программировать в 2011 году и построил свою {websiteLink} в 2015 году. Он заинтересован в языках программирования, dev infra и веб-разработки, и создал свои собственные {samLangLink} и {miniReactLink}."
+  },
+  "team.profile.Sam Zhou.body.samLangLink.label": {
+    "message": "язык программирования"
+  },
+  "team.profile.Sam Zhou.body.miniReactLink.label": {
+    "message": "мини React"
+  },
+  "team.profile.Tan Teik Jun.body": {
+    "message": "энтузиаст с открытым исходным кодом, который стремится стать таким же потрясающим как и другие люди на этой странице. Работа с Docusaurus приблизила его к своей цели. 🌱"
+  },
+  "team.profile.Nisarag Bhatt.body": {
+    "message": "Веб-разработчик Fullstack, который любит изучать новые технологии и применять их! Любит вносить свой вклад в разработку с открытым исходным кодом, а также писать статьи и обучающие материалы."
+  },
+  "upgradeGuide.archivedVersion.notice": {
+    "message": "Вы просматриваете архивную версию и сниппет ниже устарел. Перейдите на {mainSiteLink} и следуйте инструкциям по обновлению до последней версии."
+  },
+  "upgradeGuide.archivedVersion.notice.mainSiteLink.label": {
+    "message": "главный сайт"
+  },
+  "upgradeGuide.unreleasedVersion.notice": {
+    "message": "Вы просматриваете документацию невыпущенной версии. Если вы хотите использовать невыпущенную функцию, вы можете использовать {canaryDocLink}."
+  },
+  "upgradeGuide.unreleasedVersion.notice.canaryDocLink.label": {
+    "message": "Релиз {canaryTag}"
+  },
+  "upgradeGuide.outdatedVersion.notice": {
+    "message": "Вы просматриваете документацию устаревшей версии. Ниже показано, как обновиться до последней версии."
+  },
+  "Docusaurus Site Showcase": {
+    "message": "Витрина сайта Docusaurus"
+  },
+  "List of websites people are building with Docusaurus": {
+    "message": "Список веб-сайтов, которые люди строят с помощью Docusaurus"
+  },
+  "showcase.header.button": {
+    "message": "🙏 пожалуйста, добавьте ваш сайт"
+  },
+  "showcase.filters.resultCount": {
+    "message": "1 сайт|{sitesCount} сайтов",
+    "description": "Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "showcase.filters.title": {
+    "message": "Фильтры"
+  },
+  "showcase.searchBar.placeholder": {
+    "message": "Поиск по имени сайта..."
+  },
+  "showcase.usersList.noResult": {
+    "message": "Нет результатов"
+  },
+  "showcase.favoritesList.title": {
+    "message": "Наши избранные"
+  },
+  "showcase.usersList.allUsers": {
+    "message": "Все сайты"
+  },
+  "Want to implement the same page? Read {guideLink} to find out!": {
+    "message": "Хотите использовать эту страницу? Читайте {guideLink} чтобы узнать!"
+  },
+  "the generated index page guide": {
+    "message": "сгенерированное руководство по индексу страницы"
+  },
+  "showcase.card.sourceLink": {
+    "message": "источник"
+  },
+  "changelog.backLink": {
+    "message": "<unk> Назад на страницу индекса"
+  },
+  "theme.changelog.post.paginator.navAriaLabel": {
+    "message": "Список изменений навигации по элементам",
+    "description": "The ARIA label for the changelog pagination"
+  },
+  "theme.changelog.post.paginator.newerRelease": {
+    "message": "Более новый релиз",
+    "description": "The changelog button label to navigate to the newer release"
+  },
+  "theme.changelog.post.paginator.olderRelease": {
+    "message": "Старый релиз",
+    "description": "The changelog button label to navigate to the older release"
+  },
+  "changelog.description.rssLink": {
+    "message": "RSS каналы"
+  },
+  "changelog.description": {
+    "message": "Подпишитесь на {rssLink} или подпишитесь на {twitterLink} , чтобы быть в курсе новых версий!"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "Эта страница прервана.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Вернуться к началу",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Архивировать",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Архивировать",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Навигация по списку блогов",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Новые записи",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Старые записи",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Навигация страницы блога",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Новый пост",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Старый пост",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "Одно сообщение|{count} сообщений",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} с тегом \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "Все теги",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Переключение между темным и светлым режимом (сейчас {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "темный режим",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "легкий режим",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Навигационные крошки",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription": {
+    "message": "{count} элементов",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Страницы документов",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Предыдущий",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Следующий",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "Один doc тег|{count} документов отмечено",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} с \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Версия: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "Это невыпущенная документация для версии {siteTitle} {versionLabel}.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "Это документация для {siteTitle} {versionLabel}, которая больше не поддерживается.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "Обновленная документация содержится в {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "последняя версия",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Редактировать эту страницу",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Прямая ссылка на {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " на {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " от {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Последнее обновление{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Версии",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "Страница не найдена",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Теги:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "осторожность",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "опасность",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "инфо",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "заметка",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "предупреждение",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Закрыть",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Блог последних сообщений навигации",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Скопировано",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Копировать код в буфер обмена",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Копировать",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Переключить перенос слов",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Развернуть категорию боковой панели '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Свернуть боковую панель категории '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Главный",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Языки",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p1": {
+    "message": "Мы не смогли найти то, что вы искали.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Пожалуйста, свяжитесь с владельцем сайта, который связал вас с оригинальным URL и сообщите, что их ссылка повреждена.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "На этой странице",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Читать далее",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Подробнее о {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "Один мин чтения|{readingTime} мин прочитано",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Главная страница",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Свернуть боковую панель",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Свернуть боковую панель",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Закрыть панель навигации",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "<unk> Назад в главное меню",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Переключить панель навигации",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "Все результаты {count}"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "Найдено один документ | Найдено{count} документов",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Результаты поиска для \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Поиск документации",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Введите ваш поиск здесь",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Искать",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Поиск по Algolia",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "Ничего не найдено",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Получение новых результатов...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Искать",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Очистить запрос",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Отмена",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "Недавние",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "Нет недавних поисков",
+    "description": "The text when no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "Сохранить этот поиск",
+    "description": "The label for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "Удалить этот поиск из истории",
+    "description": "The label for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "Избранное",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "Удалить этот поиск из избранного",
+    "description": "The label for remove favorite search button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "Не удалось получить результаты",
+    "description": "The title for error screen of search modal"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "Проверьте сетевое подключение.",
+    "description": "The help text for error screen of search modal"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "выбрать",
+    "description": "The explanatory text of the action for the enter key"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Введите ключ",
+    "description": "The ARIA label for the Enter key button that makes the selection"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "для навигации",
+    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Стрелка вверх",
+    "description": "The ARIA label for the Arrow up key button that makes the navigation"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Стрелка вниз",
+    "description": "The ARIA label for the Arrow down key button that makes the navigation"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "закрыть",
+    "description": "The explanatory text of the action for Escape key"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Кнопка Escape",
+    "description": "The ARIA label for the Escape key button that close the modal"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "Поиск по",
+    "description": "The text explain that the search is making by Algolia"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "Нет результатов для",
+    "description": "The text explains that there are no results for the following search"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "Попробуйте поискать",
+    "description": "The text for the suggested query when no results are found for the following search"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "Поверьте, этот запрос должен возвращать результаты?",
+    "description": "The text for the question where the user thinks there are missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "Дайте нам знать.",
+    "description": "The text for the link to report missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Поиск документации",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "Загрузка...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "Нажмите, чтобы загрузить{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "Ваш браузер не в сети. Изображение не загружено",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "404. Изображение не найдено",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "Ошибка. Нажмите, чтобы перезагрузить",
+    "description": "When the image fails to load for unknown error"
+  },
+  "theme.PwaReloadPopup.info": {
+    "message": "Доступна новая версия",
+    "description": "The text for PWA reload popup"
+  },
+  "theme.PwaReloadPopup.refreshButtonText": {
+    "message": "Обновить",
+    "description": "The text for PWA reload button"
+  },
+  "theme.PwaReloadPopup.closeButtonAriaLabel": {
+    "message": "Закрыть",
+    "description": "The ARIA label for close button of PWA reload popup"
+  },
+  "theme.Playground.result": {
+    "message": "Результат",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "Живой редактор",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Попробовать еще раз",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Перейти к основному контенту",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Теги",
+    "description": "The title of the tag list page"
+  },
+  "theme.unlistedContent.title": {
+    "message": "Страница не внесена",
+    "description": "The unlisted content banner title"
+  },
+  "theme.unlistedContent.message": {
+    "message": "Эта страница удалена. Поисковые системы не будут индексировать ее, и только пользователи, имеющие прямую ссылку, имеют доступ к ней.",
+    "description": "The unlisted content banner message"
+  }
+}

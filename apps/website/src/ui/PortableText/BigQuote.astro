@@ -1,0 +1,16 @@
+---
+type Props = {
+  node: {
+    children: { text: string }[];
+  };
+};
+
+const [child] = Astro.props.node.children;
+---
+
+<blockquote
+  data-testid="big-quote"
+  class="border-none text-xl md:text-2xl lg:text-3xl font-black tracking-normal"
+>
+  {child.text}
+</blockquote>

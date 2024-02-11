@@ -1,0 +1,10 @@
+{
+  "tagline": {
+    "en": "Collaborative writing of code and documentation",
+    "ru": "Совмесное написание кода и документации"
+  },
+  "remarkRehypeOptions_footnotes": {
+    "en": "Footnotes",
+    "ru": "Сноски"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "version.label": {
+    "message": "3.1.1",
+    "description": "The label for version 3.1.1"
+  },
+  "sidebar.tutorialSidebar.category.Advanced Tutorials": {
+    "message": "Дополнительные обучающие материалы",
+    "description": "The label for category Advanced Tutorials in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.api": {
+    "message": "api",
+    "description": "The label for category api in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugin method references": {
+    "message": "Ссылки на метод плагина",
+    "description": "The label for category Plugin method references in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Plugins": {
+    "message": "Плагины",
+    "description": "The label for category Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Themes": {
+    "message": "Темы",
+    "description": "The label for category Themes in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Miscellaneous": {
+    "message": "Прочие вопросы",
+    "description": "The label for category Miscellaneous in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📦 eslint-plugin": {
+    "message": "📦 eslint-plugin",
+    "description": "The label for category 📦 eslint-plugin in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.guides": {
+    "message": "гиды",
+    "description": "The label for category guides in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.docs": {
+    "message": "docs",
+    "description": "The label for category docs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Sidebar": {
+    "message": "Sidebar",
+    "description": "The label for category Sidebar in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.markdown-features": {
+    "message": "функции markdown-а",
+    "description": "The label for category markdown-features in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.i18n": {
+    "message": "i18n",
+    "description": "The label for category i18n in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Upgrading Docusaurus": {
+    "message": "Улучшение Докузавра",
+    "description": "The label for category Upgrading Docusaurus in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.v2": {
+    "message": "в2",
+    "description": "The label for category v2 in sidebar tutorialSidebar"
+  },
+  "sidebar.api.category.Plugin method references": {
+    "message": "Ссылки на метод плагина",
+    "description": "The label for category Plugin method references in sidebar api"
+  },
+  "sidebar.api.category.Plugins": {
+    "message": "Плагины",
+    "description": "The label for category Plugins in sidebar api"
+  },
+  "sidebar.api.category.Themes": {
+    "message": "Темы",
+    "description": "The label for category Themes in sidebar api"
+  },
+  "sidebar.api.category.Miscellaneous": {
+    "message": "Прочие вопросы",
+    "description": "The label for category Miscellaneous in sidebar api"
+  },
+  "sidebar.api.category.📦 eslint-plugin": {
+    "message": "📦 eslint-plugin",
+    "description": "The label for category 📦 eslint-plugin in sidebar api"
+  }
+}

@@ -1,0 +1,13 @@
+---
+import YouTubeComponent from './YouTube.svelte';
+
+type Props = {
+  node: {
+    videoId: string;
+  };
+};
+
+const { videoId } = Astro.props.node;
+---
+
+<YouTubeComponent client:load youTubeId={videoId} />

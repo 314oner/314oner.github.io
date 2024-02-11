@@ -1,0 +1,170 @@
+---
+import type { SupportedLanguages } from '@packages/core/config';
+import { queryTilBySlug } from '@packages/core/domains';
+import { getEstimatedReadingTime, isEmpty, isNil } from '@packages/core/utils';
+
+import { getIntl } from '@/infrastructure/i18n/getServerSideLocales.server';
+import { sanityClient } from '@/infrastructure/sanity/client';
+import {
+  getHomePageUrl,
+  getPostUrl,
+  getTagUrl,
+  getTilHomeUrl,
+  getTilUrl,
+} from '@/infrastructure/utils/url';
+import { Breadcrumbs } from '@/ui/Breadcrumbs';
+import PostLayout from '@/ui/layouts/PostLayout.astro';
+import { PortableText } from '@/ui/PortableText';
+import PostBasic from '@/ui/PostBasic.astro';
+import PostHeading from '@/ui/PostHeading.astro';
+import { ShareContent } from '@/ui/ShareContent';
+import { Tag, Tags } from '@/ui/Tags';
+
+const { lang, slug } = Astro.params as {
+  slug: string;
+  lang: SupportedLanguages;
+};
+
+const til = await queryTilBySlug({
+  slug,
+  client: sanityClient,
+  preview: Astro.url.searchParams.get(`preview`) !== null,
+});
+
+// https://github.com/vercel/next.js/issues/16681#issuecomment-792314687
+if (til === null || isNil(til) || isEmpty(til)) {
+  return Astro.redirect(`/404`);
+}
+
+const estimatedReadingTime = await getEstimatedReadingTime(til.content);
+
+const intl = getIntl(lang);
+---
+
+<PostLayout
+  contentId={til._id}
+  title={til.title}
+  seo={{
+    description: til.title,
+    article: {
+      tags: til.tags?.map((tag) => tag.name) ?? [],
+      modifiedTime: til.publishedAt,
+      publishedTime: til.publishedAt,
+    },
+  }}
+>
+  <section
+    class="w-full col-span-full lg:col-start-2 lg:col-end-12"
+    data-id={til._id}
+  >
+    <Breadcrumbs
+      class="mb-4"
+      crumbs={[
+        {
+          label: intl.formatMessage({ id: `sideMenu.home` }),
+          href: getHomePageUrl(lang),
+        },
+        {
+          label: intl.formatMessage({ id: `sideMenu.til` }),
+          href: getTilHomeUrl(lang),
+        },
+        {
+          label: til.title,
+        },
+      ]}
+    />
+
+    <PostHeading
+      title={til.title}
+      publishedDateLabel={intl.formatMessage(
+        {
+          id: `blogPost.publishedAt`,
+        },
+        {
+          publishedDate: intl.formatDate(new Date(til.publishedAt), {
+            year: `numeric`,
+            month: `short`,
+            day: `2-digit`,
+          }),
+        },
+      )}
+      readingTimeLabel={intl.formatMessage(
+        {
+          id: `blogPost.readingTime`,
+        },
+        {
+          publishedDate: til.publishedAt,
+          readingTime: estimatedReadingTime,
+        },
+      )}
+    />
+    <article class="mt-8 prose-container">
+      <PortableText value={til.content} />
+    </article>
+
+    <hr class="mt-10 mb-6" />
+
+    <footer class="flex flex-wrap justify-between">
+      {
+        til.tags ? (
+          <div class="mb-4 mr-4">
+            <span class="block mb-4 font-extrabold text-md md:text-lg lg:text-xl md:mb-6">
+              Tags
+            </span>
+            <Tags>
+              {til.tags.map((tag) => (
+                <Tag class="text-base lg:text-lg">
+                  <a
+                    href={getTagUrl(tag.slug, lang)}
+                    class="underline text-secondary"
+                  >
+                    #{tag.name}
+                  </a>
+                </Tag>
+              ))}
+            </Tags>
+          </div>
+        ) : null
+      }
+
+      <ShareContent
+        titleLabel={intl.formatMessage({ id: `blogPost.share` })}
+        twitter={{ text: `TIL ${til.title}` }}
+        linkedIn={{ title: til.title, summary: `TIL ${til.title}` }}
+      />
+
+      {
+        til.relatedPosts.length > 0 ? (
+          <section class="mt-4">
+            <span class="block mb-4 font-extrabold text-md md:text-lg lg:text-xl md:mb-6">
+              Related Posts
+            </span>
+
+            <ul class="grid grid-cols-1 gap-6 ipad-pro:grid-cols-2">
+              {til.relatedPosts.map((post) => {
+                const url =
+                  post._type === `post`
+                    ? getPostUrl(post.slug, lang)
+                    : getTilUrl(post.slug, lang);
+
+                return (
+                  <li>
+                    <PostBasic
+                      class="p-6 transition-all bg-white rounded-sm shadow dark:bg-blue-800 hover:shadow-lg dark:hover:bg-blue-700"
+                      titleClassName="text-xl"
+                      lang={lang}
+                      title={post.title}
+                      url={url}
+                      tags={post.tags || []}
+                      publishedAt={post.publishedAt}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ) : null
+      }
+    </footer>
+  </section>
+</PostLayout>

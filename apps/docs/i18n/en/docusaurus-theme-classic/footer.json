@@ -1,0 +1,46 @@
+{
+  "link.title.Learn": {
+    "message": "Learn",
+    "description": "The title of the footer links column with title=Learn in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "Introduction",
+    "description": "The label of footer link with label=Introduction linking to docs"
+  },
+  "link.item.label.Installation": {
+    "message": "Installation",
+    "description": "The label of footer link with label=Installation linking to docs/installation"
+  },
+  "link.item.label.Migration from v1 to v2": {
+    "message": "Migration from v1 to v2",
+    "description": "The label of footer link with label=Migration from v1 to v2 linking to docs/migration"
+  },
+  "link.item.label.Feature Requests": {
+    "message": "Feature Requests",
+    "description": "The label of footer link with label=Feature Requests linking to /feature-requests"
+  },
+  "link.item.label.Help": {
+    "message": "Help",
+    "description": "The label of footer link with label=Help linking to /community/support"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to blog"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/314oner"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 314oner.github.io.",
+    "description": "The footer copyright"
+  }
+}

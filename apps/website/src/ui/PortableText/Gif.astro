@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+
+type Props = {
+  node: {
+    caption: string;
+    src: string;
+    width?: number;
+    height?: number;
+  };
+};
+const { caption, src, width = 300, height } = Astro.props.node;
+---
+
+<figure
+  class="relative mx-auto flex flex-col"
+  style={{
+    maxWidth: width ? `${width}px` : `fit-content`,
+  }}
+>
+  <Image alt={caption} width={width} height={height ?? width} src={src} />
+  {caption && <figcaption class="text-center w-full">{caption}</figcaption>}
+</figure>

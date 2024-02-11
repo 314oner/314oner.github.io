@@ -1,0 +1,82 @@
+{
+  "version.label": {
+    "message": "Текущая 🚧",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Getting Started": {
+    "message": "Начало работы",
+    "description": "The label for category Getting Started in sidebar docs"
+  },
+  "sidebar.docs.category.Guides": {
+    "message": "Руководства",
+    "description": "The label for category Guides in sidebar docs"
+  },
+  "sidebar.docs.category.Guides.link.generated-index.title": {
+    "message": "Гиды Docusaurus",
+    "description": "The generated-index page title for category Guides in sidebar docs"
+  },
+  "sidebar.docs.category.Guides.link.generated-index.description": {
+    "message": "Давайте узнаем о самых важных понятиях Docusaurus!",
+    "description": "The generated-index page description for category Guides in sidebar docs"
+  },
+  "sidebar.docs.category.Docs": {
+    "message": "Документ",
+    "description": "The label for category Docs in sidebar docs"
+  },
+  "sidebar.docs.category.Sidebar": {
+    "message": "Sidebar",
+    "description": "The label for category Sidebar in sidebar docs"
+  },
+  "sidebar.docs.category.Markdown Features": {
+    "message": "Функции Markdown",
+    "description": "The label for category Markdown Features in sidebar docs"
+  },
+  "sidebar.docs.category.Internationalization": {
+    "message": "Интернационализация",
+    "description": "The label for category Internationalization in sidebar docs"
+  },
+  "sidebar.docs.category.Advanced Guides": {
+    "message": "Расширенные руководства",
+    "description": "The label for category Advanced Guides in sidebar docs"
+  },
+  "sidebar.docs.category.Upgrading": {
+    "message": "Обновление",
+    "description": "The label for category Upgrading in sidebar docs"
+  },
+  "sidebar.docs.category.To Docusaurus v2": {
+    "message": "К Docusaurus v2",
+    "description": "The label for category To Docusaurus v2 in sidebar docs"
+  },
+  "sidebar.docs.doc.Tutorial": {
+    "message": "Обучение",
+    "description": "The label for the doc item Tutorial in sidebar docs, linking to the doc i18n/tutorial"
+  },
+  "sidebar.docs.doc.Using Git": {
+    "message": "Использование Git",
+    "description": "The label for the doc item Using Git in sidebar docs, linking to the doc i18n/git"
+  },
+  "sidebar.docs.doc.Using Crowdin": {
+    "message": "Использование Crowdin",
+    "description": "The label for the doc item Using Crowdin in sidebar docs, linking to the doc i18n/crowdin"
+  },
+  "sidebar.api.category.Plugin method references": {
+    "message": "Ссылки на метод плагина",
+    "description": "The label for category Plugin method references in sidebar api"
+  },
+  "sidebar.api.category.Plugins": {
+    "message": "Плагины",
+    "description": "The label for category Plugins in sidebar api"
+  },
+  "sidebar.api.category.Themes": {
+    "message": "Темы",
+    "description": "The label for category Themes in sidebar api"
+  },
+  "sidebar.api.category.Miscellaneous": {
+    "message": "Прочие вопросы",
+    "description": "The label for category Miscellaneous in sidebar api"
+  },
+  "sidebar.api.category.📦 eslint-plugin": {
+    "message": "📦 eslint-plugin",
+    "description": "The label for category 📦 eslint-plugin in sidebar api"
+  }
+}
