@@ -1,6 +1,6 @@
 {
   "link.title.Learn": {
-    "message": "Учить",
+    "message": "Читать доки",
     "description": "The title of the footer links column with title=Learn in the footer"
   },
   "link.title.Community": {
@@ -38,6 +38,10 @@
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/314oner"
+  },
+  "link.item.label.MyRepos": {
+    "message": "Мои репозитории",
+    "description": "Репозитории GitHub над которыми я работаю в опенсурс"
   },
   "copyright": {
     "message": "Copyright © 2024 314oner.github.io.",

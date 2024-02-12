@@ -4,7 +4,7 @@
     "description": "The title in the navbar"
   },
   "item.label.Docs": {
-    "message": "Документ",
+    "message": "Документация",
     "description": "Navbar item with label Docs"
   },
   "item.label.Blog": {
@@ -12,7 +12,7 @@
     "description": "Navbar item with label Blog"
   },
   "item.label.Showcase": {
-    "message": "Витрина",
+    "message": "Примеры",
     "description": "Navbar item with label Showcase"
   },
   "item.label.About": {

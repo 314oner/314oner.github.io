@@ -9,7 +9,6 @@ import Layout from '@theme/Layout';
 import Quotes from '@site/src/data/quotes';
 import Heading from '@theme/Heading';
 import HackerNewsIcon from '@site/src/components/HackerNewsIcon';
-
 import styles from './styles.module.css';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 

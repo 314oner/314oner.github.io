@@ -50,6 +50,8 @@ const baseUrl = process.env.BASE_URL ?? '/';
 const isI18nStaging = process.env.I18N_STAGING === 'true';
 const isVersioningDisabled = !!process.env.DISABLE_VERSIONING || isI18nStaging;
 const defaultLocale = 'ru';
+const organizationName = "314oner";
+const projectName = "314oner.github.io";
 
 function getLocalizedConfigValue(key: keyof typeof ConfigLocalized) {
   const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale;
@@ -72,8 +74,8 @@ export default async function createConfigAsync() {
     tagline: getLocalizedConfigValue('tagline'),
     url: 'https://github.com',
     baseUrl: '/',
-    organizationName: '314oner',
-    projectName: '',
+    organizationName,
+    projectName,
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
     trailingSlash: isDeployPreview,
@@ -203,10 +205,6 @@ export default async function createConfigAsync() {
               from: ['/docs/resources', '/docs/next/resources'],
               to: '/community/resources',
             },
-            {
-              from: ['/docs/repos', '/docs/next/repos'],
-              to: '/community/repos',
-            },
           ],
         } satisfies ClientRedirectsOptions,
       ],
@@ -288,12 +286,9 @@ export default async function createConfigAsync() {
         'docusaurus-portfolio-plugin',
         {
           username: '314oner',
-          path: '/repos',
+          path: '/community/repositories',
           pageTitle: "My repositories",
           pageDescription: 'My repositories.',
-          userOptions: {
-            fullname: 'A.A.Gverdtsiteli',
-          },
           repoOptions: {
             type: 'all',
             sort: 'updated',
@@ -463,16 +458,17 @@ export default async function createConfigAsync() {
             label: 'Docs',
           },
           { to: 'blog', label: 'Blog', position: 'left' },
-
+          { to: '/community/repositories', label: 'Repos', position: 'left' },
+          /*
           {
             to: '/community/support',
             label: 'Community',
             position: 'left',
             activeBaseRegex: `/community/`,
           },
-          { to: '/repos', label: 'Repos', position: 'left' },
-          //{ to: 'about', label: 'About', position: 'left' },
-          //{ to: 'showcase', label: 'Showcase', position: 'left' },
+          { to: 'about', label: 'About', position: 'left' },
+          { to: 'showcase', label: 'Showcase', position: 'left' },
+          */
           // Right
           {
             type: 'docsVersionDropdown',
@@ -517,8 +513,8 @@ export default async function createConfigAsync() {
               },
               */
               {
-                label: 'Help',
-                to: '/community/support',
+                label: 'MyRepos',
+                to: '/community/repositories',
               },
             ],
           },

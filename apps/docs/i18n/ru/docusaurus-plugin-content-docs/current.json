@@ -20,7 +20,7 @@
     "description": "The generated-index page description for category Guides in sidebar docs"
   },
   "sidebar.docs.category.Docs": {
-    "message": "Документ",
+    "message": "Документация",
     "description": "The label for category Docs in sidebar docs"
   },
   "sidebar.docs.category.Sidebar": {
