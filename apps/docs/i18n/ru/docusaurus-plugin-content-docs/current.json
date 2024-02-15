@@ -8,15 +8,15 @@
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
-    "message": "Руководства",
+    "message": "Документация",
     "description": "The label for category Guides in sidebar docs"
   },
   "sidebar.docs.category.Guides.link.generated-index.title": {
-    "message": "Гиды Docusaurus",
+    "message": "Документация",
     "description": "The generated-index page title for category Guides in sidebar docs"
   },
   "sidebar.docs.category.Guides.link.generated-index.description": {
-    "message": "Давайте узнаем о самых важных понятиях Docusaurus!",
+    "message": "Документация для библиотек и приложений",
     "description": "The generated-index page description for category Guides in sidebar docs"
   },
   "sidebar.docs.category.Docs": {

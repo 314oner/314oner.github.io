@@ -5,6 +5,16 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@314oner_npm/universal-components-library@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@314oner_npm/universal-components-library@npm:3.1.0"
+  peerDependencies:
+    react: 16.8 - 18
+    react-dom: 16.8 - 18
+  checksum: 0994ef7d40e467fdfcb813d5e064e5188353307a7f577cec75ef5b81205bc0a0352feb846b7c0c2613098e72cbf1cc6b54c1e2f2dc81b69fbf3f855f841f9ce4
+  languageName: node
+  linkType: hard
+
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
   version: 1.2.6
   resolution: "@aashutoshrathi/word-wrap@npm:1.2.6"
@@ -11411,6 +11421,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:apps/docs"
   dependencies:
+    "@314oner_npm/universal-components-library": 3.1.0
     "@crowdin/cli": ^3.13.0
     "@crowdin/crowdin-api-client": ^1.23.3
     "@docusaurus/core": 3.0.0

@@ -15,6 +15,7 @@
     "docs:deploy": "GIT_USER=314oner DEPLOYMENT_BRANCH=gh-pages USE_SSH=true CURRENT_BRANCH=master docusaurus deploy"
   },
   "dependencies": {
+    "@314oner_npm/universal-components-library": "3.1.0",
     "@crowdin/cli": "^3.13.0",
     "@crowdin/crowdin-api-client": "^1.23.3",
     "@docusaurus/core": "3.0.0",
