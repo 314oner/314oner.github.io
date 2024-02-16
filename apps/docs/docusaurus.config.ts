@@ -193,18 +193,6 @@ export default async function createConfigAsync() {
             return [];
           },
           redirects: [
-            {
-              from: ['/docs/support', '/docs/next/support'],
-              to: '/community/support',
-            },
-            {
-              from: ['/docs/team', '/docs/next/team'],
-              to: '/community/team',
-            },
-            {
-              from: ['/docs/resources', '/docs/next/resources'],
-              to: '/community/resources',
-            },
           ],
         } satisfies ClientRedirectsOptions,
       ],
