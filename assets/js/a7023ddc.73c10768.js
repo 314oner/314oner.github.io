@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[9112],{61568:l=>{l.exports=JSON.parse('[{"label":"universal-components-library","permalink":"/blog/tags/universal-components-library","count":1},{"label":"blog","permalink":"/blog/tags/blog","count":1}]')}}]);

@@ -5,6 +5,21 @@
     "description": "314oner.github.io Blog",
     "items": [
         {
+            "id": "https://github.com/en/blog/universal-components-library",
+            "content_html": "<p>Начал писать документацию для своей библиотеки универсальных компонентов.</p>",
+            "url": "https://github.com/en/blog/universal-components-library",
+            "title": "Документация для библиотеки",
+            "summary": "Начал писать документацию для своей библиотеки универсальных компонентов.",
+            "date_modified": "2024-02-16T00:00:00.000Z",
+            "author": {
+                "name": "Alexander Gverdtsiteli",
+                "url": "https://github.com/314oner"
+            },
+            "tags": [
+                "universal-components-library"
+            ]
+        },
+        {
             "id": "https://github.com/en/blog/blog-example",
             "content_html": "<p>Первое сообшение в блоге</p>",
             "url": "https://github.com/en/blog/blog-example",

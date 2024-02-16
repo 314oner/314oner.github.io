@@ -2,12 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://github.com/en/blog</id>
     <title>314oner.github.io Blog</title>
-    <updated>2024-01-11T00:00:00.000Z</updated>
+    <updated>2024-02-16T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://github.com/en/blog"/>
     <subtitle>314oner.github.io Blog</subtitle>
     <icon>https://github.com/en/img/favicon.ico</icon>
     <rights>Copyright © 2024 314oner.github.io.</rights>
+    <entry>
+        <title type="html"><![CDATA[Документация для библиотеки]]></title>
+        <id>https://github.com/en/blog/universal-components-library</id>
+        <link href="https://github.com/en/blog/universal-components-library"/>
+        <updated>2024-02-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Начал писать документацию для своей библиотеки универсальных компонентов.]]></summary>
+        <content type="html"><![CDATA[<p>Начал писать документацию для своей библиотеки универсальных компонентов.</p>]]></content>
+        <author>
+            <name>Alexander Gverdtsiteli</name>
+            <uri>https://github.com/314oner</uri>
+        </author>
+        <category label="universal-components-library" term="universal-components-library"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Сайт для документации создан!]]></title>
         <id>https://github.com/en/blog/blog-example</id>

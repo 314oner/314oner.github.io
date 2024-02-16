@@ -4,11 +4,20 @@
         <title>314oner.github.io Blog</title>
         <link>https://github.com/blog</link>
         <description>314oner.github.io Blog</description>
-        <lastBuildDate>Thu, 11 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 16 Feb 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>ru</language>
         <copyright>Copyright © 2024 314oner.github.io.</copyright>
+        <item>
+            <title><![CDATA[Документация для библиотеки]]></title>
+            <link>https://github.com/blog/universal-components-library</link>
+            <guid>https://github.com/blog/universal-components-library</guid>
+            <pubDate>Fri, 16 Feb 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Начал писать документацию для своей библиотеки универсальных компонентов.]]></description>
+            <content:encoded><![CDATA[<p>Начал писать документацию для своей библиотеки универсальных компонентов.</p>]]></content:encoded>
+            <category>universal-components-library</category>
+        </item>
         <item>
             <title><![CDATA[Сайт для документации создан!]]></title>
             <link>https://github.com/blog/blog-example</link>
