@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "3.2.1",
+  "version": "3.3.1",
   "private": true,
   "scripts": {
     "prepare": "turbo run typegen --filter docs --output-logs errors-only",
