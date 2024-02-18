@@ -1,8 +1,14 @@
 {
-  "name": "website",
+  "name": "@apps/website",
   "type": "module",
   "version": "1.0.0-development",
   "private": true,
+  "author": "Alexander Gverdtsiteli",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/314oner/314oner.github.io/issues"
+  },
+  "homepage": "https://github.com/314oner/314oner.github.io#readme",
   "scripts": {
     "prepare": "turbo run typegen --filter website --output-logs errors-only",
     "dev": "astro dev",
@@ -100,5 +106,13 @@
   "packageManager": "pnpm@8.12.1",
   "volta": {
     "extends": "../../package.json"
-  }
+  },
+  "workspaces": [
+    "../../packages/code-highlight",
+    "../../packages/core",
+    "../../packages/eslint-config",
+    "../../packages/sanity-core",
+    "../../packages/styles",
+    "../../packages/tsconfig"
+  ]
 }

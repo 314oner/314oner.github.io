@@ -13,7 +13,7 @@
     "dist/"
   ],
   "scripts": {
-    "prepare": "turbo --filter sanity-core build --output-logs errors-only",
+    "prepare": "turbo --filter @packages/sanity-core build --output-logs errors-only",
     "build": "tsc -p tsconfig.build.json"
   },
   "dependencies": {

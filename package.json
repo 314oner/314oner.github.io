@@ -11,12 +11,15 @@
     "test": "turbo run test",
     "typegen": "turbo run typegen",
     "clean": "rm -rf node_modules **/node_modules",
-    "clean:deep": "rm -rf node_modules **/node_modules **/.turbo **/dist **/.vercel"
+    "clean:deep": "rm -rf node_modules **/node_modules **/.turbo **/dist **/.vercel",
+    "preact:build": "turbo run build --filter=@static-preact-app/frontend --filter=@static-preact-app/backend",
+    "preact:backend-start": "json-server --watch ./apps/json-server/src/index.js --routes ./apps/json-server/routes.json --port 3001"
   },
   "devDependencies": {
     "@packages/eslint-config": "workspace:*",
     "eslint": "8.54.0",
     "husky": "8.0.3",
+    "json-server": "0.17.4",
     "prettier": "3.0.3",
     "rimraf": "5.0.5",
     "turbo": "1.10.16",
@@ -34,7 +37,8 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "apps/*"
+      "apps/*",
+      "apps/static-preact-app/*"
     ]
   }
 }

@@ -26,7 +26,7 @@
     }
   },
   "scripts": {
-    "prepare": "turbo --filter='core' build --output-logs errors-only",
+    "prepare": "turbo --filter='@packages/core' build --output-logs errors-only",
     "build": "vite build",
     "lint": "eslint ."
   },
