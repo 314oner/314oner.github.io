@@ -1,0 +1,22 @@
+FROM alpine as copying
+COPY config /var/lib/gitea
+COPY data /etc/gitea
+
+FROM gitea/gitea:latest-rootless as gitea-app
+ARG DB_TYPE=mysql
+ARG HOST=db:3306
+ARG NAME=gitea
+ARG USER=gitea
+ARG PASSWD=gitea
+
+ENV GITEA__database__DB_TYPE="${DB_TYPE}"
+ENV GITEA__database__HOST="${HOST}"
+ENV GITEA__database__NAME="${NAME}"
+ENV GITEA__database__USER="${USER}"
+ENV GITEA__database__PASSWD="${PASSWD}"
+
+COPY --from=copying /etc/gitea /etc/gitea:Z
+COPY --from=copying /var/lib/gitea /var/lib/gitea:Z
+#RUN chown 1000:1000 .
+EXPOSE 3000:3000
+EXPOSE 222:22

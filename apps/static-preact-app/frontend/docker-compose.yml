@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  example:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ipc: host
+    working_dir: /app
+    read_only: false
+    tmpfs: /tmp
+    networks:
+        - web
+networks:
+  web:
+    name: web

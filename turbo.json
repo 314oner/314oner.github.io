@@ -2,7 +2,10 @@
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build", "typegen"],
+      "dependsOn": [
+        "^build",
+        "typegen"
+      ],
       "outputs": [
         "dist/**",
         "build/**",
@@ -13,11 +16,36 @@
     },
     "dev": {
       "outputs": [],
-      "dependsOn": ["typegen"]
+      "dependsOn": [
+        "typegen"
+      ]
+    },
+    "start": {
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".svelte-kit/**",
+        "functions/**",
+        ".vercel",
+        "lib/**"
+      ],
+      "dependsOn": [
+        "typegen"
+      ]
     },
     "typegen": {
-      "inputs": ["src/**/*.tsx", "src/**/*.ts"],
-      "outputs": ["src/**/*.typegen.ts", ".svelte-kit"]
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts"
+      ],
+      "outputs": [
+        "src/**/*.typegen.ts",
+        ".svelte-kit"
+      ]
     },
     "lint": {
       "outputs": []
@@ -26,10 +54,15 @@
       "outputs": []
     },
     "test": {
-      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts"
+      ]
     },
     "deploy": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "outputs": []
     }
   }

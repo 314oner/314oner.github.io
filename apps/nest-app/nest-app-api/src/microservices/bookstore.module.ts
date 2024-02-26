@@ -1,0 +1,25 @@
+import { Module } from '@nestjs/common';
+import { BookstoreController } from './bookstore.controller';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ClientProxyFactory, Transport } from '@nestjs/microservices';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+  controllers: [BookstoreController],
+  providers: [
+    {
+      provide: 'BOOKS_SERVICE',
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => {
+        return ClientProxyFactory.create({
+          transport: Transport.TCP,
+          options: {
+            host: configService.get('BOOKSTORE_SERVICE_HOST'),
+            port: configService.get('BOOKSTORE_SERVICE_PORT'),
+          },
+        });
+      },
+    },
+  ],
+})
+export class BookstoreModule { }

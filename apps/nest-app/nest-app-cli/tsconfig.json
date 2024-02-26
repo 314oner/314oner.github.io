@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "references": [
+    { "path": "../nest-app-api" },
+    { "path": "../nest-microservice-api2" },
+    { "path": "../nest-microservice-api3" },
+    { "path": "../nest-microservice-api4" },
+    { "path": "../nest-app-api5-gateway" }
+  ],
+  "exclude": ["lib"]
+}
