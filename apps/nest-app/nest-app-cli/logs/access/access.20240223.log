@@ -1,0 +1,18 @@
+[2024-02-23T12:48:33.353] [INFO] http - logger.middleware.ts(line: 24, column: 12): 
+ -----------------------------------------------------------------------
+    RequestOriginal: /nestApi/api2/booksstore
+    Method: GET
+    IP: 127.0.0.1
+    StatusCode: 200
+    Params: {}
+    Query: {}
+    Body: {}
+    -----------------------------------------------------------------------
+[2024-02-23T12:48:33.629] [INFO] http - transformInterceptor.ts(line: 48, column: 16): 
+ -----------------------------------------------------------------------
+        Request original url: /nestApi/api2/booksstore
+        Method: GET
+        IP: 127.0.0.1
+        User: undefined
+        Response data: undefined
+        -----------------------------------------------------------------------
