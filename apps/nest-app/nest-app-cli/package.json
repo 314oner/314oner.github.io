@@ -1,47 +1,38 @@
 {
-  "name": "@nest-app/cli",
-  "version": "1.0.0-development",
-  "private": true,
-  "author": "Alexander Gverdtsiteli",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/314oner/314oner.github.io/issues"
-  },
-  "homepage": "https://github.com/314oner/314oner.github.io#readme",
-  "main": "lib/index.js",
-  "bin": "./lib/cli.js",
+  "name": "@apps/nest-app-cli",
+  "version": "3.0.2",
+  "description": "",
+  "main": "lib/cjs/cli.js",
+  "typings": "lib/cjs/cli.d.ts",
+  "module": "lib/esm/cli.js",
   "scripts": {
-    "prepare": "turbo run typegen --filter @nest-app/cli --output-logs errors-only",
-    "dev": "npx ts-node -r dotenv/config lib/cli.js",
-    "build": "pnpm run clean && tsc --project tsconfig.json",
-    "clean": "rimraf ./lib ./tsconfig.tsbuildinfo"
+    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "dev": "node ./lib/cjs/cli.js",
+    "clean": "rimraf ./lib ./tsconfig.build.tsbuildinfo",
+    "build": "tsc -b ."
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@nest-app/api": "1.0.0",
-    "@nest-app/microservice-api2": "1.0.0",
-    "@nest-app/microservice-api3": "1.0.0",
-    "@nest-app/microservice-api4": "1.0.0",
-    "commander": "^4.0.0",
-    "ts-node": "^10.0.0"
+    "@apps/nest-app-microservice-1-user": "^3.0.2",
+    "@apps/nest-app-microservice-2-permission": "^3.0.2",
+    "@apps/nest-app-microservice-3-token": "^3.0.2",
+    "@apps/nest-app-microservice-4-mailer": "^3.0.2",
+    "@apps/nest-app-microservice-5-task": "^3.0.2",
+    "@apps/nest-app-microservice-6-post": "^3.0.2",
+    "@apps/nest-app-microservice-7-tag": "^3.0.2",
+    "@apps/nest-app-microservice-8-like": "^3.0.2",
+    "@apps/nest-app-microservice-9-security": "^3.0.2",
+    "@apps/nest-app-microservice-10-authorization": "^3.0.2",
+    "@apps/nest-app-microservice-11-order": "^3.0.2",
+    "@apps/nest-app-microservice-12-payment": "^3.0.2",
+    "@apps/nest-app-gateway": "^3.0.2",
+    "commander": "4.0.0"
   },
   "devDependencies": {
-    "rimraf": "5.0.1",
-    "turbo": "1.10.16",
-    "typescript": "5.2.2"
-  },
-  "engines": {
-    "node": "18",
-    "pnpm": "8"
-  },
-  "packageManager": "pnpm@8.12.1",
-  "volta": {
-    "extends": "../../../package.json"
-  },
-  "workspaces": [
-    "../nest-app-api",
-    "../nest-app-core",
-    "../nest-microservice-api2",
-    "../nest-microservice-api3",
-    "../nest-microservice-api4"
-  ]
+    "@types/node": "18",
+    "rimraf": "5.0.5",
+    "typescript": "5.3.0"
+  }
 }

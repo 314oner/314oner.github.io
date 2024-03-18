@@ -41,6 +41,6 @@ const ssr = createMiddleware(async ({ request }) => {
 });
 
 viteDevServer.middlewares.use(ssr);
-viteDevServer.middlewares.listen(3000).on("listening", () => {
-  console.log("Listening on http://localhost:3000");
+viteDevServer.middlewares.listen(8081).on("listening", () => {
+  console.log("Listening on http://localhost:8081");
 });
