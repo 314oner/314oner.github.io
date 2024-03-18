@@ -24,3 +24,4 @@ __exportStar(require("./entities/tag"), exports);
 __exportStar(require("./entities/token"), exports);
 __exportStar(require("./entities/order"), exports);
 __exportStar(require("./entities/payment"), exports);
+__exportStar(require("./entities/task"), exports);

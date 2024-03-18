@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common'
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import { ConfigService } from './services/config/config.service';
 
 import { logger } from './common/libs/log4js/logger.middleware'
 
@@ -22,7 +21,7 @@ export async function startGateway() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('swagger-api', app, document);
-  await app.listen(new ConfigService().get('port'), '0.0.0.0');
+  await app.listen(3000, '0.0.0.0');
   const serverUrl = await app.getUrl()
   setTimeout(() => {
     Logger.log(`api: ${serverUrl}/`)

@@ -8,3 +8,4 @@ export * from './entities/tag';
 export * from './entities/token';
 export * from './entities/order';
 export * from './entities/payment';
+export * from './entities/task';

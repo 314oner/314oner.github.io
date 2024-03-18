@@ -1,38 +1,36 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
+import { Task } from '@apps/nest-app-shared';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { RpcException } from '@nestjs/microservices';
 
-import { ITask } from './interfaces/task.interface';
-import { ITaskUpdateParams } from './interfaces/task-update-params.interface';
+const logger = new Logger();
 
 @Injectable()
 export class TaskService {
   constructor(
-    /*
-    @InjectModel('Task') private readonly taskModel: Model<ITask>
-    */
+    @InjectRepository(Task, 'database-S5')
+    private taskRepository: Repository<Task>,
   ) { }
-  /*
-public async getTasksByUserId(userId: string): Promise<ITask[]> {
-  return this.taskModel.find({ user_id: userId }).exec();
-}
+  public async getTasksByUserId(userId: number): Promise<any> {
 
-public async createTask(taskBody: ITask): Promise<ITask> {
-  const taskModel = new this.taskModel(taskBody);
-  return await taskModel.save();
-}
+    const task = await this.taskRepository.findOne({
+      where: {
+        id: userId
+      }
+    });
+    if (!task) {
+      throw new RpcException('Task not found.');
+    }
+    logger.log('Return task details for userId: ' + userId);
 
-public async findTaskById(id: string) {
-  return await this.taskModel.findById(id);
-}
+    return task;
+  }
 
-public async removeTaskById(id: string) {
-  return await this.taskModel.findOneAndDelete({ _id: id });
-}
+  public async createTask(paramData: any) {
+    const order = this.taskRepository.create();
+    order.description = paramData.taskDescription;
 
-public async updateTaskById(
-  id: string,
-  params: ITaskUpdateParams,
-): Promise<ITask> {
-  return await this.taskModel.updateOne({ _id: id }, params);
-}
-*/
+    await this.taskRepository.save(order);
+  }
 }

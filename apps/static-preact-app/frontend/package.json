@@ -50,7 +50,7 @@
     "snowpack": "^3.2.2",
     "snowpack-plugin-raw": "^1.0.0",
     "ts-node": "10.9.2",
-    "typescript": "5.3.0"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "fast-average-color": "^6.3.0",

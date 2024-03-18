@@ -122,7 +122,7 @@ import { PaymentsService } from './services/payments/payments.service';
       },
     ])
   ],
-  controllers: [UsersController, TasksController, OrdersController, PaymentsController],
+  controllers: [OrdersController, PaymentsController],
   providers: [
     OrdersService,
     PaymentsService

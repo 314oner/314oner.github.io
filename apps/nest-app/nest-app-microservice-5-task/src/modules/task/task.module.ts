@@ -1,20 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TaskController } from './task.controller';
 import { TaskService } from './task.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Task } from '@apps/nest-app-shared';
 
 @Module({
   imports: [
-    /*
-    MongooseModule.forRootAsync({
-      useClass: MongoConfigService,
-    }),
-    MongooseModule.forFeature([
-      {
-        name: 'Task',
-        schema: TaskSchema,
-      },
-    ]),
-    */
+    TypeOrmModule.forFeature([Task], 'database-S5'),
   ],
   controllers: [TaskController],
   providers: [TaskService],

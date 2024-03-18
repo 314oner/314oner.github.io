@@ -34,7 +34,7 @@
   "devDependencies": {
     "@packages/tsconfig": "workspace:*",
     "@types/bun": "1.0.1",
-    "typescript": "5.3.0"
+    "typescript": "5.2.2"
   },
   "engines": {
     "node": "18",

@@ -19,7 +19,7 @@
     "@types/node": "18",
     "json-server": "0.17.4",
     "node-fs": "0.1.7",
-    "typescript": "5.3.0"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "body-parser": "1.20.2",
