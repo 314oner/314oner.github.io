@@ -12,6 +12,7 @@
 .pnp.cjs
 .pnp.loader.mjs
 .vscode
+.history/
 
 # etc
 apps/db
@@ -27,46 +28,51 @@ run
 /build
 /build/*
 
-# Testing
-/coverage
-
 # Notes
 notes/*.md
 
 # Generated files
 .docusaurus
 .cache-loader
+.turbo/
 tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo
 **/tsconfig.tsbuildinfo
+**/tsconfig.*.tsbuildinfo
 **/**/tsconfig.tsbuildinfo
+**/**/tsconfig.*.tsbuildinfo
 **/**/**/tsconfig.tsbuildinfo
+**/**/**/tsconfig.*.tsbuildinfo
 
 # misc
+.vercel
 .DS_Store
+*.pem
 .eslintcache
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+*.typegen.ts
+
+.netlify
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# nitro
+.nitro/
+.output/
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# vscode
-.vscode
-node_modules
-.history/
-
-.vercel
-.DS_Store
-
-coverage
-
-*.typegen.ts
-
-.turbo/
-**/tsconfig.tsbuildinfo
-**/tsconfig.*.tsbuildinfo
-
-.netlify

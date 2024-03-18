@@ -34,13 +34,13 @@
   "devDependencies": {
     "@packages/tsconfig": "workspace:*",
     "@types/bun": "1.0.1",
-    "typescript": "5.2.2"
+    "typescript": "5.3.0"
   },
   "engines": {
     "node": "18",
     "pnpm": "8"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@8.15.4",
   "volta": {
     "extends": "../../package.json"
   }

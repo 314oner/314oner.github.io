@@ -1,15 +1,12 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "../../../tsconfig.json", // Extend the config options from the root
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "lib"
-  },
-  "references": [
-    { "path": "../nest-app-api" },
-    { "path": "../nest-microservice-api2" },
-    { "path": "../nest-microservice-api3" },
-    { "path": "../nest-microservice-api4" },
-    { "path": "../nest-app-api5-gateway" }
-  ],
-  "exclude": ["lib"]
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./lib/cjs"
+  }
 }

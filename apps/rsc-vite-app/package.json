@@ -19,7 +19,7 @@
     "react": "0.0.0-experimental-e91142dd6-20230705",
     "react-dom": "0.0.0-experimental-e91142dd6-20230705",
     "react-server-dom-webpack": "0.0.0-experimental-e91142dd6-20230705",
-    "vite": "^4.4.2"
+    "vite": "5.1.6"
   },
   "browserslist": {
     "production": [
@@ -37,7 +37,7 @@
     "node": "18",
     "pnpm": "8"
   },
-  "packageManager": "pnpm@8.12.1",
+  "packageManager": "pnpm@8.15.4",
   "volta": {
     "extends": "../../package.json"
   }

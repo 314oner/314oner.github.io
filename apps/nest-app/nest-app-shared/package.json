@@ -1,0 +1,23 @@
+{
+  "name": "@apps/nest-app-shared",
+  "version": "1.1.70",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "",
+  "scripts": {
+    "afterinstall": "npm run build",
+    "build": "pnpm run clean && ../../../node_modules/.bin/tsc -p tsconfig.build.json",
+    "build:watch": "../../../node_modules/.bin/tsc -p tsconfig.build.json -w --preserveWatchOutput",
+    "clean": "rimraf ./dist ./coverage ./tsconfig.build.tsbuildinfo"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "class-transformer": "^0.3.1",
+    "class-validator": "0.14.1",
+    "typescript": "5.3.0"
+  },
+  "devDependencies": {
+    "rimraf": "5.0.5"
+  }
+}
