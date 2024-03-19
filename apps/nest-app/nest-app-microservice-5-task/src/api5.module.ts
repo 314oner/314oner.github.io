@@ -12,6 +12,7 @@ import ormConfig, { getDatabaseSystemIds } from './config/orm.config';
 import * as path from 'path';
 
 import { getEnvPath } from './utils/getEnvPath';
+import { TaskModule } from './modules/task/task.module';
 
 const databasesConfigAsync = getDatabaseSystemIds().map((systemId) => {
   return TypeOrmModule.forRootAsync({
@@ -26,7 +27,6 @@ const envFilePath: string = getEnvPath(`${__dirname}`);
 
 @Module({
   imports: [
-    //TypeOrmModule.forFeature([Tag], 'database-TAG'),
     FileConfigModule.load(
       path.resolve(__dirname, 'config', '**', '!(*.d).{ts,js}')
     ),
@@ -35,6 +35,7 @@ const envFilePath: string = getEnvPath(`${__dirname}`);
       //envFilePath: '.env',
       envFilePath,
     }),
+    TaskModule,
     ...databasesConfigAsync,],
   controllers: [API5Controller],
   providers: [API5Service],

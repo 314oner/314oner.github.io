@@ -6,14 +6,9 @@ import { API5Service } from './api5.service';
 
 @Controller()
 export class API5Controller {
-  constructor(private readonly userService: API5Service) { }
+  constructor(private readonly orderService: API5Service) { }
   @MessagePattern({ cmd: 'ping' })
   ping(_: any) {
     return of('pong').pipe(delay(2000));
-  }
-
-  @EventPattern('new_user')
-  handleNewUser(data: any) {
-    return this.userService.handleNewUser(data);
   }
 }

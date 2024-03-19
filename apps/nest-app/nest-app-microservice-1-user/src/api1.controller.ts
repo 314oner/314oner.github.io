@@ -11,9 +11,4 @@ export class API1Controller {
   ping(_: any) {
     return of('pong').pipe(delay(2000));
   }
-
-  @EventPattern('new_user')
-  handleNewUser(data: any) {
-    return this.userService.handleNewUser(data);
-  }
 }

@@ -7,6 +7,9 @@ export class Task {
     id: number;
 
     @Column()
+    name: string;
+
+    @Column()
     description: string;
 
     @Column()
@@ -16,7 +19,7 @@ export class Task {
     start_time: number;
 
     @Column()
-    duration: string;
+    duration: number;
 
     @Column()
     is_solved: boolean;
@@ -25,6 +28,8 @@ export class Task {
     notification_id: number;
 
     @Column()
-    created_at: string;
+    created_at: number;
 
+    @Column({ nullable: true })
+    updated_at: string;
 }

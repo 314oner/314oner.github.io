@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import { ClientProxyFactory, ClientsModule, Transport } from '@nestjs/microservices';
-
+import { getConfiguration } from './config/configuration';
 import { AuthGuard } from './services/guards/authorization.guard';
 import { PermissionGuard } from './services/guards/permission.guard';
 
@@ -10,10 +10,9 @@ import { UsersController } from './services/users/users.controller';
 import { TasksController } from './services/tasks/tasks.controller';
 import { OrdersController } from './services/orders/orders.controller';
 import { OrdersService } from './services/orders/orders.service';
-import { getConfiguration } from './config/configuration';
-
 import { PaymentsController } from './services/payments/payments.controller';
 import { PaymentsService } from './services/payments/payments.service';
+import { TasksService } from './services/tasks/tasks.service';
 
 @Module({
   imports: [
@@ -57,7 +56,7 @@ import { PaymentsService } from './services/payments/payments.service';
         },
       },
       {
-        name: 'TASK_SERVICE',
+        name: 'SERVICE_TASKS',
         transport: Transport.TCP,
         options: {
           host: '127.0.0.1',
@@ -122,10 +121,11 @@ import { PaymentsService } from './services/payments/payments.service';
       },
     ])
   ],
-  controllers: [OrdersController, PaymentsController],
+  controllers: [OrdersController, PaymentsController, TasksController],
   providers: [
     OrdersService,
-    PaymentsService
+    PaymentsService,
+    TasksService
   ],
 })
 export class AppModule { }

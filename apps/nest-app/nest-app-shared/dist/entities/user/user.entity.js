@@ -83,10 +83,6 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "profilePicture", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", Boolean)
-], User.prototype, "is_confirmed", void 0);
-__decorate([
     (0, typeorm_1.OneToMany)(() => post_entity_1.Post, (post) => post.user),
     __metadata("design:type", Array)
 ], User.prototype, "posts", void 0);
@@ -142,14 +138,6 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], User.prototype, "refreshToken", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", Function)
-], User.prototype, "compareEncryptedPassword", void 0);
-__decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
-    __metadata("design:type", Function)
-], User.prototype, "getEncryptedPassword", void 0);
 __decorate([
     (0, typeorm_1.BeforeInsert)(),
     (0, typeorm_1.BeforeUpdate)(),

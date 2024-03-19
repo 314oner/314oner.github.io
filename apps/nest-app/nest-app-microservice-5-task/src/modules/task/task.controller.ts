@@ -1,19 +1,19 @@
-import { Controller, HttpStatus } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
+import { Controller, HttpStatus, Inject } from '@nestjs/common';
+import { MessagePattern, ClientProxy } from '@nestjs/microservices';
 
 import { TaskService } from './task.service';
-import { ITask } from './interfaces/task.interface';
-import { ITaskUpdateParams } from './interfaces/task-update-params.interface';
-import { ITaskSearchByUserResponse } from './interfaces/task-search-by-user-response.interface';
-import { ITaskDeleteResponse } from './interfaces/task-delete-response.interface';
-import { ITaskCreateResponse } from './interfaces/task-create-response.interface';
-import { ITaskUpdateByIdResponse } from './interfaces/task-update-by-id-response.interface';
 
-@Controller()
+@Controller('order')
 export class TaskController {
-  constructor(private readonly taskService: TaskService) { }
+  constructor(
+    private readonly taskService: TaskService,
+  ) { }
+  @MessagePattern({ cmd: 'task_create' })
+  create(data: any) {
+    return this.taskService.createTask(data);
+  }
 
-  @MessagePattern('task_search_by_user_id')
+  @MessagePattern({ cmd: 'task_search_by_user_id' })
   public async taskSearchByUserId(
     userId: number,
   ): Promise<any> {
@@ -37,38 +37,23 @@ export class TaskController {
     return result;
   }
 
-  @MessagePattern('task_create')
-  public async taskCreate(taskBody: any): Promise<any> {
-    let result: any;
+  @MessagePattern({ cmd: 'task_find' })
+  find(paramId: string) {
+    return this.taskService.find(paramId);
+  }
 
-    if (taskBody) {
-      try {
-        taskBody.notification_id = null;
-        taskBody.is_solved = false;
-        const task = await this.taskService.createTask(taskBody);
-        result = {
-          status: HttpStatus.CREATED,
-          message: 'task_create_success',
-          task,
-          errors: null,
-        };
-      } catch (e) {
-        result = {
-          status: HttpStatus.PRECONDITION_FAILED,
-          message: 'task_create_precondition_failed',
-          task: null,
-          errors: e.errors,
-        };
-      }
-    } else {
-      result = {
-        status: HttpStatus.BAD_REQUEST,
-        message: 'task_create_bad_request',
-        task: null,
-        errors: null,
-      };
-    }
+  @MessagePattern({ cmd: 'task_all' })
+  all() {
+    return this.taskService.all();
+  }
 
-    return result;
+  @MessagePattern({ cmd: 'task_cancel' })
+  cancel(paramId: number) {
+    return this.taskService.cancel(paramId);
+  }
+
+  @MessagePattern({ cmd: 'task_pay' })
+  pay(data: any) {
+    return this.taskService.pay(data);
   }
 }

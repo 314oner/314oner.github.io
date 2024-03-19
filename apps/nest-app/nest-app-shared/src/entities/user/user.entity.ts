@@ -1,4 +1,3 @@
-//@ts-nocheck
 import {
   BeforeInsert,
   BeforeUpdate,
@@ -24,19 +23,15 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-
   @Column({ nullable: false })
   firstName: string;
-
 
   @Column({ nullable: false })
   lastName: string;
 
-
   @IsEmail()
   @Column({ unique: true, nullable: false })
   email: string;
-
 
   @Column({ nullable: false })
   password: string;
@@ -48,19 +43,13 @@ export class User {
   })
   role: UserRole;
 
-
   @Column({
     default: 'https://via.placeholder.com/600/24f355',
   })
   profilePicture: string;
 
-  @Column({ nullable: true })
-  is_confirmed?: boolean;
-
-
   @OneToMany(() => Post, (post) => post.user)
   posts: Post[];
-
 
   @OneToMany(() => Comment, (comment) => comment.user)
   comments: Comment[];
@@ -68,55 +57,38 @@ export class User {
   @OneToMany(() => Like, (like) => like.user)
   likedPosts: Like[];
 
-
   @Column({ nullable: true })
   username?: string;
-
 
   @Column({ nullable: true })
   name?: string;
 
-
   @Column({ nullable: true })
   verified?: boolean;
-
 
   @Column({ nullable: true })
   hashedPassword?: string;
 
-
   @Column({ nullable: true })
   salt?: string;
-
 
   @Column({ nullable: true })
   updated?: Date;
 
-
   @Column({ default: Date.now })
   created?: Date;
-
 
   @Column({ nullable: true })
   seller?: boolean;
 
-
   @Column({ nullable: true })
   surname?: string;
-
 
   @Column({ nullable: true })
   phoneNumber?: string;
 
-
   @Column({ nullable: true })
   refreshToken?: string;
-
-  @Column({ nullable: true })
-  compareEncryptedPassword?: (password: string) => boolean;
-
-  @Column({ nullable: true })
-  getEncryptedPassword?: (password: string) => string;
   /////////////////////HASHFNS///////////////////////////
   @BeforeInsert()
   @BeforeUpdate()

@@ -14,7 +14,6 @@ export declare class User {
     password: string;
     role: UserRole;
     profilePicture: string;
-    is_confirmed?: boolean;
     posts: Post[];
     comments: Comment[];
     likedPosts: Like[];
@@ -29,7 +28,5 @@ export declare class User {
     surname?: string;
     phoneNumber?: string;
     refreshToken?: string;
-    compareEncryptedPassword?: (password: string) => boolean;
-    getEncryptedPassword?: (password: string) => string;
     hashPassword(): Promise<void>;
 }

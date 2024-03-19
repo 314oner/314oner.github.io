@@ -9,7 +9,7 @@
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "node ./lib/cjs/cli.js",
     "clean": "rimraf ./lib ./tsconfig.build.tsbuildinfo",
-    "build": "tsc -b ."
+    "build": "pnpm run clean && tsc -b ."
   },
   "keywords": [],
   "author": "",
