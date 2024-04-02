@@ -3,9 +3,9 @@ servers:
   - url: https://localhost:2989/
     description: Default server
 info:
-  title: Order
+  title: Order microservice.
   version: 1.0.0
-  description: Sample description.
+  description: microservice-11-order
 paths:
   'order/create':
     post:

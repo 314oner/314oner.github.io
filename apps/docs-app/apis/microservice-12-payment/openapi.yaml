@@ -3,9 +3,9 @@ servers:
   - url: https://localhost:2988/
     description: Default server
 info:
-  title: Payment
+  title: Payment microservice.
   version: 1.0.0
-  description: Payment microservice.
+  description: microservice-12-payment
 paths:
   /pay/all:
     get:

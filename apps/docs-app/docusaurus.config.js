@@ -1,6 +1,7 @@
 // @ts-nocheck
-// @ts-ignore
 const { DOCUSAURUS_VERSION } = require('@docusaurus/utils');
+const { themes } = require('prism-react-renderer');
+
 const defaultLocale = 'en';
 const organizationName = '314oner';
 const projectName = '314oner.github.io';
@@ -151,6 +152,10 @@ module.exports = {
         id: 'announcementBar_1',
         content: '🥳 A new release will be coming soon',
       },
+      prism: {
+        theme: themes.github,
+        darkTheme: themes.dracula,
+      },
     }),
 
   plugins: [
@@ -204,9 +209,7 @@ module.exports = {
             },
             template: 'api.mustache', // Customize API MDX with mustache template
             downloadUrl:
-              'https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml',
-            //downloadUrl:
-            //  'https://raw.githubusercontent.com/314oner/314oner.github.io/main/apps/docs-app/apis/microservice-14-pet.yaml',
+              'https://raw.githubusercontent.com/314oner/314oner.github.io/main/apps/docs-app/apis/microservice-14-pet.yaml',
             hideSendButton: false,
             //showSchemas: true,
           },
@@ -245,16 +248,3 @@ module.exports = {
     },
   ],
 };
-/*
-async function createConfig() {
-  const lightTheme = (await import('./src/utils/prismLight.mjs')).default;
-  const darkTheme = (await import('./src/utils/prismDark.mjs')).default;
-  // @ts-expect-error: we know it exists, right
-  config.themeConfig.prism.theme = lightTheme || undefined;
-  // @ts-expect-error: we know it exists, right
-  config.themeConfig.prism.darkTheme = darkTheme || undefined;
-  return config;
-}
-
-module.exports = createConfig;
-*/
