@@ -1,0 +1,95 @@
+openapi: 3.0.3
+servers:
+  - url: https://localhost:2989/
+    description: Default server
+info:
+  title: Order
+  version: 1.0.0
+  description: Sample description.
+paths:
+  'order/create':
+    post:
+      tags:
+        - order
+      summary: Create order
+      description: ''
+      responses:
+        200:
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: '123'
+                phone:
+                  type: string
+                  example: '123'
+                price:
+                  type: number
+                  example: '123'
+        description: ''
+        required: true
+  'order/find/{id}':
+    get:
+      tags:
+        - order
+      summary: Find order by ID
+      description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ID of order to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: OK
+  /order/all:
+    get:
+      summary: List All Orders
+      description: Orders
+      responses:
+        200:
+          description: OK
+  'order/cancel':
+    post:
+      tags:
+        - order
+      summary: Delete order by ID
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orderId:
+                  type: string
+                  example: '123'
+      responses:
+        200:
+          description: OK
+  'order/pay':
+    post:
+      tags:
+        - order
+      summary: Confirm order
+      description: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orderId:
+                  type: string
+                  example: '123'
+      responses:
+        200:
+          description: OK

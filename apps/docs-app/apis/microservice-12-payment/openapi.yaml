@@ -1,0 +1,16 @@
+openapi: 3.0.3
+servers:
+  - url: https://localhost:2988/
+    description: Default server
+info:
+  title: Payment
+  version: 1.0.0
+  description: Payment microservice.
+paths:
+  /pay/all:
+    get:
+      summary: Get all orders
+      description: Orders
+      responses:
+        200:
+          description: OK
