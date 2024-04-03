@@ -1414,6 +1414,9 @@ importers:
       '@snowpack/plugin-webpack':
         specifier: 3.0.0
         version: 3.0.0
+      '@tsconfig/node12':
+        specifier: 12.1.3
+        version: 12.1.3
       '@types/jsonp':
         specifier: ~0.2.2
         version: 0.2.3
@@ -6843,6 +6846,10 @@ packages:
 
   /@tsconfig/node12@1.0.11:
     resolution: {integrity: sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==}
+
+  /@tsconfig/node12@12.1.3:
+    resolution: {integrity: sha512-3dneYOMd/Xi7/3FRxncBRB2VpES2ykiEfDIRES3ipf9+XEiC/7982kbaJXV5aPwgER7VQZ0KtE7ZR4HhxTYneg==}
+    dev: true
 
   /@tsconfig/node14@1.0.3:
     resolution: {integrity: sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==}

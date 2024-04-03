@@ -1,12 +1,25 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": ["**/.env"],
   "pipeline": {
     "dev": {
       "cache": false
     },
+    "snowpack": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "lib/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
     }
-  }
+  },
+  "globalEnv": ["SECRET"]
 }

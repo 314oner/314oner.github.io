@@ -28,10 +28,13 @@ export const useApi = (endpoint: ENDPOINTS) => {
     error: '',
     data: [],
   });
-  const env = null || `process.env.NODE_ENV=development`; //TODO: add process for production
-  const path = env
-    ? `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/db/${endpoint}.json`
-    : `http://localhost:3001/api/${endpoint}`;
+  const env = `process.env.NODE_ENV=development`; //TODO: add process for production
+
+  // eslint-disable-next-line no-extra-boolean-cast
+  const path = !!env
+    ? `http://localhost:4999/api/${endpoint}`
+    : `https://raw.githubusercontent.com/314oner/314oner.github.io/gh-pages/db/${endpoint}.json`;
+
   const setPartData = (partialData: {
     state: string;
     data?: unknown;
