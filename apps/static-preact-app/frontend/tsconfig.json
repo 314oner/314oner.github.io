@@ -1,0 +1,56 @@
+{
+  // This is an alias to @tsconfig/node12: https://github.com/tsconfig/bases
+  "extends": "ts-node/node12/tsconfig.json",
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "jsx": "react",
+      "allowJs": true,
+      "alwaysStrict": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "lib": ["dom", "esnext"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noEmit": true,
+      "noImplicitAny": true,
+      "removeComments": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "strictNullChecks": true,
+      "target": "es6",
+      "baseUrl": "./src",
+      "paths": {
+        "@servers/*": ["../backend/*"]
+      }
+    }
+  },
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types"],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "ignoreDeprecations": "5.0",
+    "importsNotUsedAsValues": "error",
+    "incremental": true,
+    "outDir": "dist",
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo",
+    "baseUrl": "./src",
+    "paths": {
+      "@servers/*": ["../backend/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

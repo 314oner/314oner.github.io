@@ -1,0 +1,36 @@
+{
+  "name": "@static-preact-app/backend",
+  "version": "3.0.2",
+  "private": true,
+  "author": "Alexander Gverdtsiteli",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/314oner/314oner.github.io/issues"
+  },
+  "homepage": "https://github.com/314oner/314oner.github.io#readme",
+  "main": "server.js",
+  "scripts": {
+    "transpile": "tsc --build tsconfig.json",
+    "save-json-api": "node ./scripts/save-json-api.js",
+    "swap": "npm run transpile && npm run save-json-api",
+    "build": "rm ../build/db/*.json ../build/db/*.js && npm run swap"
+  },
+  "devDependencies": {
+    "@types/node": "18",
+    "json-server": "0.17.4",
+    "node-fs": "0.1.7",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "body-parser": "1.20.2",
+    "connect-pause": "0.1.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "yarn": ">=1.22.0"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "volta": {
+    "extends": "../../../package.json"
+  }
+}

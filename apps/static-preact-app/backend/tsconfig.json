@@ -1,0 +1,17 @@
+{
+  "ts-node": {
+    // Tell ts-node CLI to install the --loader automatically
+    "esm": true
+  },
+  "compilerOptions": {
+    "outDir": "../build/db",
+    "rootDir": "./src",
+    "target": "es6",
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true
+  },
+  "include": ["./src/index.ts", "./src/data.json"],
+  "exclude": []
+}

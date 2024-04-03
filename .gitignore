@@ -1,1 +1,16 @@
 node_modules
+.history/
+
+
+.vercel
+.DS_Store
+
+coverage
+
+*.typegen.ts
+
+.turbo/
+**/tsconfig.tsbuildinfo
+**/tsconfig.*.tsbuildinfo
+
+.netlify

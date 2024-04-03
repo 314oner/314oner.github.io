@@ -1,7 +1,8 @@
 # Input
+
 import APITable from '@site/src/components/APITable';
 
-## Rule Configuration {#configuration}
+## Rule Configuration
 
 Accepted fields:
 
@@ -10,24 +11,25 @@ Accepted fields:
 ```
 
 | Option | Type | Default | Description |
-| --- | --- | --- | --- |
-| none | none | none | none |
+| ------ | ---- | ------- | ----------- |
+| none   | none | none    | none        |
+
 ```mdx-code-block
 </APITable>
 ```
 
 Open [`http://localhost:3000/universal-components-library/Input`](http://localhost:3000/universal-components-library/Input)
 
-```jsx title="/pages/universal-components-library/Input.tsx"
+```jsx title="/pages/universal-components-library/Input.jsx"
 import React from 'react';
 import Layout from '@theme/Layout';
 import { Input } from '@314oner_npm/universal-components-library';
 
 export default function InputDocs() {
-    return (
-        <Layout title="Input" description="Input component">
-            <Input />
-        </Layout>
-    );
+  return (
+    <Layout title="Input" description="Input component">
+      <Input />
+    </Layout>
+  );
 }
 ```
