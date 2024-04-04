@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl, { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Image from '@theme/IdealImage';
 import Quotes from '@site/src/data/quotes';
@@ -25,7 +25,6 @@ function HeroBanner() {
           />
           <span
             className={styles.heroTitleTextHtml}
-            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: translate({
                 id: 'homepage.hero.title',

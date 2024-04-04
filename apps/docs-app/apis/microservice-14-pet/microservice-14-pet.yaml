@@ -7,9 +7,11 @@ servers:
   - url: http://127.0.0.1:4010
     description: Prism Mock API (local)
 info:
-  title: Petstore microservice.
-  description: microservice-14-pet
+  description: |
+    Petstore server
+
   version: 2.0.0
+  title: Swagger Petstore YAML
   termsOfService: 'http://swagger.io/terms/'
   contact:
     name: API Support

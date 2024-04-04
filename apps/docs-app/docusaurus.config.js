@@ -15,6 +15,7 @@ module.exports = {
   baseUrl: '/',
   organizationName,
   projectName,
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   trailingSlash: isDeployPreview,
@@ -35,7 +36,7 @@ module.exports = {
             return `https://github.com/314oner/314oner.github.io/edit/master/apps/docs-app/${nextVersionDocsDirPath}/${docPath}`;
           },
           docLayoutComponent: '@theme/DocPage',
-          docItemComponent: '@theme/ApiItem', // Derived from docusaurus-theme-openapi
+          docItemComponent: '@theme/ApiItem', // docusaurus-theme-openapi
         },
         blog: false,
         theme: {
@@ -76,11 +77,11 @@ module.exports = {
             label: '314oner.github.io',
           },
           {
-            to: '/repositories',
-            label: 'My repositories',
+            to: '/community/repositories',
+            label: 'Repositories',
             position: 'left',
+            activeBaseRegex: `/community/`,
           },
-
           {
             type: 'dropdown',
             label: 'Documentation',
@@ -225,10 +226,29 @@ module.exports = {
       },
     ],
     [
+      'client-redirects',
+      {
+        fromExtensions: ['html'],
+        createRedirects(routePath) {
+          // Redirect to /docs from /docs/introduction (now docs root doc)
+          if (routePath === '/docs' || routePath === '/docs/') {
+            return [`${routePath}/introduction`];
+          }
+          return [];
+        },
+        redirects: [
+          {
+            from: ['/community/repositories'],
+            to: '/community/repositories',
+          },
+        ],
+      },
+    ],
+    [
       'docusaurus-portfolio-plugin',
       {
         username: '314oner',
-        path: '/repositories',
+        path: '/community/repositories',
         pageTitle: 'My repositories',
         pageDescription: 'My repositories.',
         repoOptions: {

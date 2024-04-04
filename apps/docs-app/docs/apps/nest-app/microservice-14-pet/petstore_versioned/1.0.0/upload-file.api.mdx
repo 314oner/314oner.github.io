@@ -1,0 +1,45 @@
+---
+id: upload-file
+title: 'uploads an image'
+description: ''
+sidebar_label: 'uploads an image'
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVk2T2zYM/SscntoZW9q6nR58qpuPjqdpd2e9PXQST0JLkMVEEhmSslfx6L8XIGlZ/ti2J1ME8AiAD48+cCe2ls/fcw2Oryc8B5sZqZ1UDZ9zPuFKgxH0ucxxo9WVEvlbWQGatDCiBgeGAA68wQ90QSB0nXBJAFq4kl+iLl8zVTD0Y06xVufCEZqBr600gKc408KE26yEWvD5gbtOE7BsHGzBoGuhTC1c2Pr5J973awq3WjUWLEXM7u7o5/xY22YZWFu0FRuKQrBMIW7jyF9oXcnMG9LPloIO12mozWfIHJVvCMbJcGSmcvjPZH+c8X4SXQZX64xstmSoMT2xvWWjKOkq2lpo+Rhrxf2eTBay1kjX+WvAvlqnDHwULfYeb3aPJpjTtu+yyMN6Hbr2tQXrflV5F4q42QuVOXBTzAVEfbMnMc1RsRvZCNPxkB+SpFREH62s7xyxYs5TzCM9eL70aWDWsqb6qSKzO/KqNRU6l85pO0/TY3mJ3YstdjiRKt3Nrjj2GgrRVo4FIGzu/8Gxosk36vkKbBX2B7D1qeUrakVgwEXjL+n3G/JdeAYS7ZH0gu1LHCSGPHLIKGwg61RryEm1jWMZDgNehhSVTT409wtEnTFpGX4rJpgVBaBzk7MaD2U+IWB70RH8Vu6A0OKJGM8nA4EpP+pYUam9z1zWdNcy3DsalZHf/M3/NbTshY4JLVOPl+aYpyIK2AzHwsOOiDfntcpl0dHUWyabs0rPaDn362D3G4FCeNDHL9Bdt/WtMsyV2BYrsAqY+Koz0bDWAhqAYSTDSPbJasgwySl+fKIeOSR+8BiXzApZkaSdtQwxfsfDJ0eNO2YTVa7EjIkXPX0X6jrJh9i6yCD2Q3KX3PkDiOXBx+/x05yvQpfZEPv34o93ZAdT2/tihUgyg9P1jG7Fu6RR20Tm7zVmvnhYslWrtTLUdpxiWYV6HM72LycMNJ7Py1a6st0kmarTR8hVVnWpoV/SrecpXr0v+zzGBMckxmJmfmdgkg9LtFcOUbkneHbjZnlQD58L8+XijFTW23Mg7/UyGlkHSKQ7kICOGqMFjjKb+Ttox7zf7/eJ8NZEmW0aQ236bvnqzZ+rN1MMSUpXV/7+SeFq0YyAg7Dh2DZMRnU7I8dIdfmJcQ6zT3UlkF99zOcQdTO81RM+P760Y+lEaSpJZNHrcNgICzjCfU/bKPSGXghc7oSRYkMsQ3nNpaU1ynOBygL/kt13j/GJ/p7dfsJv5n4coYbGZSeqFkKhfprjv4V+jY5xiiinYHsVTp4+EcIp9sWXiUQ+RC5Q9bR7Ica/7KThw7P0cL96QudNfAVr/5Tzgv7lkPREOb+Uz7jAjqJC/QOCMzVr
+sidebar_class_name: 'post api-method'
+info_path: apps/nest-app/microservice-14-pet/petstore_versioned/1.0.0/swagger-petstore-yaml
+custom_edit_url: null
+---
+
+import ApiTabs from '@theme/ApiTabs';
+import DiscriminatorTabs from '@theme/DiscriminatorTabs';
+import MethodEndpoint from '@theme/ApiExplorer/MethodEndpoint';
+import SecuritySchemes from '@theme/ApiExplorer/SecuritySchemes';
+import MimeTabs from '@theme/MimeTabs';
+import ParamsItem from '@theme/ParamsItem';
+import ResponseSamples from '@theme/ResponseSamples';
+import SchemaItem from '@theme/SchemaItem';
+import SchemaTabs from '@theme/SchemaTabs';
+import Markdown from '@theme/Markdown';
+import OperationTabs from '@theme/OperationTabs';
+import TabItem from '@theme/TabItem';
+
+<h1 className={'openapi__heading'}>uploads an image</h1>
+
+<MethodEndpoint
+  method={'post'}
+  path={'/pet/{petId}/uploadImage'}
+></MethodEndpoint>
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"petId","in":"path","description":"ID of pet to update","required":true,"schema":{"type":"integer","format":"int64"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/octet-stream"} value={"application/octet-stream-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+string
+
+</div></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+successful operation
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"code"} required={false} schemaName={"int32"} qualifierMessage={undefined} schema={{"type":"integer","format":"int32"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"code\": 0,\n  \"type\": \"string\",\n  \"message\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+

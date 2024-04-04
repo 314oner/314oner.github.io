@@ -1,0 +1,38 @@
+---
+id: delete-pet
+title: 'Deletes a pet'
+description: ''
+sidebar_label: 'Deletes a pet'
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVW1v2zYQ/isEP22AI2VBsQ/GMCxbvCFo1gR19qHojPYinSSiksiSlB3X0H/f3UmxLSfZsE+i7vXhcy/c6Qhl0POP2mHUq5nOMWTeuGhsq+daz7R16IF/r3MS5FhjxDuynWkHHhr68+y/0y39kAU48+kLbklvOEKFkKOnP49fO+ORghRQB5zpkFXYgJ7vdNw69gzRm7bU/UzjIzSuZtmvCB69+un+9u3i3c+k2+chvIRozOIgVvoUPKFUJlfRqgH1BET03UsYTBuxFLyF9Q3EQfTjG933K3YPzrYBA3u8OT/nzzTndbuGmpISOkWnDsmR0mDWeRO3whOpQrQeP0FHoIn5DalwzmJBCPlwXnFG4reyB+KFdfbSKdmkOyGh15zBr58K0fmaiY/RhXmaPqVLwgZKulpibLq+eEbWFRbQ1VENgYTo/44ToM0f7OOzYMtBvg+2OlCwZMYHAk+IOKXyD6IQsgxDkBJCBLWpTI3KeRsxi9Qrams7z0a2a6PKqLDYRkPtlfzd3l5S1AtlgqJ/q0AFKKiTCJlqKKkSQKg2sOXwpVkjRxszkj9dauwJy/iYsaK2G0FuqDtNZiKfWWm9+SYz8teeslcYo+lIJV6aE05bcukyGjEJe9QIc93Y3BRbbqSgTDu56aRN5nIe9CLoe265pzF8Ruvv1qtYES1BZmwmt86gVV1AUqAiT0We6nNwmBHIM/r5zBxFDHGwOL6yKkzNO2BCGcV4KzvgX5cC4zRtYZ+DvBupGztI/ZCcJ+eSgLt8sBEZpzRRVsVyYFntfT9c/nnDevRNuC2WFMlkeCjPUVXEJCXbzLYRMqnriPzy7lotO+esZ9ppWZh6uE9EaH45xCDldF5KE6vuIclsk77H3Gb1NvX85f32eEall2tPffxgmIy+hEwk+04St8S13DZQx3t8jMdkSVAJn4P/cpIjNU05DSRWr0dj7T4ktTvS4jsmxgGNsrqQGnTHfb/ZbBIQbWJ9mY6uIb25/m3xbrk4I5ekik0t9Xc2xAbao8BXsulobLmdT1fLTkpEUz48TmO7RYKeuhqoufoRzG5clMPDNtPz4b2gTVRRRpbvdg8QkCa271n8tUPPC5qOa/AGHripaJvmJvD58G69iue79+Pr8r164el5EerTuLQ8GsN7IfeSyR2fuH5FhuPE/D9Ar2Udoh9mcp948uJcLW4W9wvujXE9n67D8UCU0cb5BxkS12I=
+sidebar_class_name: 'delete api-method'
+info_path: apps/nest-app/microservice-14-pet/petstore_versioned/1.0.0/swagger-petstore-yaml
+custom_edit_url: null
+---
+
+import ApiTabs from '@theme/ApiTabs';
+import DiscriminatorTabs from '@theme/DiscriminatorTabs';
+import MethodEndpoint from '@theme/ApiExplorer/MethodEndpoint';
+import SecuritySchemes from '@theme/ApiExplorer/SecuritySchemes';
+import MimeTabs from '@theme/MimeTabs';
+import ParamsItem from '@theme/ParamsItem';
+import ResponseSamples from '@theme/ResponseSamples';
+import SchemaItem from '@theme/SchemaItem';
+import SchemaTabs from '@theme/SchemaTabs';
+import Markdown from '@theme/Markdown';
+import OperationTabs from '@theme/OperationTabs';
+import TabItem from '@theme/TabItem';
+
+<h1 className={'openapi__heading'}>Deletes a pet</h1>
+
+<MethodEndpoint method={'delete'} path={'/pet/{petId}'}></MethodEndpoint>
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"petId","in":"path","description":"Pet id to delete","required":true,"schema":{"type":"integer","format":"int64"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"api_key","in":"header","required":false,"schema":{"type":"string"},"example":"Bearer <TOKEN>"}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"400"} value={"400"}><div>
+
+Invalid pet value
+
+</div><div></div></TabItem></ApiTabs></div></div>
+

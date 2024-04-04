@@ -5,9 +5,11 @@ servers:
   - url: https://petstore.swagger.io/sandbox
     description: Sandbox server
 info:
-  title: Petstore microservice.
-  description: microservice-14-pet-1.0.0
+  description: |
+    Petstore server 1.0.0
+
   version: 1.0.0
+  title: Swagger Petstore YAML
   termsOfService: 'http://swagger.io/terms/'
   contact:
     name: API Support
