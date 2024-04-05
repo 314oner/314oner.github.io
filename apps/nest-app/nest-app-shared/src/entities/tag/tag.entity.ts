@@ -1,16 +1,16 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ name: 'tags' })
+@Entity('tag')
 export class Tag {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: false })
+  @Column()
   name: string;
 
-  @Column({ nullable: false })
-  color: string;
-
-  @Column({ nullable: false })
+  @Column()
   description: string;
+
+  @Column()
+  color: string;
 }

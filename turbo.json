@@ -14,6 +14,11 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", "lib/**"]
     },
+    "start": {
+      "dependsOn": ["^build"],
+      "outputs": [],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
+    },
     "clean": {
       "cache": false
     },

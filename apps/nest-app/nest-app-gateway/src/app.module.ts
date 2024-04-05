@@ -8,6 +8,8 @@ import { OrdersService } from './services/orders/orders.service';
 import { PaymentsController } from './services/payments/payments.controller';
 import { PaymentsService } from './services/payments/payments.service';
 import { TasksService } from './services/tasks/tasks.service';
+import { TagsController } from './services/tags/tags.controller';
+import { TagsService } from './services/tags/tags.service';
 
 @Module({
   imports: [
@@ -67,7 +69,7 @@ import { TasksService } from './services/tasks/tasks.service';
         },
       },
       {
-        name: 'API_7',
+        name: 'SERVICE_TAG',
         transport: Transport.TCP,
         options: {
           host: '127.0.0.1',
@@ -132,7 +134,12 @@ import { TasksService } from './services/tasks/tasks.service';
       },
     ]),
   ],
-  controllers: [OrdersController, PaymentsController, TasksController],
-  providers: [OrdersService, PaymentsService, TasksService],
+  controllers: [
+    OrdersController,
+    PaymentsController,
+    TasksController,
+    TagsController,
+  ],
+  providers: [OrdersService, PaymentsService, TasksService, TagsService],
 })
 export class AppModule {}

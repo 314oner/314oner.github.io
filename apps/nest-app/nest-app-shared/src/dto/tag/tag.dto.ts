@@ -5,7 +5,7 @@ export class TagDto {
   @IsNotEmpty()
   readonly name: string;
 
-  @IsString({ message: 'Оптсание должно быть строкой' })
+  @IsString({ message: 'Описание должно быть строкой' })
   @IsNotEmpty()
   readonly description: string;
 
