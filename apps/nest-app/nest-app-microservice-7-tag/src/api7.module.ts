@@ -6,6 +6,8 @@ import { ConfigModule as FileConfigModule } from 'nestjs-config';
 import { API7Controller } from './api7.controller';
 import { API7Service } from './api7.service';
 
+import { TagModule } from './modules/tag/tag.module';
+
 import ormConfig, { getDatabaseSystemIds } from './config/orm.config';
 
 import * as path from 'path';
@@ -34,6 +36,7 @@ const envFilePath: string = getEnvPath(`${__dirname}`);
       //envFilePath: '.env',
       envFilePath,
     }),
+    TagModule,
     ...databasesConfigAsync,
   ],
   controllers: [API7Controller],

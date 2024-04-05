@@ -1095,6 +1095,9 @@ importers:
 
   apps/nest-app/nest-app-microservice-7-tag:
     dependencies:
+      '@apps/nest-app-shared':
+        specifier: ^1.1.70
+        version: link:../nest-app-shared
       '@nestjs/common':
         specifier: 10.3.3
         version: 10.3.3(class-validator@0.14.1)(reflect-metadata@0.2.1)(rxjs@7.8.1)

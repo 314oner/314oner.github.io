@@ -21,7 +21,7 @@
     "nest:dev": "turbo run dev --filter=nest-app-cli",
     "nest:start": "pnpm nest:build & pnpm run nest:dev",
     "docs:build": "turbo run build --filter=docs-app",
-    "docs:dev": "turbo run start --filter=docs-app",
+    "docs:start": "turbo run start --filter=docs-app",
     "lint:ws": "pnpm dlx sherif@latest -i react -i react-server-dom-webpack -i react-dom",
     "postinstall": "pnpm lint:ws"
   },

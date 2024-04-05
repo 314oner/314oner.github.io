@@ -1,5 +1,6 @@
 import { registerAs } from '@nestjs/config';
 import * as dotenv from 'dotenv';
+import { Tag } from '@apps/nest-app-shared';
 
 dotenv.config(); // used to get process.env access prior to AppModule instanciation
 
@@ -19,7 +20,7 @@ export default registerAs('orm', () => {
       password: process.env[`DB_${systemId}_PASSWORD`],
       database: process.env[`DB_${systemId}_DATABASE`],
       synchronize: process.env[`DB_${systemId}_SYNCHRONIZE`] === 'true',
-      entities: [__dirname + '/../../**/*.entity{.ts,.js}'],
+      entities: [Tag],
     };
   });
 

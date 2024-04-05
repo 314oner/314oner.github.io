@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/314oner/314oner.github.io#readme",
   "dependencies": {
+    "@apps/nest-app-shared": "^1.1.70",
     "@nestjs/common": "10.3.3",
     "@nestjs/config": "3.2.0",
     "@nestjs/core": "10.3.3",
