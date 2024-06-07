@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2021",
+    "declaration": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "useUnknownInCatchVariables": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@shared/common/*": ["nest-app-shared/common/src/*"],
+      "@app/gateway/*": ["nest-app-microservices/gateway-1-http/src/*"],
+      "@app/likes/*": ["nest-app-microservices/likes-8-tcp/src/*"],
+      "@app/posts/*": ["nest-app-microservices/posts-9-tcp/src/*"],
+      "@app/orders/*": ["nest-app-microservices/orders-11-tcp/src/*"],
+      "@app/payments/*": ["nest-app-microservices/payments-12-tcp/src/*"],
+      "@app/pets/*": ["nest-app-microservices/pets-14-tcp/src/*"],
+      "@app/tags/*": ["nest-app-microservices/tags-7-tcp/src/*"],
+      "@app/tasks/*": ["nest-app-microservices/tasks-5-tcp/src/*"],
+      "@app/users/*": ["nest-app-microservices/users-3-tcp/src/*"],
+      "@app/auth/*": ["nest-app-microservices/auth-2-tcp/src/*"],
+      "@app/events/*": ["nest-app-microservices/events-15-tcp/src/*"]
+    }
+  }
+}

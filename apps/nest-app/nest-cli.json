@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "monorepo": true,
+  "projects": {
+    "common": {
+      "type": "library",
+      "root": "nest-app-shared/common",
+      "entryFile": "index",
+      "sourceRoot": "nest-app-shared/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-shared/common/tsconfig.lib.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "nest-app-microservices/gateway-1",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/gateway-1/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/gateway-1/tsconfig.app.json"
+      }
+    },
+    "order": {
+      "type": "application",
+      "root": "nest-app-microservices/order-11",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/order-11/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/order-11/tsconfig.app.json"
+      }
+    },
+    "payment": {
+      "type": "application",
+      "root": "nest-app-microservices/payment-12",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/payment-12/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/payment-12/tsconfig.app.json"
+      }
+    },
+    "tag": {
+      "type": "application",
+      "root": "nest-app-microservices/tag-7",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/tag-7/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/tag-7/tsconfig.app.json"
+      }
+    },
+    "user": {
+      "type": "application",
+      "root": "nest-app-microservices/user-2",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/user-2/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/user-2/tsconfig.app.json"
+      }
+    }
+  }
+}

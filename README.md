@@ -13,6 +13,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [vitejs](https://vitejs.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [NestJS](https://nestjs.com/)
 
 ## Structure
 
