@@ -1,0 +1,75 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+/.yarn/cache
+/.yarn/unplugged
+.yarn/cache
+.yarn/sdks
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.cjs
+.pnp.loader.mjs
+.vscode
+
+# etc
+apps/db
+
+# scripts
+npm
+deploy
+run
+
+# Production
+/dist
+/lib
+/build
+/build/*
+
+# Testing
+/coverage
+
+# Notes
+notes/*.md
+
+# Generated files
+.docusaurus
+.cache-loader
+tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo
+**/**/tsconfig.tsbuildinfo
+**/**/**/tsconfig.tsbuildinfo
+
+# misc
+.DS_Store
+.eslintcache
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# vscode
+.vscode
+node_modules
+.history/
+
+.env
+
+.vercel
+.DS_Store
+
+coverage
+
+*.typegen.ts
+
+.turbo/
+**/tsconfig.tsbuildinfo
+**/tsconfig.*.tsbuildinfo
+
+.netlify
