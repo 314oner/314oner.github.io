@@ -59,11 +59,31 @@ export default function FooterCom() {
             year={new Date().getFullYear()}
           />
           <div className="flex gap-6 mt-4 sm:mt-0 sm:justify-center">
-            <Footer.Icon href="#" icon={BsFacebook} />
-            <Footer.Icon href="#" icon={BsInstagram} />
-            <Footer.Icon href="#" icon={BsTwitter} />
-            <Footer.Icon href="https://github.com/314oner" icon={BsGithub} />
-            <Footer.Icon href="#" icon={BsDribbble} />
+            <Footer.Icon
+              href="#"
+              ariaLabel="Логотип фейсбука"
+              icon={BsFacebook}
+            />
+            <Footer.Icon
+              href="#"
+              ariaLabel="Логотип инстаграмма"
+              icon={BsInstagram}
+            />
+            <Footer.Icon
+              href="#"
+              ariaLabel="Логотит твитера"
+              icon={BsTwitter}
+            />
+            <Footer.Icon
+              href="https://github.com/314oner"
+              ariaLabel="Логотип гитхаба"
+              icon={BsGithub}
+            />
+            <Footer.Icon
+              href="#"
+              ariaLabel="Иконка главной страницы"
+              icon={BsDribbble}
+            />
           </div>
         </div>
       </div>

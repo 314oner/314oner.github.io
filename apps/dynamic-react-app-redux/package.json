@@ -1,7 +1,7 @@
 {
   "name": "dynamic-react-app-redux",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "type": "module",
   "author": "Alexander Gverdtsiteli",
   "license": "UNLICENSED",
@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "test": "cypress open",
+    "serve": "vite preview --port 5001"
   },
   "dependencies": {
     "@314oner_npm/universal-components-library": "3.1.0",
@@ -30,6 +31,9 @@
     "js-base64": "^3.7.7"
   },
   "devDependencies": {
+    "axe-core": "^4.9.1",
+    "cypress": "^13.12.0",
+    "cypress-axe": "^1.5.0",
     "@types/react-lazyload": "^3.2.3",
     "@types/react-redux": "^7.1.33",
     "@types/react-router-dom": "^5.3.3",
