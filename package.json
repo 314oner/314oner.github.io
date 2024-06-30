@@ -1,7 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "preact:start": "pnpm preact:backend-start & pnpm preact:frontend-start",
     "docs:build": "turbo run build --filter=docs-app",
     "docs:start": "turbo run start --filter=docs-app",
-    "lint:ws": "pnpm dlx sherif@latest -i react -i react-dom -i @314oner_npm/universal-components-library -i @docusarus/",
+    "lint:ws": "pnpm dlx sherif@latest -i @314oner_npm/universal-components-library -p @apps/docs-app",
     "postinstall": "pnpm lint:ws"
   },
   "author": "Alexander Gverdtsiteli",
@@ -46,6 +46,10 @@
     "rimraf": "5.0.5"
   },
   "lint-staged": {
+    "!(apps/dynamic-react-app-redux/cypress/**/*)*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
     "**/*.{js,ts,tsx}": [
       "eslint --fix"
     ],

@@ -48,22 +48,33 @@ export default function Header() {
         </span>
         github.io
       </Link>
-      <form onSubmit={handleSubmit}>
+      <form role="search" onSubmit={handleSubmit}>
         <TextInput
-          type="text"
-          placeholder="Искать..."
-          rightIcon={AiOutlineSearch}
+          title="Поиск по сайту"
+          aria-label="Введите свой поисковый запрос"
           className="hidden lg:inline"
-          value={searchTerm}
+          type="search"
+          id="search"
+          name="search"
           onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchTerm || ''}
+          placeholder="Поле ввода для поискового запроса"
+          required
         />
+        <Button
+          type="submit"
+          onClick={handleSubmit}
+          className="w-12 h-10 lg:hidden"
+          color="gray"
+          pill
+        >
+          <AiOutlineSearch title="Изображение для поля ввода" />
+        </Button>
       </form>
-      <Button className="w-12 h-10 lg:hidden" color="gray" pill>
-        <AiOutlineSearch />
-      </Button>
       <div className="flex gap-2 md:order-2">
         <Button
           className="hidden w-12 h-10 sm:inline"
+          aria-label="Переключить цветовую тему"
           color="gray"
           pill
           onClick={() => dispatch(toggleTheme())}

@@ -6,7 +6,11 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'wcag-green': '#428500',
+      },
+    },
   },
   plugins: [require('flowbite/plugin'), require('tailwind-scrollbar')],
 };
