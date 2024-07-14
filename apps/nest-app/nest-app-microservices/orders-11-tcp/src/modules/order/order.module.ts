@@ -2,7 +2,7 @@ import {
   OrdersConfigType,
   ordersConfig,
 } from '@app/orders/config/orders.config';
-import { OrderEntity } from '@app/orders/modules/order/entities/order.entity';
+import { OrderEntity } from '@app/orders/entities/order.entity';
 import { OrderController } from '@app/orders/modules/order/order.controller';
 import { OrderService } from '@app/orders/modules/order/order.service';
 import { OrderRepository } from '@app/orders/modules/order/repositories/order.repository';

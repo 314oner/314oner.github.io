@@ -1,7 +1,7 @@
+import { PostEntity } from '@app/posts/entities/post.entity';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm/repository/Repository';
-import { PostEntity } from './enitities/post.entity';
 const _ = require('lodash');
 @Injectable()
 export class PostService {

@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
+import { UserEntity } from '@app/users/entities/user.entity';
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AUTH_SERVICE_TOKEN } from '@shared/common/tokens';
 import { Repository } from 'typeorm';
-import { UserEntity } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
