@@ -1,7 +1,7 @@
+import { LikeEntity } from '@app/likes/entities/like.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { LikeEntity } from '../enitities/like.entity';
 @Injectable()
 export class LikeRepository {
   constructor(

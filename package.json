@@ -1,7 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "prepare": "husky install",
     "build": "turbo build",
-    "nest:dev": "echo \"Сегодня: $(date) 'GOTO => nest-app/*' :) \" ",
+    "nest:dev": "echo \"Сегодня: $(date) 'я живу здесь => apps/nest-app/*' :) \" ",
     "react:dev": "echo \"Сегодня: $(date) 'GOTO => dynamic-react-app-redux/*' :) \" ",
     "clean": "rm -rf node_modules **/node_modules",
     "clean:deep": "rm -rf node_modules **/node_modules **/.turbo **/dist **/lib **/.vercel",
@@ -21,7 +21,7 @@
     "preact:start": "pnpm preact:backend-start & pnpm preact:frontend-start",
     "docs:build": "turbo run build --filter=docs-app",
     "docs:start": "turbo run start --filter=docs-app",
-    "lint:ws": "pnpm dlx sherif@latest -i @314oner_npm/universal-components-library -p @apps/docs-app",
+    "lint:ws": "pnpm dlx sherif@latest -i @314oner_npm/universal-components-library -p @apps/docs-app -p @docusaurus/core",
     "postinstall": "pnpm lint:ws"
   },
   "author": "Alexander Gverdtsiteli",
@@ -61,7 +61,9 @@
     "yarn": "please-use-pnpm",
     "pnpm": ">= 8.14.1"
   },
-  "volta": {
-    "extends": "../../../package.json"
+  "pnpm": {
+    "overrides": {
+      "postman-code-generators": "1.10.1"
+    }
   }
 }

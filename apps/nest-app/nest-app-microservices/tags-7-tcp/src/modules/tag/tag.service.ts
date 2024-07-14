@@ -1,5 +1,5 @@
+import { TagEntity } from '@app/tags/entities/tag.entity';
 import { Injectable } from '@nestjs/common';
-import { TagEntity } from './enitities/tag.entity';
 import { TagRepository } from './repositories/tag.repository';
 @Injectable()
 export class TagService {

@@ -1,7 +1,7 @@
+import { PostEntity } from '@app/posts/entities/post.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PostEntity } from '../enitities/post.entity';
 @Injectable()
 export class PostRepository {
   constructor(

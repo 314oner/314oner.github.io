@@ -4,7 +4,7 @@ import { TypeOrmConfigService } from '@shared/common/modules/database/typeorm-co
 
 export interface IDatabaseModuleOptions {
   entities: string[];
-  migrations: string[];
+  //migrations: string[];
 }
 
 @Module({})
@@ -21,7 +21,7 @@ export class DatabaseModule {
             return {
               ...baseConfig,
               entities: moduleOptions.entities,
-              migrations: moduleOptions.migrations,
+              //migrations: moduleOptions.migrations,
             };
           },
           extraProviders: [TypeOrmConfigService],

@@ -1,7 +1,8 @@
-import { LikeEntity } from '@app/likes/modules/like/enitities/like.entity';
-import { PostEntity } from '@app/posts/modules/post/enitities/post.entity';
-import { TagEntity } from '@app/tags/modules/tag/enitities/tag.entity';
+import { LikeEntity } from '@app/likes/entities/like.entity';
+import { PostEntity } from '@app/posts/entities/post.entity';
+import { TagEntity } from '@app/tags/entities/tag.entity';
 import { UsersConfigType, usersConfig } from '@app/users/config/users.config';
+import { UserEntity } from '@app/users/entities/user.entity';
 import { UserRepository } from '@app/users/modules/user/repositories';
 import { UserController } from '@app/users/modules/user/user.controller';
 import { UserService } from '@app/users/modules/user/user.service';
@@ -11,7 +12,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AUTH_SERVICE_TOKEN } from '@shared/common/tokens';
 import { DoesNotExist } from '@shared/common/utils/validators/does-not-exist.validator';
-import { UserEntity } from './entities/user.entity';
 
 @Module({
   imports: [

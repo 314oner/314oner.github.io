@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
+import { OrderEntity } from '@app/orders/entities/order.entity';
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PAYMENTS_SERVICE_TOKEN } from '@shared/common/tokens';
 import { map } from 'rxjs';
 import { Repository, UpdateResult } from 'typeorm';
-import { OrderEntity } from './entities/order.entity';
 @Injectable()
 export class OrderService {
   constructor(
