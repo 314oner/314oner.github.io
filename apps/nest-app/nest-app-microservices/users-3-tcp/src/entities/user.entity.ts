@@ -1,5 +1,6 @@
 import { LikeEntity } from '@app/likes/entities/like.entity';
 import { PostEntity } from '@app/posts/entities/post.entity';
+import { Exclude } from 'class-transformer';
 import {
   BaseEntity,
   Column,
@@ -10,11 +11,11 @@ import {
   Unique,
   UpdateDateColumn,
 } from 'typeorm';
-import { UserInterface } from '../modules/user/interfaces';
+
 @Entity()
 @Unique(['username'])
 @Unique(['email'])
-export class UserEntity extends BaseEntity implements UserInterface {
+export class UserEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   public id!: string;
 
@@ -24,17 +25,28 @@ export class UserEntity extends BaseEntity implements UserInterface {
   @Column({ type: 'varchar', length: 255, select: true, unique: true })
   public email!: string;
 
+  @Exclude()
   @Column({ type: 'varchar' })
   public password!: string;
 
   @Column({ type: 'boolean' })
   public is_confirmed!: boolean;
 
+  @Column({ type: 'boolean', default: false })
+  public isAdmin!: boolean;
+
+  @Column({
+    type: 'varchar',
+    nullable: true,
+    default: 'https://www.gstatic.com/webp/gallery3/2_webp_a.webp',
+  })
+  public profile_picture!: string;
+
   @OneToMany(() => PostEntity, (post) => post.user)
-  posts: PostEntity[];
+  public posts!: PostEntity[];
 
   @OneToMany(() => LikeEntity, (like) => like.user)
-  likedPosts: LikeEntity[];
+  public likedPosts!: LikeEntity[];
 
   @CreateDateColumn({})
   public createdAt!: Date;

@@ -13,7 +13,7 @@ export const config = {
   multipleStatements: 'typeorm',
   entities: ['dist/nest-app-microservices/**/src/entities/*.entity.js'],
   migrationsRun: false,
-  dropSchema: false,
+  dropSchema: true,
   migrations: ['dist/nest-app-microservices/**/src/migrations/*.js'],
   namingStrategy: new SnakeNamingStrategy(),
 };

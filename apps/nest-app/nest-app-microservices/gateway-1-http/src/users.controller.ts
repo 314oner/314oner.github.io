@@ -20,6 +20,7 @@ import { ClientProxy } from '@nestjs/microservices/client/client-proxy';
 import { firstValueFrom } from 'rxjs';
 import { Authorization } from './decorators/authorization.decorator';
 import { IAuthorizedRequest } from './interfaces/common/authorized-request.interface';
+import { CreateGoogleUserDto } from './interfaces/user/dto/create-google-user.dto';
 import { CreateUserResponseDto } from './interfaces/user/dto/create-user-response.dto';
 import { CreateUserDto } from './interfaces/user/dto/create-user.dto';
 import { GetUserByTokenResponseDto } from './interfaces/user/dto/get-user-by-token-response.dto';
@@ -28,6 +29,7 @@ import { LoginUserDto } from './interfaces/user/dto/login-user.dto';
 import { IServiveTokenCreateResponse } from './interfaces/user/service-token-create-response.interface';
 import { IServiceUserCreateResponse } from './interfaces/user/service-user-create-response.interface';
 import { IServiceUserGetByIdResponse } from './interfaces/user/service-user-get-by-id-response.interface';
+import { IServiceUserGoogleCreateResponse } from './interfaces/user/service-user-google-create-response.interface';
 import { IServiceUserSearchResponse } from './interfaces/user/service-user-search-response.interface';
 
 @ApiBearerAuth('authorization')
@@ -44,7 +46,7 @@ export class UsersController {
     private readonly tokenServiceClient: ClientProxy,
   ) {}
 
-  @Post()
+  @Post('/sign-up')
   @ApiCreatedResponse({
     type: CreateUserResponseDto,
   })
@@ -100,7 +102,7 @@ export class UsersController {
     };
   }
 
-  @Post('/login')
+  @Post('/sign-in')
   @ApiCreatedResponse({
     type: LoginUserResponseDto,
   })
@@ -110,8 +112,6 @@ export class UsersController {
     const getUserResponse: IServiceUserSearchResponse = await firstValueFrom(
       this.userServiceClient.send('user_search_by_credentials', loginRequest),
     );
-    console.log(getUserResponse);
-
     if (getUserResponse.status !== HttpStatus.OK) {
       throw new HttpException(
         {
@@ -135,8 +135,32 @@ export class UsersController {
       message: createTokenResponse.message,
       data: {
         token: createTokenResponse.token,
+        user: getUserResponse.user,
       },
       //@ts-ignore
+      errors: null,
+    };
+  }
+  @Post('/auth/google')
+  public async createGoogleUser(
+    @Body() userRequest: CreateGoogleUserDto,
+  ): Promise<any> {
+    const createUserResponse: IServiceUserGoogleCreateResponse =
+      await firstValueFrom(
+        this.userServiceClient.send('user_google_create', userRequest),
+      );
+    const createTokenResponse: IServiveTokenCreateResponse =
+      await firstValueFrom(
+        this.tokenServiceClient.send('token_create', {
+          userId: createUserResponse.user.id,
+        }),
+      );
+    return {
+      message: createUserResponse.message,
+      data: {
+        user: createUserResponse.user,
+        token: createTokenResponse.token,
+      },
       errors: null,
     };
   }

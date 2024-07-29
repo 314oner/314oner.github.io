@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from '@shared/common/modules/database/typeorm-config.service';
 
 export interface IDatabaseModuleOptions {
+  migrations: string[];
   entities: string[];
-  //migrations: string[];
 }
 
 @Module({})
@@ -21,7 +21,7 @@ export class DatabaseModule {
             return {
               ...baseConfig,
               entities: moduleOptions.entities,
-              //migrations: moduleOptions.migrations,
+              migrations: moduleOptions.migrations,
             };
           },
           extraProviders: [TypeOrmConfigService],

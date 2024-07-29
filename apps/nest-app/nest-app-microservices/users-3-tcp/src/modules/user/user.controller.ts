@@ -145,4 +145,64 @@ export class UserController {
 
     return result;
   }
+
+  @MessagePattern('user_google_create')
+  public async createGoogleUser(userParams: any): Promise<any> {
+    let result: any;
+
+    if (userParams) {
+      const usersWithEmail = await this.userService.searchUserByEmail({
+        email: userParams.email,
+      });
+
+      if (usersWithEmail) {
+        const userUpdated = await this.userService.updateUserById(
+          userParams.id,
+          {
+            is_confirmed: true,
+            profile_picture: userParams.googlePhotoUrl,
+            isAdmin: true,
+          },
+        );
+        result = {
+          status: HttpStatus.OK,
+          message: 'user_google_update_success',
+          user: userUpdated,
+          errors: null,
+        };
+        return result;
+      } else {
+        try {
+          userParams.is_confirmed = false;
+          const createdUser = await this.userService.createGoogleUser(
+            userParams,
+          );
+          delete createdUser.password;
+          result = {
+            status: HttpStatus.CREATED,
+            message: 'user_google_create_success',
+            user: createdUser,
+            errors: null,
+          };
+          return result;
+        } catch (e) {
+          result = {
+            status: HttpStatus.PRECONDITION_FAILED,
+            message: 'user_google_create_precondition_failed',
+            user: null,
+            errors: e.errors,
+          };
+        }
+      }
+    } else {
+      result = {
+        status: HttpStatus.BAD_REQUEST,
+        message: 'user_google_create_bad_request',
+        user: null,
+        errors: null,
+      };
+    }
+
+    return result;
+  }
 }

@@ -1,9 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { authorizeUser } from './actionCreators';
 
-type State = { currentUser: any; loading: any; error: any };
+export interface State {
+  currentUser: any;
+  loading: any;
+  error: any;
+}
 
 const initialState: State = {
   currentUser: null,
+  //currentUser: {} as Users.IUser,
   error: null,
   loading: false,
 };
@@ -61,6 +67,39 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+    reset(state: State) {
+      Object.assign(state, initialState);
+    },
+  },
+  extraReducers: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    [authorizeUser.pending.type]: (state: State, action) => {
+      state.error = '';
+      state.loading = true;
+    },
+    [authorizeUser.fulfilled.type]: (
+      state: State,
+      action: PayloadAction<Auth.AuthResponse>,
+    ) => {
+      localStorage.setItem('token', action.payload.data.token);
+      state.loading = false;
+      state.currentUser = action.payload.data.user;
+      state.error = '';
+    },
+    [authorizeUser.rejected.type]: (
+      state: State,
+      action: PayloadAction<any>,
+    ) => {
+      const error = action.payload;
+      if (error.response) {
+        if (Array.isArray(error.response.data.message)) {
+          state.error = error.response.data.message[0];
+        } else {
+          state.error = error.response.data.message;
+        }
+      }
+      state.loading = false;
+    },
   },
 });
 
@@ -79,6 +118,7 @@ export const {
   signOutUserStart,
   signOutUserSuccess,
   signOutUserFailure,
+  reset,
 } = actions;
 
 export default reducer;

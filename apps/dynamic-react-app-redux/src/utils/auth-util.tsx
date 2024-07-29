@@ -1,3 +1,5 @@
+import { useAppDispatch } from '@/store';
+import { reset } from '@/store/user/userSlice';
 import React, { createContext, useContext, useState } from 'react';
 import { redirect } from 'react-router-dom';
 
@@ -10,11 +12,13 @@ interface AuthContextProps {
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const dispatch = useAppDispatch();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const loginUser = () => setIsAuthenticated(true);
 
   const logoutUser = () => {
     setIsAuthenticated(false);
+    dispatch(reset());
     redirect('/');
   };
 

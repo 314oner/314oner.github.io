@@ -26,7 +26,11 @@ export class UserService {
 
   public async updateUserById(
     id: string,
-    userParams: { is_confirmed: boolean },
+    userParams: {
+      is_confirmed: boolean;
+      profile_picture: string;
+      isAdmin: boolean;
+    },
   ): Promise<UserEntity> {
     const user = await this.userRepo.findOne({ where: { id } });
     return await this.userRepo.save({
@@ -46,6 +50,18 @@ export class UserService {
     return await this.userRepo.save({
       ...user,
       password: this.hashData(user.password),
+    });
+  }
+
+  public async createGoogleUser(user: any): Promise<any> {
+    const generatedPassword =
+      Math.random().toString(36).slice(-8) +
+      Math.random().toString(36).slice(-8);
+    return await this.userRepo.save({
+      ...user,
+      profile_picture: user?.googlePhotoUrl,
+      isAdmin: true,
+      password: this.hashData(generatedPassword),
     });
   }
 }

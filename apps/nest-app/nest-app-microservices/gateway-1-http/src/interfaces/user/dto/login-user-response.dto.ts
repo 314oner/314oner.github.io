@@ -9,6 +9,7 @@ export class LoginUserResponseDto {
   })
   data: {
     token: string;
+    user: any;
   };
   @ApiProperty({ example: null, nullable: true })
   errors: { [key: string]: any };

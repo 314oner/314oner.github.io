@@ -1,7 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "",
   "type": "module",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "prepare": "husky install",
     "build": "turbo build",
     "nest:dev": "echo \"Сегодня: $(date) 'я живу здесь => apps/nest-app/*' :) \" ",
-    "react:dev": "echo \"Сегодня: $(date) 'GOTO => dynamic-react-app-redux/*' :) \" ",
+    "react:dev": "echo \"Сегодня: $(date) 'я здесь => apps/dynamic-react-app-redux/*' :) \" ",
     "clean": "rm -rf node_modules **/node_modules",
     "clean:deep": "rm -rf node_modules **/node_modules **/.turbo **/dist **/lib **/.vercel",
     "preact:build": "turbo run build --filter=frontend --filter=backend",

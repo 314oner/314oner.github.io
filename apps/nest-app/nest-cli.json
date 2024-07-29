@@ -1,0 +1,111 @@
+{
+  "language": "ts",
+  "collection": "@nestjs/schematics",
+  "monorepo": true,
+  "projects": {
+    "common": {
+      "type": "library",
+      "root": "nest-app-shared/common",
+      "entryFile": "index",
+      "sourceRoot": "nest-app-shared/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-shared/common/tsconfig.lib.json"
+      }
+    },
+    "gateway:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/gateway-1-http",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/gateway-1-http/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/gateway-1-http/tsconfig.app.json"
+      }
+    },
+    "auth:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/auth-2",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/auth-2/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/auth-2/tsconfig.app.json"
+      }
+    },
+    "event:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/events-15-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/events-15-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/events-15-tcp/tsconfig.app.json"
+      }
+    },
+    "like:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/likes-8-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/likes-8-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/likes-8-tcp/tsconfig.app.json"
+      }
+    },
+    "order:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/order-11",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/order-11/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/order-11/tsconfig.app.json"
+      }
+    },
+    "payment:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/payment-12",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/payment-12/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/payment-12/tsconfig.app.json"
+      }
+    },
+    "pet:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/pets-14-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/pets-14-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/pets-14-tcp/tsconfig.app.json"
+      }
+    },
+    "post:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/posts-9-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/posts-9-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/posts-9-tcp/tsconfig.app.json"
+      }
+    },
+    "tag:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/tags-7-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/tags-7-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/tags-7-tcp/tsconfig.app.json"
+      }
+    },
+    "user:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/users-3-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/users-3-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/users-3-tcp/tsconfig.app.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "assets": ["nest-app-microservices/**/*.proto"],
+    "watchAssets": true
+  },
+  "sourceRoot": "src"
+}
