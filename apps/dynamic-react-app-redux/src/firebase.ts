@@ -1,13 +1,12 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-  //@ts-ignore
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: '314oner.firebaseapp.com',
-  projectId: '314oner',
-  storageBucket: '314oner.appspot.com',
-  messagingSenderId: undefined,
-  appId: undefined,
+  authDomain: 'dynamic-react-app.firebaseapp.com',
+  projectId: 'dynamic-react-app',
+  storageBucket: 'dynamic-react-app.appspot.com',
+  messagingSenderId: '431837727247',
+  appId: '1:431837727247:web:46a8b5ad1a88578ac4717a',
 };
 
 export const app = initializeApp(firebaseConfig);

@@ -5,7 +5,8 @@ import {
   configureStore,
 } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import logger from 'redux-logger';
+
+import { logger } from 'redux-logger';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import themeSlice from './theme/themeSlice';
@@ -25,9 +26,8 @@ const myPersistReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: myPersistReducer,
-  //reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }).concat(logger),
+    getDefaultMiddleware({ serializableCheck: false }).concat(logger as any),
   devTools: true,
 });
 export type AppThunk<ReturnType = void> = ThunkAction<

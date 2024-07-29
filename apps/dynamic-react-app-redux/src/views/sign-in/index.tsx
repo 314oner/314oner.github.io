@@ -1,7 +1,15 @@
+import OAuth from '@/components/OAuth';
+import { useAppDispatch } from '@/store';
+import { authorizeUser, loginArgs } from '@/store/user/actionCreators';
+import {
+  signInUserFailure,
+  signInUserStart,
+  signInUserSuccess,
+} from '@/store/user/userSlice';
 import { useAuth } from '@/utils/auth-util';
 import { decode } from 'js-base64';
 import { MouseEvent, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const loginData = {
   email: '314oner@smtp.com',
@@ -12,11 +20,22 @@ export default function SignIn() {
   const { loginUser } = useAuth();
   const navigate = useNavigate();
   const { search } = useLocation();
-
+  const dispatch = useAppDispatch();
   const [email, setEmail] = useState(loginData.email);
   const [password, setPassword] = useState(loginData.password);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const login = (e: MouseEvent) => {
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const loginAnonymous = (e: MouseEvent) => {
     e.preventDefault();
 
     if (email === loginData.email && password === loginData.password) {
@@ -26,7 +45,33 @@ export default function SignIn() {
       navigate(redirect ? decode(redirect) : '/');
     }
   };
-
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const args: loginArgs = {
+      type: 'login',
+      email: formData.email,
+      password: formData.password,
+    };
+    try {
+      dispatch(signInUserStart());
+      const res = await dispatch(authorizeUser(args));
+      console.log(res);
+      if (res.meta.requestStatus === 'rejected') {
+        dispatch(signInUserFailure(res.meta.requestStatus));
+        return;
+      }
+      dispatch(signInUserSuccess(res));
+      navigate('/');
+    } catch (e: unknown) {
+      if (
+        typeof e === 'object' &&
+        e &&
+        'message' in e &&
+        typeof e.message === 'string'
+      )
+        dispatch(signInUserFailure(e.message));
+    }
+  };
   return (
     <>
       <div className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
@@ -35,64 +80,48 @@ export default function SignIn() {
             Авторизоваться
           </h2>
         </div>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
-            <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Электронная почта
-                </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Пароль
-                </label>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                onClick={login}
-              >
-                Войти
-              </button>
-            </div>
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm p-3 max-w-lg mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            action="#"
+            method="POST"
+            className="flex flex-col gap-4"
+          >
+            <input
+              type="email"
+              placeholder="Электронная почта"
+              className="p-3 border rounded-lg dark:text-black"
+              id="email"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              placeholder="Пароль"
+              className="p-3 border rounded-lg dark:text-black"
+              id="password"
+              onChange={handleChange}
+            />
+            <button
+              type="submit"
+              className="flex mb-5 w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              onClick={loginAnonymous}
+            >
+              Войти анонимно
+            </button>
+            <button
+              type="submit"
+              className="flex mb-5 w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Войти
+            </button>
           </form>
+          <OAuth />
+          <div className="flex items-center justify-center gap-2 mt-5">
+            <p>Создать учетную запись?</p>
+            <Link to={'/sign-up'}>
+              <span className="text-blue-700">Зарегистрироваться</span>
+            </Link>
+          </div>
         </div>
       </div>
     </>

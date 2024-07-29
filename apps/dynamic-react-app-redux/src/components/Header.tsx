@@ -1,24 +1,23 @@
 import { RootState } from '@/store';
 import { toggleTheme } from '@/store/theme/themeSlice';
 import { useAuth } from '@/utils/auth-util';
-import { Button, Navbar, TextInput } from 'flowbite-react';
+import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import {
-  HiMiniArrowLeftOnRectangle,
-  HiMiniArrowRightOnRectangle,
-} from 'react-icons/hi2';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const path = useLocation().pathname;
   const location = useLocation();
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const { theme } = useSelector((state: RootState) => state.theme);
+  const { currentUser } = useSelector((state: RootState) => state.user);
+
   const { isAuthenticated, logoutUser } = useAuth();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
@@ -51,14 +50,14 @@ export default function Header() {
       <form role="search" onSubmit={handleSubmit}>
         <TextInput
           title="Поиск по сайту"
-          aria-label="Введите свой поисковый запрос"
+          aria-label="Поиск по сайту"
           className="hidden lg:inline"
           type="search"
           id="search"
           name="search"
           onChange={(e) => setSearchTerm(e.target.value)}
           value={searchTerm || ''}
-          placeholder="Поле ввода для поискового запроса"
+          placeholder="Поиск по сайту"
           required
         />
         <Button
@@ -81,28 +80,42 @@ export default function Header() {
         >
           {theme === 'light' ? <FaSun /> : <FaMoon />}
         </Button>
-        <button
-          type="button"
-          className="relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-          onClick={() =>
-            isAuthenticated ? logoutUser() : navigate('/sign-in')
-          }
-        >
-          <span className="absolute -inset-1.5" />
-          <span className="sr-only">View notifications</span>
-          {isAuthenticated && (
-            <HiMiniArrowLeftOnRectangle
-              className="w-6 h-6"
-              aria-hidden="true"
-            />
-          )}
-          {!isAuthenticated && (
-            <HiMiniArrowRightOnRectangle
-              className="w-6 h-6"
-              aria-hidden="true"
-            />
-          )}
-        </button>
+        {!!currentUser || !!isAuthenticated ? (
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar
+                alt="user"
+                img={currentUser?.payload?.data?.user?.profile_picture}
+                rounded
+              />
+            }
+          >
+            <Dropdown.Header>
+              <span className="block text-sm">
+                @
+                {currentUser
+                  ? currentUser?.payload?.data?.user?.username
+                  : 'Anonymous'}
+              </span>
+              <span className="block text-sm font-medium truncate">
+                {currentUser?.payload?.data?.user?.email}
+              </span>
+            </Dropdown.Header>
+            <Link to={'/dashboard?tab=profile'}>
+              <Dropdown.Item>Профиль</Dropdown.Item>
+            </Link>
+            <Dropdown.Divider />
+            <Dropdown.Item onClick={logoutUser}>Выйти</Dropdown.Item>
+          </Dropdown>
+        ) : (
+          <Link to="/sign-in">
+            <Button gradientDuoTone="purpleToBlue" outline>
+              Войти
+            </Button>
+          </Link>
+        )}
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
