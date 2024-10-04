@@ -24,7 +24,8 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "types": ["./cypress.d.ts", "cypress"]
   },
   "include": ["src"],
   "exclude": ["src/**/*.stories.ts"],

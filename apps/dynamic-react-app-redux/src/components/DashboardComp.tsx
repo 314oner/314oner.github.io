@@ -90,12 +90,10 @@ export default function DashboardComp() {
   return (
     <div className="p-3 md:mx-auto">
       <div className="flex flex-wrap justify-center gap-4">
-        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md dark:bg-slate-800 md:w-72">
+        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md md:w-72">
           <div className="flex justify-between">
             <div className="">
-              <h3 className="text-gray-500 uppercase text-md">
-                Всего пользователей
-              </h3>
+              <h3 className="uppercase text-md">Всего пользователей</h3>
               <p className="text-2xl">{totalUsers}</p>
             </div>
             <HiOutlineUserGroup className="p-3 text-5xl text-white bg-teal-600 rounded-full shadow-lg" />
@@ -105,15 +103,13 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthUsers}
             </span>
-            <div className="text-gray-500">За последний месяц</div>
+            <div>За последний месяц</div>
           </div>
         </div>
-        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md dark:bg-slate-800 md:w-72">
+        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md md:w-72">
           <div className="flex justify-between">
             <div className="">
-              <h3 className="text-gray-500 uppercase text-md">
-                Всего комментариев
-              </h3>
+              <h3 className="uppercase text-md">Всего комментариев</h3>
               <p className="text-2xl">{totalComments}</p>
             </div>
             <HiAnnotation className="p-3 text-5xl text-white bg-indigo-600 rounded-full shadow-lg" />
@@ -123,15 +119,13 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthComments}
             </span>
-            <div className="text-gray-500">За последний месяц</div>
+            <div>За последний месяц</div>
           </div>
         </div>
-        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md dark:bg-slate-800 md:w-72">
+        <div className="flex flex-col w-full gap-4 p-3 rounded-md shadow-md md:w-72">
           <div className="flex justify-between">
             <div className="">
-              <h3 className="text-gray-500 uppercase text-md">
-                Всего тем для общения
-              </h3>
+              <h3 className="uppercase text-md">Всего тем для общения</h3>
               <p className="text-2xl">{totalPosts}</p>
             </div>
             <HiDocumentText className="p-3 text-5xl text-white rounded-full shadow-lg bg-lime-600" />
@@ -141,12 +135,12 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthPosts}
             </span>
-            <div className="text-gray-500">За последний месяц</div>
+            <div>За последний месяц</div>
           </div>
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-4 py-3 mx-auto">
-        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto dark:bg-gray-800">
+        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center">Последние пользователи</h1>
             <Button outline gradientDuoTone="purpleToPink">
@@ -161,11 +155,11 @@ export default function DashboardComp() {
             {users &&
               users.map((user) => (
                 <Table.Body key={user.id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Row className="bg-white">
                     <Table.Cell>
                       <img
                         src={user.profilePicture}
-                        className="w-10 h-10 bg-gray-500 rounded-full"
+                        className="w-10 h-10 rounded-full"
                       />
                     </Table.Cell>
                     <Table.Cell>{user.username}</Table.Cell>
@@ -174,7 +168,7 @@ export default function DashboardComp() {
               ))}
           </Table>
         </div>
-        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto dark:bg-gray-800">
+        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center">Последние комментарии</h1>
             <Button outline gradientDuoTone="purpleToPink">
@@ -189,7 +183,7 @@ export default function DashboardComp() {
             {comments &&
               comments.map((comment) => (
                 <Table.Body key={comment.id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Row className="bg-white">
                     <Table.Cell className="w-96">
                       <p className="line-clamp-2">{comment?.content}</p>
                     </Table.Cell>
@@ -199,7 +193,7 @@ export default function DashboardComp() {
               ))}
           </Table>
         </div>
-        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto dark:bg-gray-800">
+        <div className="flex flex-col w-full p-2 rounded-md shadow-md md:w-auto">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center">Последние сообшения</h1>
             <Button outline gradientDuoTone="purpleToPink">
@@ -215,12 +209,9 @@ export default function DashboardComp() {
             {posts &&
               posts.map((post) => (
                 <Table.Body key={post.id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Row className="bg-white">
                     <Table.Cell>
-                      <img
-                        src={post?.image}
-                        className="h-10 bg-gray-500 rounded-md w-14"
-                      />
+                      <img src={post?.image} className="h-10 rounded-md w-14" />
                     </Table.Cell>
                     <Table.Cell className="w-96">{post?.title}</Table.Cell>
                     <Table.Cell className="w-5">{post?.category}</Table.Cell>

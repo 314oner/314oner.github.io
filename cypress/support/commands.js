@@ -1,4 +1,5 @@
-//@ts-nocheck
+/* eslint-disable no-undef */
+
 const severityIndicators = {
   minor: '⚪️',
   moderate: '🟡',

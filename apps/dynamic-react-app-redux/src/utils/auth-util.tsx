@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/store';
-import { reset } from '@/store/user/userSlice';
+import { reset } from '@/store/reducers/user/userSlice';
 import React, { createContext, useContext, useState } from 'react';
 import { redirect } from 'react-router-dom';
 

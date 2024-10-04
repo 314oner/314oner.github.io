@@ -1,5 +1,5 @@
 import { useAppDispatch } from '@/store';
-import { authArgs, registerUser } from '@/store/user/actionCreators';
+import { authArgs, registerUser } from '@/store/reducers/user/actionCreators';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -52,44 +52,46 @@ export default function SignUp() {
   return (
     <div className="flex flex-col items-center justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
+        <h1 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center">
           Зарегистрироваться
-        </h2>
+        </h1>
       </div>
-      <form
-        onSubmit={handleSubmit}
-        action="#"
-        method="POST"
-        className="flex flex-col gap-4"
-      >
-        <input
-          type="text"
-          placeholder="Имя пользователя"
-          className="p-3 border rounded-lg dark:text-black"
-          id="username"
-          onChange={handleChange}
-        />
-        <input
-          type="email"
-          placeholder="Электронная почта"
-          className="p-3 border rounded-lg dark:text-black"
-          id="email"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          placeholder="Пароль"
-          className="p-3 border rounded-lg dark:text-black"
-          id="password"
-          onChange={handleChange}
-        />
-        <button
-          disabled={loading}
-          className="flex mb-5 w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      <div className="max-w-lg p-3 mx-auto mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form
+          onSubmit={handleSubmit}
+          action="#"
+          method="POST"
+          className="flex flex-col gap-4"
         >
-          {loading ? 'Загрузка...' : 'Зарегистрироваться'}
-        </button>
-      </form>
+          <input
+            type="text"
+            placeholder="Имя пользователя"
+            className="p-3 border rounded-lg"
+            id="username"
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            placeholder="Электронная почта"
+            className="p-3 border rounded-lg"
+            id="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Пароль"
+            className="p-3 border rounded-lg"
+            id="password"
+            onChange={handleChange}
+          />
+          <button
+            disabled={loading}
+            className="flex mb-5 w-full justify-center rounded-md !bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            {loading ? 'Загрузка...' : 'Зарегистрироваться'}
+          </button>
+        </form>
+      </div>
       <div className="flex gap-2 mt-5">
         <p>У вас есть учетная запись?</p>
         <Link to={'/sign-in'}>

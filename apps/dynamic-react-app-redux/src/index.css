@@ -1,17 +1,46 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  input,
+  select,
+  textarea {
+    color: #428500;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+:root {
+  --background: 7, 0%, 17%, 1%;
+  --foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --radius: 0.5rem;
 }
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+}
+
 * {
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
 }
 
 .ql-editor {

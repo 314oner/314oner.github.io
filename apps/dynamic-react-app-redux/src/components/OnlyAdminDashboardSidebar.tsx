@@ -43,6 +43,7 @@ export default function OnlyAdminDashboardSidebar() {
           <Link to="/dashboard?tab=profile">
             <Sidebar.Item
               active={tab === 'profile'}
+              data-testid="dashUserStatus"
               icon={HiUser}
               label={
                 currentUser?.payload?.data?.user?.isAdmin ? 'Admin' : 'User'

@@ -6,7 +6,7 @@ export default function About() {
           <h1 className="text-3xl font-semibold text-center font my-7">
             Скромность украшает
           </h1>
-          <div className="flex flex-col gap-6 text-gray-500 text-md">
+          <div className="flex flex-col gap-6 text-md">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad fugiat
               mollitia, quo natus maxime suscipit ullam facilis molestiae

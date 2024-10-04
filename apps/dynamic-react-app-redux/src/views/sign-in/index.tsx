@@ -1,11 +1,11 @@
 import OAuth from '@/components/OAuth';
 import { useAppDispatch } from '@/store';
-import { authorizeUser, loginArgs } from '@/store/user/actionCreators';
+import { authorizeUser, loginArgs } from '@/store/reducers/user/actionCreators';
 import {
   signInUserFailure,
   signInUserStart,
   signInUserSuccess,
-} from '@/store/user/userSlice';
+} from '@/store/reducers/user/userSlice';
 import { useAuth } from '@/utils/auth-util';
 import { decode } from 'js-base64';
 import { MouseEvent, useState } from 'react';
@@ -73,57 +73,57 @@ export default function SignIn() {
     }
   };
   return (
-    <>
-      <div className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center text-gray-900">
-            Авторизоваться
-          </h2>
-        </div>
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm p-3 max-w-lg mx-auto">
-          <form
-            onSubmit={handleSubmit}
-            action="#"
-            method="POST"
-            className="flex flex-col gap-4"
+    <div className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h1 className="mt-10 text-2xl font-bold leading-9 tracking-tight text-center">
+          Авторизоваться
+        </h1>
+      </div>
+      <div className="max-w-lg p-3 mx-auto mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form
+          onSubmit={handleSubmit}
+          action="#"
+          method="POST"
+          className="flex flex-col gap-4"
+        >
+          <input
+            type="email"
+            placeholder="Электронная почта"
+            className="p-3 border rounded-lg"
+            id="email"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Пароль"
+            className="p-3 border rounded-lg"
+            id="password"
+            onChange={handleChange}
+          />
+          <button
+            type="submit"
+            id="btnSignInAnon"
+            className="flex mb-5 w-full justify-center rounded-md !bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onClick={loginAnonymous}
           >
-            <input
-              type="email"
-              placeholder="Электронная почта"
-              className="p-3 border rounded-lg dark:text-black"
-              id="email"
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Пароль"
-              className="p-3 border rounded-lg dark:text-black"
-              id="password"
-              onChange={handleChange}
-            />
-            <button
-              type="submit"
-              className="flex mb-5 w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              onClick={loginAnonymous}
-            >
-              Войти анонимно
-            </button>
-            <button
-              type="submit"
-              className="flex mb-5 w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Войти
-            </button>
-          </form>
-          <OAuth />
-          <div className="flex items-center justify-center gap-2 mt-5">
-            <p>Создать учетную запись?</p>
-            <Link to={'/sign-up'}>
-              <span className="text-blue-700">Зарегистрироваться</span>
-            </Link>
-          </div>
+            Войти анонимно
+          </button>
+          <button
+            type="submit"
+            id="btnSignInNest"
+            className="flex mb-5 w-full justify-center rounded-md !bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Войти
+          </button>
+        </form>
+        <OAuth />
+        <div className="flex items-center justify-center gap-2 mt-5">
+          <p>Создать учетную запись?</p>
+          <Link to={'/sign-up'}>
+            <span className="text-blue-700">Зарегистрироваться</span>
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
