@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function DashPosts() {
   const { currentUser } = useSelector((state: RootState) => state.user);
-  const [userPosts, setUserPosts] = useState([]);
+  const [userPosts, setUserPosts] = useState<any[]>([]);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState('');
@@ -45,7 +45,6 @@ export default function DashPosts() {
       );
       const data = await res.json();
       if (res.ok) {
-        //@ts-ignore
         setUserPosts((prev) => [...prev, ...data.posts]);
         if (data.posts.length < 9) {
           setShowMore(false);
@@ -107,7 +106,7 @@ export default function DashPosts() {
             </Table.Head>
             {userPosts?.map((post: any) => (
               <Table.Body className="divide-y">
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Row className="bg-white">
                   <Table.Cell>
                     {new Date(post?.updatedAt).toLocaleDateString()}
                   </Table.Cell>
@@ -115,15 +114,12 @@ export default function DashPosts() {
                     <Link to={`/post/${post.slug}`}>
                       <img
                         src={post?.image}
-                        className="object-cover w-20 h-10 bg-gray-500"
+                        className="object-cover w-20 h-10"
                       />
                     </Link>
                   </Table.Cell>
                   <Table.Cell>
-                    <Link
-                      className="font-medium text-gray-900 dark:text-white"
-                      to={`/post/${post.slug}`}
-                    >
+                    <Link className="font-medium" to={`/post/${post.slug}`}>
                       {post?.title}
                     </Link>
                   </Table.Cell>
@@ -172,8 +168,8 @@ export default function DashPosts() {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="mx-auto mb-4 text-gray-400 h-14 w-14 dark:text-gray-200" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14" />
+            <h3 className="mb-5 text-lg">
               Вы действительно хотите удалить это?
             </h3>
             <div className="flex justify-center gap-4">

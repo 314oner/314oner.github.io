@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "types": ["./cypress.d.ts", "cypress", "node", "@testing-library/cypress"]
+  },
+
+  "include": ["**/*.ts", "**/*.tsx"]
+}

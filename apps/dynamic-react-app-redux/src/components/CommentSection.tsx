@@ -129,7 +129,7 @@ export default function CommentSection({ postId }: any) {
   return (
     <div className="w-full max-w-2xl p-3 mx-auto">
       {currentUser ? (
-        <div className="flex items-center gap-1 my-5 text-sm text-gray-500">
+        <div className="flex items-center gap-1 my-5 text-sm">
           <p>Signed in as:</p>
           <img
             className="object-cover w-5 h-5 rounded-full"
@@ -163,7 +163,7 @@ export default function CommentSection({ postId }: any) {
             value={comment}
           />
           <div className="flex items-center justify-between mt-5">
-            <p className="text-xs text-gray-500">
+            <p className="text-xs">
               {200 - comment.length} characters remaining
             </p>
             <Button outline gradientDuoTone="purpleToBlue" type="submit">
@@ -183,7 +183,7 @@ export default function CommentSection({ postId }: any) {
         <>
           <div className="flex items-center gap-1 my-5 text-sm">
             <p>Comments</p>
-            <div className="px-2 py-1 border border-gray-400 rounded-sm">
+            <div className="px-2 py-1 border rounded-sm">
               <p>{comments.length}</p>
             </div>
           </div>
@@ -201,8 +201,8 @@ export default function CommentSection({ postId }: any) {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="mx-auto mb-4 text-gray-400 h-14 w-14 dark:text-gray-200" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14" />
+            <h3 className="mb-5 text-lg">
               Are you sure you want to delete this comment?
             </h3>
             <div className="flex justify-center gap-4">

@@ -1,11 +1,11 @@
 import { app } from '@/firebase';
 import { useAppDispatch } from '@/store';
-import { authorizeGoogleUser } from '@/store/user/actionCreators';
+import { authorizeGoogleUser } from '@/store/reducers/user/actionCreators';
 import {
   signInUserFailure,
   signInUserStart,
   signInUserSuccess,
-} from '@/store/user/userSlice';
+} from '@/store/reducers/user/userSlice';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -49,7 +49,8 @@ export default function OAuth() {
       }
       */
       dispatch(signInUserStart());
-      const res = await dispatch(authorizeGoogleUser(args));
+
+      const res = dispatch(authorizeGoogleUser(args));
       console.log(res);
       if (res.meta.requestStatus === 'rejected') {
         dispatch(signInUserFailure(res.meta.requestStatus));
@@ -63,7 +64,6 @@ export default function OAuth() {
   };
   return (
     <button
-      type="submit"
       className="flex mb-5 w-full justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
       onClick={handleGoogleClick}
     >

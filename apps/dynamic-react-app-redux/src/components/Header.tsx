@@ -1,5 +1,5 @@
 import { RootState } from '@/store';
-import { toggleTheme } from '@/store/theme/themeSlice';
+import { toggleTheme } from '@/store/reducers/theme/themeSlice';
 import { useAuth } from '@/utils/auth-util';
 import { Avatar, Button, Dropdown, Navbar, TextInput } from 'flowbite-react';
 import { useEffect, useState } from 'react';
@@ -40,7 +40,7 @@ export default function Header() {
     <Navbar className="border-b-2">
       <Link
         to="/"
-        className="self-center text-sm font-semibold whitespace-nowrap sm:text-xl dark:text-white"
+        className="self-center text-sm font-semibold whitespace-nowrap sm:text-xl"
       >
         <span className="px-2 py-1 text-white rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
           314oner
@@ -80,42 +80,47 @@ export default function Header() {
         >
           {theme === 'light' ? <FaSun /> : <FaMoon />}
         </Button>
-        {!!currentUser || !!isAuthenticated ? (
-          <Dropdown
-            arrowIcon={false}
-            inline
-            label={
-              <Avatar
-                alt="user"
-                img={currentUser?.payload?.data?.user?.profile_picture}
-                rounded
-              />
-            }
-          >
-            <Dropdown.Header>
-              <span className="block text-sm">
-                @
-                {currentUser
-                  ? currentUser?.payload?.data?.user?.username
-                  : 'Anonymous'}
-              </span>
-              <span className="block text-sm font-medium truncate">
-                {currentUser?.payload?.data?.user?.email}
-              </span>
-            </Dropdown.Header>
-            <Link to={'/dashboard?tab=profile'}>
-              <Dropdown.Item>Профиль</Dropdown.Item>
+        <span data-testid="userAvatar">
+          {!!currentUser || !!isAuthenticated ? (
+            <Dropdown
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar
+                  alt="user"
+                  img={currentUser?.payload?.data?.user?.profile_picture}
+                  rounded
+                />
+              }
+            >
+              <Dropdown.Header>
+                <span className="block text-sm">
+                  @
+                  {currentUser
+                    ? currentUser?.payload?.data?.user?.username
+                    : 'Anonymous'}
+                </span>
+                <span
+                  data-testid="userAvatarEmail"
+                  className="block text-sm font-medium truncate"
+                >
+                  {currentUser?.payload?.data?.user?.email}
+                </span>
+              </Dropdown.Header>
+              <Link to={'/dashboard?tab=profile'}>
+                <Dropdown.Item>Профиль</Dropdown.Item>
+              </Link>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={logoutUser}>Выйти</Dropdown.Item>
+            </Dropdown>
+          ) : (
+            <Link to="/sign-in">
+              <Button gradientDuoTone="purpleToBlue" outline>
+                Войти
+              </Button>
             </Link>
-            <Dropdown.Divider />
-            <Dropdown.Item onClick={logoutUser}>Выйти</Dropdown.Item>
-          </Dropdown>
-        ) : (
-          <Link to="/sign-in">
-            <Button gradientDuoTone="purpleToBlue" outline>
-              Войти
-            </Button>
-          </Link>
-        )}
+          )}
+        </span>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>

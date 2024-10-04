@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 export default function DashUsers() {
   const { currentUser } = useSelector((state: RootState) => state.user);
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<any[]>([]);
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [userIdToDelete, setUserIdToDelete] = useState('');
@@ -43,7 +43,6 @@ export default function DashUsers() {
       const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
       const data = await res.json();
       if (res.ok) {
-        //@ts-ignore
         setUsers((prev) => [...prev, ...data.users]);
         if (data.users.length < 9) {
           setShowMore(false);
@@ -100,7 +99,7 @@ export default function DashUsers() {
             </Table.Head>
             {users.map((user: any) => (
               <Table.Body className="divide-y" key={user.id}>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                <Table.Row className="bg-white">
                   <Table.Cell>
                     {new Date(user?.createdAt).toLocaleDateString()}
                   </Table.Cell>
@@ -108,7 +107,7 @@ export default function DashUsers() {
                     <img
                       src={user?.profilePicture}
                       alt={user?.username}
-                      className="object-cover w-10 h-10 bg-gray-500 rounded-full"
+                      className="object-cover w-10 h-10 rounded-full"
                     />
                   </Table.Cell>
                   <Table.Cell>{user?.username}</Table.Cell>
@@ -156,8 +155,8 @@ export default function DashUsers() {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="mx-auto mb-4 text-gray-400 h-14 w-14 dark:text-gray-200" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14" />
+            <h3 className="mb-5 text-lg">
               Вы действительно хотите удалить этого пользователя?
             </h3>
             <div className="flex justify-center gap-4">

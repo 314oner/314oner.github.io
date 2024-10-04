@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { app } from '@/firebase';
 import { RootState } from '@/store';
 import {
@@ -8,7 +7,7 @@ import {
   signOutUserSuccess,
   updateUserFailure,
   uploadUserStart,
-} from '@/store/user/userSlice';
+} from '@/store/reducers/user/userSlice';
 import { useAuth } from '@/utils/auth-util';
 import {
   getDownloadURL,
@@ -301,8 +300,8 @@ export default function DashProfile() {
         <Modal.Header />
         <Modal.Body>
           <div className="text-center">
-            <HiOutlineExclamationCircle className="mx-auto mb-4 text-gray-400 h-14 w-14 dark:text-gray-200" />
-            <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
+            <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14" />
+            <h3 className="mb-5 text-lg">
               Вы действительно хотите удалить учетную запись?
             </h3>
             <div className="flex justify-center gap-4">

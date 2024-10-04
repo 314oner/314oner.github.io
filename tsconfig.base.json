@@ -1,5 +1,21 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "noEmit": true,
     "strictNullChecks": false,
     "declaration": true,
     "noImplicitAny": false,
@@ -8,10 +24,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "lib": ["es2015", "dom"],
-    "target": "es6",
     "typeRoots": ["./node_modules/@types"],
-    "moduleResolution": "node",
     "strictPropertyInitialization": false,
     "resolveJsonModule": true
   }

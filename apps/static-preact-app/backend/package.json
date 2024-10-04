@@ -2,18 +2,22 @@
   "name": "@static-preact-app/backend",
   "version": "3.0.2",
   "private": true,
-  "author": "Alexander Gverdtsiteli",
-  "license": "UNLICENSED",
+  "homepage": "https://github.com/314oner/314oner.github.io#readme",
   "bugs": {
     "url": "https://github.com/314oner/314oner.github.io/issues"
   },
-  "homepage": "https://github.com/314oner/314oner.github.io#readme",
+  "license": "UNLICENSED",
+  "author": "Alexander Gverdtsiteli",
   "main": "server.js",
   "scripts": {
-    "transpile": "tsc --build tsconfig.json",
+    "build": "rm ../build/db/*.json ../build/db/*.js && npm run swap",
     "save-json-api": "node ./scripts/save-json-api.js",
     "swap": "npm run transpile && npm run save-json-api",
-    "build": "rm ../build/db/*.json ../build/db/*.js && npm run swap"
+    "transpile": "tsc --build tsconfig.json"
+  },
+  "dependencies": {
+    "body-parser": "1.20.2",
+    "connect-pause": "0.1.0"
   },
   "devDependencies": {
     "@types/node": "18",
@@ -21,15 +25,11 @@
     "node-fs": "0.1.7",
     "typescript": "5.2.2"
   },
-  "dependencies": {
-    "body-parser": "1.20.2",
-    "connect-pause": "0.1.0"
-  },
+  "packageManager": "pnpm@8.15.4",
   "engines": {
     "node": ">=18",
     "yarn": ">=1.22.0"
   },
-  "packageManager": "pnpm@8.15.4",
   "volta": {
     "extends": "../../../package.json"
   }
