@@ -1,4 +1,4 @@
-import { DefaultButton } from '@314oner_npm/universal-components-library';
+import { DefaultLongButton } from '@314oner_npm/universal-components-library';
 import { Button } from 'flowbite-react';
 
 export default function ButtonsPrototyping() {
@@ -23,13 +23,17 @@ export default function ButtonsPrototyping() {
       <div className="flex flex-col justify-center flex-1 px-px">
         <h2 className="text-2xl">Yes yes yes</h2>
         <p className="my-2 text-gray-500">My custom button</p>
-        <DefaultButton>
+        <DefaultLongButton
+          onClick={() => {
+            console.log('DefaultLongButton clicked');
+          }}
+        >
           <a
             href="https://github.com/314oner/universal-components-library"
             target="_blank"
             rel="noopener noreferrer"
           ></a>
-        </DefaultButton>
+        </DefaultLongButton>
       </div>
     </div>
   );

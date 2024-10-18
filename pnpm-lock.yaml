@@ -202,8 +202,8 @@ importers:
   apps/dynamic-react-app-redux:
     dependencies:
       '@314oner_npm/universal-components-library':
-        specifier: 3.1.0
-        version: 3.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.2.1
+        version: 3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@reduxjs/toolkit':
         specifier: 1.9.5
         version: 1.9.5(react-redux@7.2.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -234,6 +234,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      react-error-boundary:
+        specifier: ^4.1.1
+        version: 4.1.1(react@18.3.1)
       react-icons:
         specifier: ^4.12.0
         version: 4.12.0(react@18.3.1)
@@ -558,6 +561,12 @@ packages:
 
   '@314oner_npm/universal-components-library@3.1.0':
     resolution: {integrity: sha512-E6Nzgn6rS32eZ2ItOTUKKM8is2/N5z7VskgilsR96H1I9ROZORHMLV1gWVEqEQIcc+CTxTXuJVpLscLZUOrwTg==}
+    peerDependencies:
+      react: 16.8 - 18
+      react-dom: 16.8 - 18
+
+  '@314oner_npm/universal-components-library@3.2.1':
+    resolution: {integrity: sha512-9f9SSGtwdmT1G5dejeuRFg7wQRU59lDp1auGLIjXe/ndiku0K1Hx5mEhOerYXq74T301zv6KI0xqFGgVHAWA7g==}
     peerDependencies:
       react: 16.8 - 18
       react-dom: 16.8 - 18
@@ -9370,6 +9379,12 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-error-boundary@4.1.1:
+    resolution: {integrity: sha512-EOAEsbVm2EQD8zPS4m24SiaR/506RPC3CjMcjJ5JWKECsctyLsDTKxB26Hvl7jcz7KweSOkBYAcY/hmMpMn2jA==}
+    engines: {pnpm: '=9'}
+    peerDependencies:
+      react: '>=16.13.1'
+
   react-error-overlay@6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
 
@@ -11628,7 +11643,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@314oner_npm/universal-components-library@3.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@314oner_npm/universal-components-library@3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -24162,6 +24177,11 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-error-boundary@4.1.1(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.1
+      react: 18.3.1
 
   react-error-overlay@6.0.11: {}
 

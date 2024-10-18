@@ -1,3 +1,4 @@
+import errorFallback from '@/components/common/ErrorFallback';
 import OAuth from '@/components/OAuth';
 import { useAppDispatch } from '@/store';
 import { authorizeUser, loginArgs } from '@/store/reducers/user/actionCreators';
@@ -9,6 +10,7 @@ import {
 import { useAuth } from '@/utils/auth-util';
 import { decode } from 'js-base64';
 import { MouseEvent, useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const loginData = {
@@ -116,7 +118,10 @@ export default function SignIn() {
             Войти
           </button>
         </form>
-        <OAuth />
+        <ErrorBoundary FallbackComponent={errorFallback}>
+          <OAuth />
+        </ErrorBoundary>
+
         <div className="flex items-center justify-center gap-2 mt-5">
           <p>Создать учетную запись?</p>
           <Link to={'/sign-up'}>

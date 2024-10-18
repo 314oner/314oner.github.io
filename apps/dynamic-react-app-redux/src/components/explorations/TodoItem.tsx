@@ -4,6 +4,10 @@ import {
   deleteContact,
   editContact,
 } from '@/store/reducers/todos/todosSlice';
+import {
+  DefaultButton,
+  DefaultCheckbox,
+} from '@314oner_npm/universal-components-library';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -53,18 +57,24 @@ export class TodoItem extends PureComponent<any, any> {
       );
     } else {
       element = (
-        <div className="view">
-          <input
-            className="toggle"
-            type="checkbox"
-            checked={todo?.completed}
-            onChange={() => this.props.actions.completeContact(todo?.id)}
-          />
-          <label onDoubleClick={this.handleDoubleClick}>{todo?.title}</label>
-          <button
-            className="border-8 size-16 destroy"
-            onClick={() => this.props.actions.deleteContact(todo?.id)}
-          />
+        <div className="flex items-center p-5 mb-5 rounded-lg shadow cursor-pointer hover:bg-gray-400">
+          <div className="w-1/6 text-center">
+            <DefaultCheckbox
+              className="toggle"
+              checked={todo?.completed}
+              onChange={() => this.props.actions.completeContact(todo?.id)}
+              label={'Выполнено'}
+            />
+          </div>
+          <div className="w-5/6">
+            <label onDoubleClick={this.handleDoubleClick}>{todo?.title}</label>
+            <DefaultButton
+              className="px-3 destroy bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              onClick={() => this.props.actions.deleteContact(todo?.id)}
+            >
+              Удалить
+            </DefaultButton>
+          </div>
         </div>
       );
     }

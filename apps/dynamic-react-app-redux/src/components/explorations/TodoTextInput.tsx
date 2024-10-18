@@ -4,6 +4,7 @@ import {
   deleteContact,
   editContact,
 } from '@/store/reducers/todos/todosSlice';
+import { DefaultInput } from '@314oner_npm/universal-components-library';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -47,7 +48,7 @@ export class TodoTextInput extends PureComponent<any, any> {
 
   render() {
     return (
-      <input
+      <DefaultInput
         className={classnames({
           edit: this.props.editing,
           'new-todo': this.props.newTodo,

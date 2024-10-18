@@ -15,7 +15,7 @@
     "test": "cypress open"
   },
   "dependencies": {
-    "@314oner_npm/universal-components-library": "3.1.0",
+    "@314oner_npm/universal-components-library": "3.2.1",
     "@reduxjs/toolkit": "1.9.5",
     "axios": "1.4.0",
     "classnames": "^2.5.1",
@@ -26,6 +26,7 @@
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.1.1",
     "react-icons": "^4.12.0",
     "react-redux": "^7.1.0",
     "react-router-dom": "^6.20.0",
