@@ -1,6 +1,4 @@
-import ButtonsPrototyping from '@/components/explorations/ButtonsPrototyping';
-import InputsPrototyping from '@/components/explorations/InputsPrototyping';
-import LabelsPrototyping from '@/components/explorations/LabelsPrototyping';
+import FlowbitePrototyping from '@/components/explorations/FlowbitePrototyping';
 import TodosPrototyping from '@/components/explorations/TodosPrototyping';
 
 export default function Projects() {
@@ -10,9 +8,7 @@ export default function Projects() {
       <p className="text-md">
         Осмысление подходов, проработка и реализация решений тех или иных задач.
       </p>
-      <ButtonsPrototyping />
-      <InputsPrototyping />
-      <LabelsPrototyping />
+      <FlowbitePrototyping />
       <TodosPrototyping />
     </div>
   );

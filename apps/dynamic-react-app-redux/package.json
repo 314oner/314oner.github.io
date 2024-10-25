@@ -1,6 +1,6 @@
 {
   "name": "dynamic-react-app-redux",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "bugs": {
     "url": "https://github.com/314oner/314oner.github.io/issues"
   },
@@ -15,7 +15,7 @@
     "test": "cypress open"
   },
   "dependencies": {
-    "@314oner_npm/universal-components-library": "3.2.1",
+    "@314oner_npm/universal-components-library": "3.3.1",
     "@reduxjs/toolkit": "1.9.5",
     "axios": "1.4.0",
     "classnames": "^2.5.1",
