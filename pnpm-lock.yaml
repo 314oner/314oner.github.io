@@ -202,8 +202,8 @@ importers:
   apps/dynamic-react-app-redux:
     dependencies:
       '@314oner_npm/universal-components-library':
-        specifier: 3.2.1
-        version: 3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 3.3.1
+        version: 3.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@reduxjs/toolkit':
         specifier: 1.9.5
         version: 1.9.5(react-redux@7.2.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -565,8 +565,8 @@ packages:
       react: 16.8 - 18
       react-dom: 16.8 - 18
 
-  '@314oner_npm/universal-components-library@3.2.1':
-    resolution: {integrity: sha512-9f9SSGtwdmT1G5dejeuRFg7wQRU59lDp1auGLIjXe/ndiku0K1Hx5mEhOerYXq74T301zv6KI0xqFGgVHAWA7g==}
+  '@314oner_npm/universal-components-library@3.3.1':
+    resolution: {integrity: sha512-376GHHehXe+A4sW1xhXirGMWU/Ykkl3HrQj1nsTTAmeEc9dx9xNnAmYOhzaWTj3N4pwE2TYdX52Ij+5Rsuznwg==}
     peerDependencies:
       react: 16.8 - 18
       react-dom: 16.8 - 18
@@ -11643,7 +11643,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@314oner_npm/universal-components-library@3.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@314oner_npm/universal-components-library@3.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
