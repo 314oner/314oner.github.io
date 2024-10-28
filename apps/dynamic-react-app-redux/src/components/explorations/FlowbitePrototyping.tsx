@@ -1,18 +1,23 @@
 import {
+  DefaultAccordion,
   DefaultAlert,
   DefaultAvatar,
   DefaultBadge,
+  DefaultBreadcrumb,
   DefaultCard,
   DefaultCheckbox,
   DefaultDropdown,
   DefaultModal,
   DefaultRadioButton,
+  DefaultTag,
   RefButton as MyDefaultLongButton,
 } from '@314oner_npm/universal-components-library';
 import {
+  Accordion,
   Alert,
   Avatar,
   Badge,
+  Breadcrumb,
   Button,
   Card,
   Checkbox,
@@ -103,11 +108,7 @@ export default function ButtonsPrototyping() {
           <Badge color="info">Badge</Badge>
         </div>
         <div className="flex flex-col justify-center flex-1 px-px">
-          <DefaultBadge
-            color="red"
-            className="dark:text-white"
-            text={'Badge'}
-          />
+          <DefaultBadge className="dark:text-white" text={'Badge'} />
         </div>
       </div>
       <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
@@ -337,6 +338,118 @@ export default function ButtonsPrototyping() {
               />
             </div>
           </fieldset>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <Breadcrumb aria-label="Default breadcrumb example">
+            <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+            <Breadcrumb.Item href="#">Projects</Breadcrumb.Item>
+            <Breadcrumb.Item>Flowbite React</Breadcrumb.Item>
+          </Breadcrumb>
+        </div>
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <DefaultBreadcrumb
+            items={[
+              { label: 'Home', href: '#' },
+              { label: 'Projects', href: '#' },
+              { label: 'Universal Components Library' },
+            ]}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <Accordion collapseAll>
+            <Accordion.Panel>
+              <Accordion.Title>What is Flowbite?</Accordion.Title>
+              <Accordion.Content>
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  Flowbite is an open-source library of interactive components
+                  built on top of Tailwind CSS including buttons, dropdowns,
+                  modals, navbars, and more.
+                </p>
+              </Accordion.Content>
+            </Accordion.Panel>
+            <Accordion.Panel>
+              <Accordion.Title>
+                Is there a Figma file available?
+              </Accordion.Title>
+              <Accordion.Content>
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  Flowbite is first conceptualized and designed using the Figma
+                  software so everything you see in the library has a design
+                  equivalent in our Figma file.
+                </p>
+              </Accordion.Content>
+            </Accordion.Panel>
+            <Accordion.Panel>
+              <Accordion.Title>
+                What are the differences between Flowbite and Tailwind UI?
+              </Accordion.Title>
+              <Accordion.Content>
+                <p className="mb-2 text-gray-500 dark:text-gray-400">
+                  The main difference is that the core components from Flowbite
+                  are open source under the MIT license, whereas Tailwind UI is
+                  a paid product. Another difference is that Flowbite relies on
+                  smaller and standalone components, whereas Tailwind UI offers
+                  sections of pages.
+                </p>
+              </Accordion.Content>
+            </Accordion.Panel>
+          </Accordion>
+        </div>
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <DefaultAccordion
+            size="large"
+            items={[
+              {
+                title: 'What is Universal Components Library?',
+                content: `Flowbite is an open-source library of interactive components
+                  built on top of Tailwind CSS including buttons, dropdowns,
+                  modals, navbars, and more.`,
+              },
+              {
+                title: 'Is there a Figma file available?',
+                content: `Universal Components Library is first conceptualized and designed using the Figma
+                  software so everything you see in the library has a design
+                  equivalent in our Figma file.`,
+              },
+              {
+                title:
+                  'What are the differences between Universal Components Library and Tailwind UI?',
+                content: `The main difference is that the core components from Universal Components Library
+                  are open source under the MIT license, whereas Tailwind UI is
+                  a paid product. Another difference is that Universal Components Library relies on
+                  smaller and standalone components, whereas Tailwind UI offers
+                  sections of pages.`,
+              },
+            ]}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <div className="inline-flex items-center justify-between space-x-1 bg-green-100 text-green-800 px-2 py-0.5 rounded-md text-sm">
+            <div className="select-none">Cat</div>
+            <svg
+              className="w-4 h-4 text-green-900 cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <DefaultTag text={'Cat'} />
         </div>
       </div>
     </>
