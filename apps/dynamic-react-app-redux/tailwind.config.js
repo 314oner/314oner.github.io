@@ -4,6 +4,7 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+    'node_modules/@314oner_npm/universal-components-library/**/*.{js,jsx,ts,tsx}',
   ],
   darkMode: ['class'],
   theme: {
@@ -29,5 +30,9 @@ export default {
       },
     },
   },
-  plugins: [require('flowbite/plugin'), require('tailwind-scrollbar')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('flowbite/plugin'),
+    require('tailwind-scrollbar'),
+  ],
 };

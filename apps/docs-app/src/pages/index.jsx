@@ -1,14 +1,14 @@
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Layout from '@theme/Layout';
-import Image from '@theme/IdealImage';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import HackerNewsIcon from '@site/src/components/HackerNewsIcon';
 import Quotes from '@site/src/data/quotes';
 import Heading from '@theme/Heading';
-import HackerNewsIcon from '@site/src/components/HackerNewsIcon';
+import Image from '@theme/IdealImage';
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
 import styles from './index.module.css';
 
 function HeroBanner() {
@@ -35,7 +35,7 @@ function HeroBanner() {
           />
         </Heading>
         <div className={styles.indexCtas}>
-          <Link className="button button--primary" to="/docs">
+          <Link className="button button--primary" to="/category">
             <Translate>Get Started</Translate>
           </Link>
           <span className={styles.indexCtasGitHubButtonWrapper}>

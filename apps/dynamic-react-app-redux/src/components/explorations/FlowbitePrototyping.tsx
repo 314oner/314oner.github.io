@@ -10,6 +10,7 @@ import {
   DefaultModal,
   DefaultRadioButton,
   DefaultTag,
+  DefaultToggleSwitch,
   RefButton as MyDefaultLongButton,
 } from '@314oner_npm/universal-components-library';
 import {
@@ -26,12 +27,15 @@ import {
   Modal,
   Radio,
   TextInput,
+  ToggleSwitch,
 } from 'flowbite-react';
 import { useState } from 'react';
 
-export default function ButtonsPrototyping() {
+export default function FlowbitePrototyping() {
   const [openModal, setOpenModal] = useState(false);
   const [openModal2, setOpenModal2] = useState(false);
+  const [switch1, setSwitch1] = useState(false);
+  const [switch2, setSwitch2] = useState(false);
   return (
     <>
       <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
@@ -57,9 +61,6 @@ export default function ButtonsPrototyping() {
           <MyDefaultLongButton
             className="enabled:hover:bg-gradient-to-l bg-gradient-to-r from-purple-500 to-pink-500"
             size="small"
-            onClick={() => {
-              console.log('MyDefaultLongButton clicked');
-            }}
           >
             <a
               href="https://github.com/314oner/universal-components-library"
@@ -450,6 +451,24 @@ export default function ButtonsPrototyping() {
         </div>
         <div className="flex flex-col justify-center flex-1 px-px">
           <DefaultTag text={'Cat'} />
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center p-3 text-center border border-teal-500 sm:flex-row rounded-tl-3xl rounded-br-3xl">
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <ToggleSwitch
+            checked={switch1}
+            label="Toggle me"
+            onChange={setSwitch1}
+          />
+        </div>
+        <div className="flex flex-col justify-center flex-1 px-px">
+          <DefaultToggleSwitch
+            handleToggle={switch2}
+            //@ts-ignore
+            onChange={setSwitch2}
+            //@ts-ignore
+            size="medium"
+          />
         </div>
       </div>
     </>

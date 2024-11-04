@@ -1,6 +1,6 @@
 {
   "name": "@apps/docs-app",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "private": true,
   "homepage": "https://github.com/314oner/314oner.github.io#readme",
   "bugs": {
@@ -40,7 +40,7 @@
     ]
   },
   "dependencies": {
-    "@314oner_npm/universal-components-library": "3.1.0",
+    "@314oner_npm/universal-components-library": "3.4.5",
     "@docusaurus/core": "2.4.3",
     "@docusaurus/plugin-client-redirects": "2.4.3",
     "@docusaurus/plugin-google-gtag": "2.4.3",
@@ -58,6 +58,9 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0"
+    "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   }
 }

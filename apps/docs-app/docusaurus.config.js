@@ -1,6 +1,7 @@
 // @ts-nocheck
 const { DOCUSAURUS_VERSION } = require('@docusaurus/utils');
 const { themes } = require('prism-react-renderer');
+const tailwindPlugin = require('./plugins/tailwind-config.cjs');
 
 const defaultLocale = 'en';
 const organizationName = '314oner';
@@ -40,7 +41,7 @@ module.exports = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./src/css/custom.css')],
         },
         /*
         gtag: {
@@ -160,6 +161,7 @@ module.exports = {
     }),
 
   plugins: [
+    tailwindPlugin,
     [
       'ideal-image',
       {
