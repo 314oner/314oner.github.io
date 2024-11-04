@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_apps_docs_app=self.webpackChunk_apps_docs_app||[]).push([[4193],{61384:p=>{p.exports=JSON.parse('{"pageTitle":"My repositories","pageDescription":"My repositories."}')}}]);
