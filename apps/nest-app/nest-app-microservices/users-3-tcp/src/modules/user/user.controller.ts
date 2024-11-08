@@ -91,6 +91,36 @@ export class UserController {
     return result;
   }
 
+  @MessagePattern('user_get_all_users')
+  public async getAllUsers(): Promise<any> {
+    let result: any;
+    try {
+      const users = await this.userService.getAllUsers();
+      if (users) {
+        result = {
+          status: HttpStatus.OK,
+          message: 'user_get_all_users_success',
+          users,
+        };
+      } else {
+        result = {
+          status: HttpStatus.NOT_FOUND,
+          message: 'user_get_all_users_not_found',
+          users: null,
+        };
+      }
+      return result;
+    } catch (e) {
+      result = {
+        status: HttpStatus.BAD_REQUEST,
+        message: 'user_get_all_users_bad_request',
+        users: null,
+        errors: e.errors,
+      };
+    }
+    return result;
+  }
+
   @MessagePattern('user_create')
   public async createUser(userParams: any): Promise<any> {
     let result: any;
@@ -174,9 +204,8 @@ export class UserController {
       } else {
         try {
           userParams.is_confirmed = false;
-          const createdUser = await this.userService.createGoogleUser(
-            userParams,
-          );
+          const createdUser =
+            await this.userService.createGoogleUser(userParams);
           delete createdUser.password;
           result = {
             status: HttpStatus.CREATED,

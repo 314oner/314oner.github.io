@@ -1,3 +1,4 @@
+import { CommentEntity } from '@app/comments/entities/comment.entity';
 import { LikeEntity } from '@app/likes/entities/like.entity';
 import { PostEntity } from '@app/posts/entities/post.entity';
 import { TagEntity } from '@app/tags/entities/tag.entity';
@@ -29,7 +30,13 @@ import { DoesNotExist } from '@shared/common/utils/validators/does-not-exist.val
         }),
       },
     ]),
-    TypeOrmModule.forFeature([UserEntity, PostEntity, LikeEntity, TagEntity]),
+    TypeOrmModule.forFeature([
+      UserEntity,
+      CommentEntity,
+      PostEntity,
+      LikeEntity,
+      TagEntity,
+    ]),
   ],
   controllers: [UserController],
   providers: [DoesNotExist, UserRepository, UserService],

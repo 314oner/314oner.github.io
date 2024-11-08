@@ -1,3 +1,4 @@
+import { CommentEntity } from '@app/comments/entities/comment.entity';
 import { LikeEntity } from '@app/likes/entities/like.entity';
 import { PostEntity } from '@app/posts/entities/post.entity';
 import { Exclude } from 'class-transformer';
@@ -44,6 +45,9 @@ export class UserEntity extends BaseEntity {
 
   @OneToMany(() => PostEntity, (post) => post.user)
   public posts!: PostEntity[];
+
+  @OneToMany(() => CommentEntity, (comment) => comment.user)
+  public comments!: CommentEntity[];
 
   @OneToMany(() => LikeEntity, (like) => like.user)
   public likedPosts!: LikeEntity[];

@@ -9,3 +9,4 @@ export const TASKS_SERVICE_TOKEN = 'tasks-service-token';
 export const USERS_SERVICE_TOKEN = 'users-service-token';
 export const AUTH_SERVICE_TOKEN = 'auth-service-token';
 export const EVENTS_SERVICE_TOKEN = 'events-service-token';
+export const COMMENTS_SERVICE_TOKEN = 'comments-service-token';

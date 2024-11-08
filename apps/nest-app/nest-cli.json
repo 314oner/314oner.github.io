@@ -101,6 +101,15 @@
       "compilerOptions": {
         "tsConfigPath": "nest-app-microservices/users-3-tcp/tsconfig.app.json"
       }
+    },
+    "comment:dev": {
+      "type": "application",
+      "root": "nest-app-microservices/comments-10-tcp",
+      "entryFile": "main",
+      "sourceRoot": "nest-app-microservices/comments-10-tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "nest-app-microservices/comments-10-tcp/tsconfig.app.json"
+      }
     }
   },
   "compilerOptions": {

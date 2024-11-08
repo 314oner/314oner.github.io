@@ -24,6 +24,12 @@ export class UserService {
     return await this.userRepo.findOne({ where: { id } });
   }
 
+  public async getAllUsers() {
+    return await this.userRepo.find({
+      relations: ['posts', 'comments'],
+    });
+  }
+
   public async updateUserById(
     id: string,
     userParams: {

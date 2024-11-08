@@ -32,6 +32,9 @@ export const gatewayConfigSchema = {
   EVENTS_SERVICE_HOST: Joi.string().required(),
   EVENTS_SERVICE_TCP_PORT: Joi.number().required(),
   EVENTS_SERVICE_HTTP_PORT: Joi.string().required(),
+  COMMENTS_SERVICE_HOST: Joi.string().required(),
+  COMMENTS_SERVICE_TCP_PORT: Joi.number().required(),
+  COMMENTS_SERVICE_HTTP_PORT: Joi.string().required(),
 };
 
 export const gatewayConfig = registerAs('gateway', () => ({
@@ -75,6 +78,12 @@ export const gatewayConfig = registerAs('gateway', () => ({
   eventsServiceHost: process.env.EVENTS_SERVICE_HOST as unknown as string,
   eventsServiceHttpPort: process.env
     .EVENTS_SERVICE_HTTP_PORT as unknown as string,
+
+  commentsServiceTcpPort: process.env
+    .COMMENTS_SERVICE_TCP_PORT as unknown as number,
+  commentsServiceHost: process.env.COMMENTS_SERVICE_HOST as unknown as string,
+  commentsServiceHttpPort: process.env
+    .COMMENTS_SERVICE_HTTP_PORT as unknown as string,
 }));
 
 export type GatewayConfigType = ConfigType<typeof gatewayConfig>;

@@ -29,7 +29,8 @@
       "@app/tasks/*": ["nest-app-microservices/tasks-5-tcp/src/*"],
       "@app/users/*": ["nest-app-microservices/users-3-tcp/src/*"],
       "@app/auth/*": ["nest-app-microservices/auth-2/src/*"],
-      "@app/events/*": ["nest-app-microservices/events-15-tcp/src/*"]
+      "@app/events/*": ["nest-app-microservices/events-15-tcp/src/*"],
+      "@app/comments/*": ["nest-app-microservices/comments-10-tcp/src/*"]
     }
   }
 }

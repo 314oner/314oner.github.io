@@ -16,6 +16,7 @@ import { HomeModule } from '@shared/common/modules/home/home.module';
 import { LoggerModule } from '@shared/common/modules/logger/logger.module';
 import {
   AUTH_SERVICE_TOKEN,
+  COMMENTS_SERVICE_TOKEN,
   EVENTS_SERVICE_TOKEN,
   LIKE_SERVICE_TOKEN,
   ORDERS_SERVICE_TOKEN,
@@ -28,6 +29,7 @@ import {
 } from '@shared/common/tokens';
 import { HttpExceptionFilter } from '@shared/common/utils/filters/http-exception.filter';
 import { validationOptions } from '@shared/common/utils/validation-options';
+import { CommentsController } from './comments.controller';
 import { EventsController } from './events.controller';
 import { AuthGuard } from './guards/authorization.guard';
 import { LikesController } from './likes.controller';
@@ -166,6 +168,18 @@ import { UsersController } from './users.controller';
           },
         }),
       },
+      {
+        name: COMMENTS_SERVICE_TOKEN,
+        imports: [ConfigModule],
+        inject: [gatewayConfig.KEY],
+        useFactory: (config: GatewayConfigType) => ({
+          transport: Transport.TCP,
+          options: {
+            host: config.commentsServiceHost,
+            port: config.commentsServiceTcpPort,
+          },
+        }),
+      },
     ]),
   ],
   controllers: [
@@ -179,6 +193,7 @@ import { UsersController } from './users.controller';
     UsersController,
     TasksController,
     UsersController,
+    CommentsController,
   ],
   providers: [
     {

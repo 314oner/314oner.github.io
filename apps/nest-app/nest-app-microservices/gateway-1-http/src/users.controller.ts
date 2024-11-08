@@ -28,6 +28,7 @@ import { LoginUserResponseDto } from './interfaces/user/dto/login-user-response.
 import { LoginUserDto } from './interfaces/user/dto/login-user.dto';
 import { IServiveTokenCreateResponse } from './interfaces/user/service-token-create-response.interface';
 import { IServiceUserCreateResponse } from './interfaces/user/service-user-create-response.interface';
+import { IServiceUsergeGetAllUsersResponse } from './interfaces/user/service-user-get-all-users-response.interface';
 import { IServiceUserGetByIdResponse } from './interfaces/user/service-user-get-by-id-response.interface';
 import { IServiceUserGoogleCreateResponse } from './interfaces/user/service-user-google-create-response.interface';
 import { IServiceUserSearchResponse } from './interfaces/user/service-user-search-response.interface';
@@ -98,6 +99,22 @@ export class UsersController {
         user: userResponse.user,
       },
       //@ts-ignore
+      errors: null,
+    };
+  }
+  //@Authorization(true)
+  @Get('/all')
+  public async getAllUsers(): Promise<any> {
+    const usersResponse: IServiceUsergeGetAllUsersResponse =
+      await firstValueFrom(
+        this.userServiceClient.send('user_get_all_users', {}),
+      );
+
+    return {
+      message: usersResponse.message,
+      data: {
+        users: usersResponse.users,
+      },
       errors: null,
     };
   }

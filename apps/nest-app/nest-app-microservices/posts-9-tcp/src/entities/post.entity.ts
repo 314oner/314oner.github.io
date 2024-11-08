@@ -1,3 +1,4 @@
+import { CommentEntity } from '@app/comments/entities/comment.entity';
 import { LikeEntity } from '@app/likes/entities/like.entity';
 import { UserEntity } from '@app/users/entities/user.entity';
 import {
@@ -40,4 +41,7 @@ export class PostEntity extends BaseEntity implements PostInterface {
   userLikes: LikeEntity[];
 
   tags: any;
+
+  @OneToMany(() => CommentEntity, (comment) => comment.post, { eager: true })
+  comments: CommentEntity[];
 }

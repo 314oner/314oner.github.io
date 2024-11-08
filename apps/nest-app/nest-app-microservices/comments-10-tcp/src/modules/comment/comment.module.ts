@@ -1,26 +1,26 @@
+import { CommentEntity } from '@app/comments/entities/comment.entity';
 import { LikeEntity } from '@app/likes/entities/like.entity';
 import { PostEntity } from '@app/posts/entities/post.entity';
 import { TagEntity } from '@app/tags/entities/tag.entity';
 import { UserEntity } from '@app/users/entities/user.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PostController } from './post.controller';
-import { PostService } from './post.service';
-import { PostRepository } from './repositories/post.repository';
-import { CommentEntity } from '@app/comments/entities/comment.entity';
+import { CommentController } from './comment.controller';
+import { CommentService } from './comment.service';
+import { CommentRepository } from './repositories/comment.repository';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([
-      PostEntity,
       CommentEntity,
       LikeEntity,
+      PostEntity,
       UserEntity,
       TagEntity,
     ]),
   ],
-  controllers: [PostController],
-  providers: [PostService, PostRepository],
-  exports: [PostService],
+  controllers: [CommentController],
+  providers: [CommentService, CommentRepository],
+  exports: [CommentService],
 })
-export class PostModule {}
+export class CommentModule {}
